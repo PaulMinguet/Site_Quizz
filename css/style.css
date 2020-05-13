@@ -1,0 +1,63 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+ 
+
+.title {
+    font-family: 'DM Mono', monospace;
+}
+
+.text {
+    position: relative;
+    top: 44px;
+    left: 50%;
+    font-family: 'Jost',sans-serif;
+    font-size: 22px;
+    padding: 22px;
+    background-color: #1A73E8;
+    color: #FFF;
+    width: 22em;
+    height: auto;
+    box-shadow: 4px 4px 12px #BBB;
+    border-radius: 10px;
+    transform: translateX(-50%);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.quizz {
+    position: relative;
+    top: 44px;
+    font-family: 'Jost',sans-serif;
+    font-size: 22px;
+    padding: 22px;
+    width: 22em;
+    height: auto;
+    box-shadow: 4px 4px 12px #BBB;
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-border-radius: 10px;
+    margin-top: 40px;
+    background-color: #2ECC72;
+    color: #FFF;
+
+}
+
+.footer {
+    background-color: #444;
+    color: #FFF;
+    font-family: 'Jost',sans-serif;
+    font-size: 22px;
+    padding: 22px;
+    margin-top: 400px;
+}
