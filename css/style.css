@@ -9,6 +9,13 @@ a {
 li {
     text-decoration: none;
 }
+input {
+    overflow: hidden;
+    font-size: 14px;
+}
+input:focus {
+    overflow: hidden;
+}
 
 nav {
     position: relative;
@@ -32,6 +39,7 @@ nav ul li a {
     font-weight: normal;
     font-size: 22px;
 }
+
 #btn-acc {
     position: relative;
     left: 50px;
@@ -67,13 +75,14 @@ nav ul li a {
     font-family: 'Jost',sans-serif;
     font-weight: normal;
     color: red;
-    font-size: 22px;
-    padding: 22px;
+    border: 1px dashed red;
+    font-size: 18px;
+    padding: 16px;
     left: 50%;
     text-align: center;
-    background-color: rgb(255, 172, 172);
+    background-color: rgb(255, 202, 202);
     border-radius: 8px;
-    width: 300px;
+    width: 250px;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
@@ -143,6 +152,82 @@ nav ul li a {
     -o-border-radius: 10px;
 }
 
+.login {
+    position: relative;
+    top: 42px;
+    left: 50%;
+    padding: 22px;
+    width: 250px;
+    border-radius: 10px;
+    border-radius: 10px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.login:hover {
+    transition: all .5s;
+    background-color: #1A73E8;
+    box-shadow: rgb(97, 166, 255) -3px 3px 12px;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+.login:not(:hover) {
+    transition: all .5s;
+    background-color: rgb(173, 208, 255);
+    box-shadow: rgb(158, 200, 255) -3px 3px 6px;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+.login:hover label {
+    color: #FFF;
+}
+.login label {
+    font-size: 20px;
+    text-align: center;
+}
+.login input {
+}
+.login label, .login input {
+    font-family: 'Jost', sans-serif;
+    display: block;
+    margin: 12px 6px 12px 10px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+.login > .area {
+    margin-left: 32px;
+    width: 164px;
+    padding: 8px;
+    margin-bottom: 22px;
+}
+input[type="submit"] {
+    margin: 0 auto;
+    padding: 13px;
+    border: none;
+    font-family: 'Jost', sans-serif;
+    background-color: #2ECC72;
+    color: #FFF;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-style: italic;
+}
+input[type="submit"]:hover {
+    cursor: pointer;
+}
 .footer {
     text-align: center;
     background-color: #444;
