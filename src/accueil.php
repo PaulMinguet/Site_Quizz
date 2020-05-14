@@ -1,14 +1,22 @@
 <?php 
 $title = "Quiz | Homepage";
+require 'auth.php';
+if(!connection()) {
+    header('Location: login.php');
+    exit();
+}
 require 'header.php';
+require 'nav.php';
 ?>
-    <nav>
-        <ul>
-            <li><a href="#" id="btn-acc"><i class="fas fa-home"></i>&nbsp;&nbsp;Accueil</a></li>
-            <li></li>
-            <li><a href="./login.php" id="btn-log"><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Log In</a></li>
-        </ul>
-    </nav>
+
+<?php
+    $nom=$_GET['nom'];
+    $prenom=$_GET['prenom'];
+    $email=$_GET['email'];
+
+    echo "<h1 class='bienvenue'>$prenom $nom <img src='../img/cactus.jpg'/> $email</h1>"
+?>
+
 
     <h1 class="title">Bienvenue sur Qui veut gagner des cailloux</h1>
     <h3 class="text">Cette application web permet à des professeurs inscrits sur le site de créer des quizz (questionnaires à choix multiples).</h3>

@@ -16,7 +16,35 @@ input {
 input:focus {
     overflow: hidden;
 }
-
+.visible {
+    display: block;
+}
+.not-visible {
+    display: none;
+}
+.bienvenue {
+    position: absolute;
+    font-family: 'Jost',sans-serif;
+    font-weight: normal;
+    font-size: 22px;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+.bienvenue img {
+    padding: 4px 4px -4px;
+    margin: 0 12px;
+    width: 22px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
 nav {
     position: relative;
     width: 100%;
