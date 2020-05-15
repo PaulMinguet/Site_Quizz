@@ -13,7 +13,9 @@ require 'nav.php';
     <label for="prenom">Prénom</label>
     <input id="prenom" type="text" name="prenom" placeholder="Votre prénom" class="area" />
     <label for="email">Email</label>
-    <input id="email " type="email" name="email" placeholder="Votre adresse mail" class="area" />
+    <input id="email" type="email" name="email" placeholder="Votre adresse mail" class="area" />
+    <label for="password">Mot de passe</label>
+    <input id="password" type="password" name="password" placeholder="Votre mot de passe" class="area" />
     <input type="submit" name="connect" value="Se connecter">
 </form>
 
