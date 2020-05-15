@@ -1,10 +1,10 @@
 <?php 
 $title = "Quiz | Homepage";
 require 'auth.php';
-if(!connection()) {
-    header('Location: login.php');
-    exit();
-}
+// if(!connection()) {
+//     header('Location: login.php');
+//     exit();
+// }
 require 'header.php';
 require 'nav.php';
 ?>
