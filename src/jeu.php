@@ -1,13 +1,14 @@
 <?php 
 $title = "Quiz | Jeu";
+require 'auth.php';
 require 'header.php';
 require 'nav.php';
 ?>
 
 <?php
-    $nom=$_GET['nom'];
-    $prenom=$_GET['prenom'];
-    $email=$_GET['email'];
+    $nom=$_POST['nom'];
+    $prenom=$_POST['prenom'];
+    $email=$_POST['email'];
 
     echo "<h1 class='bienvenue'>$prenom $nom <img src='../img/cactus.jpg'/> $email</h1>"
 ?>
@@ -15,7 +16,7 @@ require 'nav.php';
 
 <h1 class="title">Créer le quizz</h1>
 
-<?php if (($GET['nom']='') && ($GET['prenom']='') && ($GET['email']='')) {
+<?php if (($POST['nom']='') && ($POST['prenom']='') && ($POST['email']='')) {
     echo "<h3 class='title2 visible'>Veuillez vous enregistrer</h3>";
 } else {
     echo "<h3 class='title2 not-visible'>Veuillez vous enregistrer</h3>";

@@ -10,9 +10,9 @@ require 'nav.php';
 ?>
 
 <?php
-    $nom=$_GET['nom'];
-    $prenom=$_GET['prenom'];
-    $email=$_GET['email'];
+    $nom=$_POST['nom'];
+    $prenom=$_POST['prenom'];
+    $email=$_POST['email'];
 
     echo "<h1 class='bienvenue'>$prenom $nom <img src='../img/cactus.jpg'/> $email</h1>"
 ?>
