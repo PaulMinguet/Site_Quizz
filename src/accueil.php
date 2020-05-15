@@ -13,8 +13,10 @@ require 'nav.php';
     $nom=$_POST['nom'];
     $prenom=$_POST['prenom'];
     $email=$_POST['email'];
+    $passwd=$_POST['password'];
 
     echo "<h1 class='bienvenue'>$prenom $nom <img src='../img/cactus.jpg'/> $email</h1>"
+    // echo password_hash("$passwd", PASSWORD_DEFAULT);
 ?>
 
 
