@@ -1,22 +1,21 @@
 <?php 
 $title = "Quiz | Homepage";
-require 'auth.php';
+require 'include/auth.php';
 // if(!connection()) {
 //     header('Location: login.php');
 //     exit();
 // }
-require 'header.php';
-require 'nav.php';
-?>
+require 'vues/header.php';
+require 'vues/nav.php';
 
-<?php
-    $nom=$_POST['nom'];
-    $prenom=$_POST['prenom'];
-    $email=$_POST['email'];
-    $passwd=$_POST['password'];
 
-    echo "<h1 class='bienvenue'>$prenom $nom <img src='../img/cactus.jpg'/> $email</h1>"
-    // echo password_hash("$passwd", PASSWORD_DEFAULT);
+$nom=$_POST['nom'];
+$prenom=$_POST['prenom'];
+$email=$_POST['email'];
+$passwd=$_POST['password'];
+
+echo "<h1 class='bienvenue'>$prenom $nom <img src='../img/cactus.jpg'/> $email</h1>"
+// echo password_hash("$passwd", PASSWORD_DEFAULT);
 ?>
 
 
@@ -27,5 +26,6 @@ require 'nav.php';
         <a href="./jeu.php">Lancer le quizz !</a> 
     </div>
 
-
-<?php require 'footer.php';?>
+<?php
+require 'vues/footer.php';
+?>

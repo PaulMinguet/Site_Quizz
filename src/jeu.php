@@ -1,16 +1,16 @@
 <?php 
 $title = "Quiz | Jeu";
-require 'auth.php';
-require 'header.php';
-require 'nav.php';
-?>
+require 'include/auth.php';
+require 'vues/header.php';
+require 'vues/nav.php';
+ 
+$nom=$_POST['nom'];
+$prenom=$_POST['prenom'];
+$email=$_POST['email'];
+$passwd=$_POST['password'];
 
-<?php
-    $nom=$_POST['nom'];
-    $prenom=$_POST['prenom'];
-    $email=$_POST['email'];
 
-    echo "<h1 class='bienvenue'>$prenom $nom <img src='../img/cactus.jpg'/> $email</h1>"
+echo "<h1 class='bienvenue'>$prenom $nom <img src='../img/cactus.jpg'/> $email</h1>"
 ?>
 
 
@@ -24,4 +24,4 @@ require 'nav.php';
 ?>
  
 
-<?php require 'footer.php';?>
+<?php require 'vues/footer.php';?>
