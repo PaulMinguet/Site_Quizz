@@ -7,14 +7,18 @@ require 'vues/msg_log.php';
 ?>
 
 
-<h1 class="title">Espace Log In</h1>
+<h1 class="title">Espace Sign In</h1>
 
 <form action="./jeu.php" method="post" class="login">
+    <label for="nom">Nom</label>
+    <input id="nom" type="text" name="nom" placeholder="Votre nom" value="<?= htmlentities($nom) ?>" class="area" />
+    <label for="prenom">Prénom</label>
+    <input id="prenom" type="text" name="prenom" placeholder="Votre prénom" value="<?= htmlentities($prenom) ?>" class="area" />
     <label for="email">Email</label>
     <input id="email" type="email" name="email" placeholder="Votre adresse mail" value="<?= htmlentities($email) ?>" class="area" />
     <label for="password">Mot de passe</label>
     <input id="password" type="text" name="password" placeholder="Votre mot de passe" value="<?= htmlentities($passwd) ?>" class="area" />
-    <input type="submit" name="connect" value="Se connecter">
+    <input type="submit" name="connect" value="S'inscrire">
 </form>
 
 <?php require 'vues/footer.php';?>

@@ -76,14 +76,21 @@ nav ul li a {
     padding: 6px 12px 6px 8px;
     border-radius: 4px;
 }
-#btn-log {
-    position: absolute;
+#btn-log { 
     right: 50px;
+    color: #2ECC72;
+    background-color: #222;
+}
+#btn-sign {
+    right: 170px;
+    color: red;
+    background-color: #EEE;
+}
+#btn-log, #btn-sign {
+    position: absolute;
     top: 12px;
     font-size: 20px;
-    color: #2ECC72;
     font-style: italic;
-    background-color: #222;
     padding: 6px 12px 6px 8px;
     border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -100,15 +107,14 @@ nav ul li a {
 }
 .title2 {
     position: relative;
-    font-family: 'Jost',sans-serif;
+    font-family: 'Jost',
+    sans-serif;
     font-weight: normal;
-    color: red;
-    border: 1px dashed red;
+    
     font-size: 18px;
     padding: 16px;
     left: 50%;
     text-align: center;
-    background-color: rgb(255, 202, 202);
     border-radius: 8px;
     width: 250px;
     transform: translateX(-50%);
@@ -120,6 +126,16 @@ nav ul li a {
     -moz-border-radius: 8px;
     -ms-border-radius: 8px;
     -o-border-radius: 8px;
+}
+.title2.alert {
+    color: red;
+    border: 1px dashed red;
+    background-color: rgb(255, 202, 202);
+}
+.title2.succes {
+    color: green;
+    border: 1px dashed red;
+    background-color: rgb(255, 202, 202);
 }
 
 .text {
@@ -222,8 +238,6 @@ nav ul li a {
 .login label {
     font-size: 20px;
     text-align: center;
-}
-.login input {
 }
 .login label, .login input {
     font-family: 'Jost', sans-serif;
