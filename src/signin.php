@@ -16,14 +16,19 @@ require 'vues/msg_log.php';
     <input id="prenom" type="text" name="prenom" placeholder="Votre prénom" value="<?= htmlentities($prenom) ?>" class="area" />
     <label for="email">Email</label>
     <input id="email" type="email" name="email" placeholder="Votre adresse mail" value="<?= htmlentities($email) ?>" class="area" />
-    <label for="statut">Statut</label>
-    <select name="statut" id="statut" class="area">
-        <option value="Professeur">Professeur</option>
-        <option value="Elève">Elève</option>
-    </select>
     <label for="password">Mot de passe</label>
     <input id="password" type="text" name="password" placeholder="Votre mot de passe" value="<?= htmlentities($passwd) ?>" class="area" />
+    <label for="statut">Statut</label>
+    <div class="custom-select">
+        <select name="statut" id="statut">
+            <option value="0">Choisissez votre statut</option>
+            <option value="1">Professeur</option>
+            <option value="2">Élève</option>
+        </select>
+    </div>
     <input type="submit" name="connect" value="S'inscrire">
 </form>
 
 <?php require 'vues/footer.php';?>
+
+<script src="/js/btnSelect.js"></script>
