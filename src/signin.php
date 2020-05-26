@@ -30,5 +30,3 @@ require 'vues/msg_log.php';
 </form>
 
 <?php require 'vues/footer.php';?>
-
-<script src="/js/btnSelect.js"></script>
