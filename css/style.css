@@ -132,10 +132,10 @@ nav ul li a {
     border: 1px dashed red;
     background-color: rgb(255, 202, 202);
 }
-.title2.succes {
+.title2.success {
     color: green;
-    border: 1px dashed red;
-    background-color: rgb(255, 202, 202);
+    border: 1px dashed green;
+    background-color: rgba(211, 255, 202, 0.858);
 }
 
 .text {

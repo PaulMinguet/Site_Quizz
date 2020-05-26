@@ -1,12 +1,11 @@
 <?php 
-require_once 'include/auth.php';
+require 'include/auth.php';
 $title = "Quiz | LOGIN";
 require 'vues/header.php';
 require 'vues/nav.php';
-require 'vues/msg_log.php';
 ?>
 
-
+<?php require 'vues/msg_log.php'; ?>
 <h1 class="title">Espace Log In</h1>
 
 <form action="./jeu.php" method="post" class="login">
