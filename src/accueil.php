@@ -1,7 +1,6 @@
 <?php 
 require 'include/is_connected.php';
 $title = "Quiz | Homepage";
-not_connected();
 require 'vues/header.php';
 require 'vues/nav.php';
 
