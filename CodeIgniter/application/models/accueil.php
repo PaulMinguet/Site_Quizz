@@ -1,18 +1,18 @@
 <?php 
-require 'include/is_connected.php';
-require 'include/auth.php';
+require '../controllers/include/is_connected.php';
+require '../controllers/include/auth.php';
 $title = "Quiz | Homepage";
-not_connected();
+// not_connected();
 
-require 'vues/header.php';
-require 'vues/nav.php';
+require '../views/header.php';
+require '../views/nav.php';
 
 
 // echo password_hash("$passwd", PASSWORD_DEFAULT);
 echo "<h1 class='bienvenue'>$prenom $nom <img src='../img/cactus.jpg'/> $email</h1>"
 ?>
 
-<?php require 'vues/msg_log.php'; ?>
+<?php require '../views/msg_log.php'; ?>
 
 
     <h1 class="title">Bienvenue sur Qui veut gagner des cailloux</h1>
@@ -22,4 +22,4 @@ echo "<h1 class='bienvenue'>$prenom $nom <img src='../img/cactus.jpg'/> $email</
         <a href="./jeu.php">Lancer le quizz !</a> 
     </div>
 
-<?php require 'vues/footer.php'; ?>
+<?php require '../views/footer.php'; ?>

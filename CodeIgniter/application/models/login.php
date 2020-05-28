@@ -1,11 +1,11 @@
 <?php 
-require 'include/auth.php';
+require '../controllers/include/auth.php';
 $title = "Quiz | LOGIN";
-require 'vues/header.php';
-require 'vues/nav.php';
+require '../views/header.php';
+require '../views/nav.php';
 ?>
 
-<?php require 'vues/msg_log.php'; ?>
+<?php require '../views/msg_log.php'; ?>
 <h1 class="title">Espace Log In</h1>
 
 <form action="./jeu.php" method="post" class="login">
@@ -16,4 +16,4 @@ require 'vues/nav.php';
     <input type="submit" name="connect" value="Se connecter">
 </form>
 
-<?php require 'vues/footer.php';?>
+<?php require '../views/footer.php';?>
