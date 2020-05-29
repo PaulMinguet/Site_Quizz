@@ -2,12 +2,13 @@
     <head>
         <link rel = "stylesheet" type = "text/css" 
 	    href = "<?php echo base_url(); ?>css/style.css">
+        <script src="<?php echo base_url(); ?>js/btnSelect.js"></script>
     </head>
 
     <body>
         <h1 class="title">Espace Sign In</h1>
 
-        <form action="../home/jeu" method="post" class="login">
+        <form action="home/jeu" method="post" class="login">
             <label for="nom">Nom</label>
             <input id="nom" type="text" name="nom" placeholder="Votre nom" value="<?= htmlentities($nom) ?>" class="area" />
             <label for="prenom">Prénom</label>

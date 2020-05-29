@@ -12,3 +12,4 @@ function not_connected (){
         exit();
     }
 }
+?>

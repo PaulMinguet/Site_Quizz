@@ -9,7 +9,7 @@
 			require $this->load->views('header.php');
 			require $this->load->views('nav.php');
 
-			require $this->load->views('msg_log.php');
+            require $this->load->models('msg_log.php');
 			require $this->load->views('footer.php');
 		} 
 	}

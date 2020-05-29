@@ -5,7 +5,6 @@
 
 			require $this->load->controllers('include/is_connected');
 			require $this->load->controllers('include/auth.php');
-			$title = "Quiz | Jeu";
 			// not_connected();
 
 			require $this->load->views('header.php');

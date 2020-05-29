@@ -15,7 +15,7 @@
 			// echo password_hash("$passwd", PASSWORD_DEFAULT);
 			echo "<h1 class='bienvenue'>$prenom $nom <img src='../img/cactus.jpg'/> $email</h1>";
 
-			require $this->load->views('msg_log.php');
+			require $this->load->models('msg_log.php');
 			require $this->load->views('footer.php');
 		}
 	}

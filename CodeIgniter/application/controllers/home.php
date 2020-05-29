@@ -9,17 +9,17 @@ class Home extends CI_Controller {
     {
     	$this->load->helper('url');
     	$this->load->view('nav');
-    	//$this->load->view('questions');
     	$this->load->view('header');
         $this->load->model('accueil');
         $this->load->view('accueil_view');
     }
-
+    
     public function jeu() {
         $this->load->view('nav');
         $this->load->view('header');
         $this->load->model('jeu');
-         $this->load->view('jeu_view');
+        $this->load->view('jeu_view');
+        $this->load->view('questions');
     }
     public function login() {
         $this->load->view('nav');
