@@ -9,7 +9,7 @@
 	<body>
 		<h1 class="title">Espace Log In</h1>
 
-		<form action="./jeu.php" method="post" class="login">
+		<form action="../home/jeu" method="post" class="login">
 		    <label for="email">Email</label>
 		    <input id="email" type="email" name="email" placeholder="Votre adresse mail" value="<?= htmlentities($email) ?>" class="area" />
 		    <label for="password">Mot de passe</label>

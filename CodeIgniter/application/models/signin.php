@@ -1,31 +1,16 @@
 <?php 
-require '../controllers/include/auth.php';
-$title = "Quiz | LOGIN";
-require '../views/header.php';
-require '../views/nav.php';
+	class Signin extends CI_Model {
+
+		function affiche_signin() {
+
+			require $this->load->controllers('include/auth.php');
+			$title = "Quiz | SIGN IN";
+			
+			require $this->load->views('header.php');
+			require $this->load->views('nav.php');
+
+			require $this->load->views('msg_log.php');
+			require $this->load->views('footer.php');
+		} 
+	}
 ?>
-
-<?php require '../views/msg_log.php';?>
-<h1 class="title">Espace Sign In</h1>
-
-<form action="/jeu.php" method="post" class="login">
-    <label for="nom">Nom</label>
-    <input id="nom" type="text" name="nom" placeholder="Votre nom" value="<?= htmlentities($nom) ?>" class="area" />
-    <label for="prenom">Prénom</label>
-    <input id="prenom" type="text" name="prenom" placeholder="Votre prénom" value="<?= htmlentities($prenom) ?>" class="area" />
-    <label for="email">Email</label>
-    <input id="email" type="email" name="email" placeholder="Votre adresse mail" value="<?= htmlentities($email) ?>" class="area" />
-    <label for="password">Mot de passe</label>
-    <input id="password" type="text" name="password" placeholder="Votre mot de passe" value="<?= htmlentities($passwd) ?>" class="area" />
-    <label for="statut">Statut</label>
-    <div class="custom-select">
-        <select name="statut" id="statut">
-            <option value="0">Choisissez votre statut</option>
-            <option value="1">Professeur</option>
-            <option value="2">Élève</option>
-        </select>
-    </div>
-    <input type="submit" name="connect" value="S'inscrire">
-</form>
-
-<?php require '../views/footer.php';?>

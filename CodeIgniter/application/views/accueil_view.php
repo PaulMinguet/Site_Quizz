@@ -1,6 +1,8 @@
 <html>
 	<head>
-		<title>Accueil</title>
+        
+        <title>Accueil</title>
+        
         <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/style.css">
 	</head>
 	<body>
@@ -8,7 +10,7 @@
 	    <h3 class="text">Cette application web permet à des professeurs inscrits sur le site de créer des quizz (questionnaires à choix multiples).</h3>
 
 	    <div class="launch">
-	        <a href="./jeu.php">Lancer le quizz !</a> 
+	        <a href="../home/">Lancer le quizz !</a> 
 	    </div>
 	</body>
 </html>
