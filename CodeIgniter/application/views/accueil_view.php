@@ -1,8 +1,7 @@
 <html>
 	<head>
 		<title>Accueil</title>
-		<link rel = "stylesheet" type = "text/css" 
-         href = "<?php echo base_url(); ?>css/style.css">
+        <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>css/style.css">
 	</head>
 	<body>
 		<h1 class="title">Bienvenue sur Qui veut gagner des cailloux</h1>
