@@ -1,8 +1,4 @@
 <html>
-    <head>
-        <link rel = "stylesheet" type = "text/css" href = "<?php echo CSS; ?>style.css">
-    </head>
-
     <body>
         <h1 class="title">Espace Sign In</h1>
 
