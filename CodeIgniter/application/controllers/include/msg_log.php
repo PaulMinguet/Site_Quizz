@@ -1,3 +1,5 @@
+
+
 <?php if ($error) : ?>
     <div class="title2 alert">
         <?= $error ?>
