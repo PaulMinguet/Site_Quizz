@@ -10,13 +10,13 @@
 
         <form action="home/jeu" method="post" class="login">
             <label for="nom">Nom</label>
-            <input id="nom" type="text" name="nom" placeholder="Votre nom" value="<?= htmlentities($nom) ?>" class="area" />
+            <input id="nom" type="text" name="nom" placeholder="Votre nom" value="<?php $nom ?>" class="area" />
             <label for="prenom">Prénom</label>
-            <input id="prenom" type="text" name="prenom" placeholder="Votre prénom" value="<?= htmlentities($prenom) ?>" class="area" />
+            <input id="prenom" type="text" name="prenom" placeholder="Votre prénom" value="<?php $prenom ?>" class="area" />
             <label for="email">Email</label>
-            <input id="email" type="email" name="email" placeholder="Votre adresse mail" value="<?= htmlentities($email) ?>" class="area" />
+            <input id="email" type="email" name="email" placeholder="Votre adresse mail" value="<?php $email ?>" class="area" />
             <label for="password">Mot de passe</label>
-            <input id="password" type="text" name="password" placeholder="Votre mot de passe" value="<?= htmlentities($passwd) ?>" class="area" />
+            <input id="password" type="text" name="password" placeholder="Votre mot de passe" value="<?php $passwd ?>" class="area" />
             <label for="statut">Statut</label>
             <div class="custom-select">
                 <select name="statut" id="statut">
