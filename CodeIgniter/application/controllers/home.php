@@ -4,10 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Home extends CI_Controller {
     public function index() {
         $this->accueil();
+        $this->load->helper('url');
     }
     public function accueil()
     {
-    	$this->load->helper('url');
     	$this->load->view('nav');
     	$this->load->view('header');
         $this->load->model('accueil');

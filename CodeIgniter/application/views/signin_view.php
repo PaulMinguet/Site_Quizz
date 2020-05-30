@@ -2,7 +2,6 @@
     <head>
         <link rel = "stylesheet" type = "text/css" 
 	    href = "<?php echo base_url(); ?>css/style.css">
-        <script src="<?php echo base_url(); ?>js/btnSelect.js"></script>
     </head>
 
     <body>
@@ -28,4 +27,6 @@
             <input type="submit" name="connect" value="S'inscrire">
         </form>
     </body>
+    <script src="<?php echo base_url(); ?>js/btnSelect.js"></script>
+
 </html>
