@@ -26,6 +26,6 @@
             <input type="submit" name="connect" value="S'inscrire">
         </form>
     </body>
-    <script src="<?php echo base_url(); ?>js/btnSelect.js"></script>
+    <script src="<?php echo JS; ?>/btnSelect.js"></script>
 
 </html>
