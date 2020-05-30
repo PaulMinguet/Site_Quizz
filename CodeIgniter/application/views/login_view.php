@@ -1,9 +1,6 @@
 <html>
 	<head>
-		<link rel = "stylesheet" type = "text/css" 
-	    href = "<?php echo base_url(); ?>css/style.css">
-	    <script type = 'text/javascript' src = "<?php echo base_url(); 
-   		?>js/btnSelect.js"></script>
+        <link rel = "stylesheet" type = "text/css" href = "<?php echo CSS; ?>style.css">
 	</head>
 
 	<body>
@@ -16,5 +13,7 @@
 		    <input id="password" type="text" name="password" placeholder="Votre mot de passe" value="<?php $passwd ?>" class="area" />
 		    <input type="submit" name="connect" value="Se connecter">
 		</form>
-	</body>
+    </body>
+    <script src="<?php echo JS; ?>btnSelect.js"></script>
+    
 </html>
