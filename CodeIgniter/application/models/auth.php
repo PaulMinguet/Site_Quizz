@@ -1,4 +1,5 @@
 <?php
+
     class Auth extends CI_Model {
         public function __construct() {
             parent::__construct();
@@ -7,46 +8,43 @@
             $nom = null;
             $prenom = null;
             $email = null;
-            $passwd = null;
-            $status = null;
-            $file = __DIR__ . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'data.php';
+            $password = null;
+            $statep = null;
+            $matiere = null;
+            $group = null;
 
             if (isset($_POST['nom'])) {
                 $nom = $_POST['nom'];
-                setcookie($nom, $nom, time() + 60*60*24*30);
             }
             if (isset($_POST['prenom'])) {
                 $prenom = $_POST['prenom'];
-                setcookie($prenom, $prenom, time() + 60*60*24*30);
             }
             if (isset($_POST['email'])) {
                 $email = $_POST['email'];
-                setcookie($email, $email,  time() + 60*60*24*30);
                 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
                     $success = "Votre compte a bien été enregistré !";  
                 } else {
                     $error = "Email invalide";
                 }
             }
-            if (isset($_POST['passwd'])) {
-                $passwd = $_POST['passwd'];
-                // $passwd.password_hash("$passwd", PASSWORD_DEFAULT);
-                setcookie($passwd, $passwd, time() + 60*60*24*30);
-                var_dump($passwd);
+            if (isset($_POST['password'])) {
+                $password = md5($_POST['password']);
+                // $password.password_hash("$password", password_DEFAULT);
             }
 
-            if (isset($_POST['status'])) {
-                $status = $_POST['status'];
-                setcookie($status, $status, time() + 60*60*24*30);
-                var_dump($status);
+            if (isset($_POST['statep'])) {
+                $statep = $_POST['statep'];
             }
-            /*
-            file_put_contents($file, $nom . ' ', FILE_APPEND);
-            file_put_contents($file, $prenom . ' ', FILE_APPEND);
-            file_put_contents($file, $passwd . ' ', FILE_APPEND);
-            file_put_contents($file, $email . PHP_EOL, FILE_APPEND);
-            */
-            $this->db->query("INSERT INTO Utilisateur(utilisateur_mail, utilisateur_nom, utilisateur_prenom, utilisateur_mdp, utilisateur_status) VALUES('".$email."', '".$nom."', '".$prenom."', '".$passwd."', '".$status."')");
+
+            if (isset($_POST['matiere'])) {
+                $matiere = $_POST['matiere'];
+            }
+
+            if (isset($_POST['group'])) {
+                $group = $_POST['group'];
+            }
+
+            $this->db->query("INSERT INTO Utilisateur(utilisateur_mail, utilisateur_nom, utilisateur_prenom, utilisateur_mdp, utilisateur_status, utilisateur_group, utilisateur_matiere) VALUES('".$email."', '".$nom."', '".$prenom."', '".$password."', '".$statep."', '".$group."', '".$matiere."')");
 
             if (empty($_POST['nom']) && empty($_POST['prenom']) && empty($_POST['email'])) {
                 $error = "Veuillez vous enregistrer";
