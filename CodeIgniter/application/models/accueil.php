@@ -8,6 +8,7 @@
 			require $this->load->views('header.php');
 			require $this->load->views('nav.php');
 
+            require $this->load->views('cactus.php');
 
 			// echo password_hash("$passwd", PASSWORD_DEFAULT);
 			echo "<h1 class='bienvenue'>$prenom $nom <img src='../img/cactus.jpg'/> $email</h1>";

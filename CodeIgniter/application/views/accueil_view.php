@@ -5,6 +5,7 @@
 
 	    <div class="launch">
 	        <a href="../home/creer">Lancer le quizz !</a> 
-	    </div>
+        </div>
+        
 	</body>
 </html>

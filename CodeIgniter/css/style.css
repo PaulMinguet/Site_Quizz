@@ -612,6 +612,15 @@ textarea {
 .quizz .final_btn .container .reset_btn {
     background-color: rgb(228, 4, 38);
 }
+
+.cactus {
+    position: fixed;
+    top: 200px;
+}
+#cac_right {
+    position: fixed;
+    right: 0;
+}
 .footer {
     text-align: center;
 	background-color: #444;
