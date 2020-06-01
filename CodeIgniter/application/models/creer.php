@@ -2,9 +2,7 @@
 	class Creer extends CI_Model{
 
 		function affiche_creer() {
-
-            
-			// not_connected();
+            // not_connected();
 
 			require $this->load->views('header.php');
 			require $this->load->views('nav.php');

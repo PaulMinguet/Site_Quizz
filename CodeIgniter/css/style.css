@@ -294,16 +294,18 @@ nav ul li a {
 }
 
 .login>.area {
-	border-color: transparent transparent #fff transparent;
+    border-color: transparent transparent #FFF transparent;
 	margin-left: 32px;
 	width: 164px;
 	padding: 8px;
-	margin-bottom: 22px;
+    margin-bottom: 22px;
+}
+.login>.area:focus {
+    border-color: #2E712E;
 }
 
 /* --------------------------- select -------------- */
 
-/* The container must be positioned relative: */
 .custom-select {
     position: relative;
     font-family: Arial;
@@ -313,7 +315,6 @@ nav ul li a {
 
 .custom-select select {
     display: none;
-    /*hide original SELECT element: */
 }
 
 .select-selected {
@@ -321,8 +322,6 @@ nav ul li a {
     border-radius: 6px;
 
 }
-
-/* Style the arrow inside the select element: */
 .select-selected:after {
     position: absolute;
     content: "";
@@ -398,8 +397,110 @@ input[type="radio"] {
 input[type="radio"]:hover {
     cursor: pointer;
 }
-input[type="radio"]:checked~input[type="radio"] {
-    background-color: #FF0000;
+
+.quizz {
+    font-family: 'Jost', sans-serif;
+    position: relative;
+    background-color: #333333bd;
+    box-shadow: 0 4px 4px #222;
+    width: 650px;
+    margin: 0 auto;
+    border-radius: 11px;
+    -webkit-border-radius: 11px;
+    -moz-border-radius: 11px;
+    -ms-border-radius: 11px;
+    -o-border-radius: 11px;
+}
+.quizz .separate {
+    position: absolute;
+    top: 0;
+    height: 90%;
+    left: 50%;
+    border-style: dashed;
+	color: #2ECC72;
+}
+.quizz .line {
+    display: block;
+    padding: 22px 0;
+}
+.quizz label {
+    left: 25%;
+    font-size: 22px;
+    margin: 22px;
+    color: #FFF;
+}
+.quizz .line label .nb {
+    background-color: #1A73E8;
+    color: #FFF;
+    padding: 10px 16px;
+    margin-right: 12px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+}
+.quizz input {
+    border-color: transparent transparent #FFF transparent;
+    padding: 6px;    
+    width: 37.5% !important;
+}
+.custom-select.quizz-select {
+    width: 40% !important;
+}
+textarea {
+    width: 40%;
+}
+.quizz input, .quizz textarea, .custom-select.quizz-select {
+    margin: 0;
+    position: absolute;
+    right: 30px;
+    align-self: flex-end;
+    display: inline-block;
+    font-family: 'Jost', sans-serif;
+    border-radius: 6px;
+}
+.reponse {
+    margin-top: -12px;
+}
+.reponse .arrow {
+    color: #2ECC72;
+    font-size: 42px;
+    background-color: #333;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.quizz .final_btn {
+    display: block;
+    position: relative;
+}
+
+.quizz .final_btn .container {
+    position: relative;
+    width: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+.quizz .final_btn .container input {
+    position: relative;
+    margin: 12px 12px 12px 22px;
+    left: 114px;
+    padding: 17px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+.quizz .final_btn .container .reset_btn {
+    background-color: rgb(228, 4, 38);
 }
 .footer {
     text-align: center;
