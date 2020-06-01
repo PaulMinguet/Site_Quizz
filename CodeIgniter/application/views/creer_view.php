@@ -53,7 +53,7 @@
         
         <label for="nb_rep" class="sous_q"><span class="material-icons arrow">arrow_right_alt</span> Choix</label>
     </div>
-
+    <button class="add">+<span>Ajouter une question</span></button>
     <div class="final_btn">
         <div class="container">
             <input type="submit" name="save" value="Enregistrer" class="save_btn">
