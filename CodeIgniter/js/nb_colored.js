@@ -15,7 +15,7 @@ function onStart() {
     //     nb[i].style.backgroundColor = '#1A73E8';
         
     // }
-    nb1.style.backgroundColor = '#1A73E8';
+    nb1.style.backgroundColor = 'red';
     nb2.style.backgroundColor = '#1A73E8';
     nb3.style.backgroundColor = '#1A73E8';
     nb4.style.backgroundColor = '#1A73E8';

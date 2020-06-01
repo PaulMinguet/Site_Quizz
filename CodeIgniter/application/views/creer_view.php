@@ -5,7 +5,7 @@
     <hr class="separate"/>
     <div class="line">
         <label for="nomqz"><span class="nb" id="nb1">1</span> Nom du Quizz</label>
-        <input type="text" name="nomqz" id="nomqz" class="area_qz" placeholder="Nom"  onclick="colorizeNB1()" required/>
+        <input type="text" name="nomqz" id="nomqz" class="area_qz" placeholder="Nom" onclick="colorizeNB1()" required autofocus/>
     </div>
     <div class="line">
         <label for="nombre"><span class="nb" id="nb2">2</span> Nombre de questions</label>
@@ -42,6 +42,10 @@
             </div>
             <div class="radio_form">
                 <label for="multi">Checkbox</label>
+                <input id="multi" type="radio" name="statep" value="multi" onchange=""  onclick="colorizeNB4()"/>
+            </div>
+            <div class="radio_form">
+                <label for="multi">Réponse texte</label>
                 <input id="multi" type="radio" name="statep" value="multi" onchange=""  onclick="colorizeNB4()"/>
             </div>
         </div>
