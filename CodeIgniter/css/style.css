@@ -383,7 +383,7 @@ input[type="submit"]:hover {
     cursor: pointer;
 }
 
-input[type="radio"] {
+.login input[type="radio"] {
     position: relative;
     top: 44px;
     left: -60px;
@@ -459,13 +459,26 @@ textarea {
     display: inline-block;
     font-family: 'Jost', sans-serif;
     border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+.quizz input:focus ~.nb {
+    background-color: pink;
 }
 .reponse {
-    margin-top: -12px;
+    position: relative;
+    top: -22px;
+    left: 25px;
 }
 .reponse .arrow {
+    position: relative;
+    top: 10px;
+    margin-right: 12px;
+    display: inline-block;
     color: #2ECC72;
-    font-size: 42px;
+    font-size: 38px;
     background-color: #333;
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -473,6 +486,26 @@ textarea {
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 }
+.right {
+    position: absolute;
+    top: 0;
+    right: 50px;
+}
+.right > div {
+    margin: 12px 0;
+}
+.right .radio_form {
+    display: block;
+}
+.right > div > label {
+    font-size: 18px;
+}
+.right > div > input {
+    left: -42px;
+    padding: 12px;
+    font-size: 22px;
+}
+
 .quizz .final_btn {
     display: block;
     position: relative;

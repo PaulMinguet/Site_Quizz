@@ -4,13 +4,13 @@
 <form action="questions" method="post" class="quizz">
     <hr class="separate"/>
     <div class="line">
-        <label for="nomqz"><span class="nb">1</span> Nom du Quizz</label>
-        <input type="text" name="nomqz" id="nomqz" class="area_qz" placeholder="Nom"/>
+        <label for="nomqz"><span class="nb" id="nb1">1</span> Nom du Quizz</label>
+        <input type="text" name="nomqz" id="nomqz" class="area_qz" placeholder="Nom"  onclick="colorizeNB1()"/>
     </div>
     <div class="line">
-        <label for="nombre"><span class="nb">2</span> Nombre de questions</label>
-        <div class="custom-select quizz-select">
-            <select name="nbr" id="nbr">
+        <label for="nombre"><span class="nb" id="nb2">2</span> Nombre de questions</label>
+        <div class="custom-select quizz-select" onclick="colorizeNB2()">
+            <select name="nbr" id="nbr" onclick="colorizeNB2()">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -26,16 +26,29 @@
         </div>
     </div>
     <div class="line">
-        <label for="nomqz"><span class="nb">3</span> Enoncé de la Q1</label>
-        <textarea rows="2" cols="22" name="nomqz" id="nomqz" maxlength="500" placeholder="(500 caractères max.)" class="area_qz"></textarea> </textarea>
+        <label for="enonce"><span class="nb" id="nb3">3</span> Enoncé de la Q1</label>
+        <textarea rows="2" cols="22" name="enonce" id="enonce" maxlength="500" placeholder="(500 caractères max.)" class="area_qz" onclick="colorizeNB3()"></textarea>
     </div>
     
     <div class="line">
-        <label for="reponse"><span class="nb">4</span> Réponse</label>
+        <label for="reponse"><span class="nb" id="nb4">4</span> Réponse</label>
     </div>
     <div class="line reponse">
         <label for="nb_rep"><span class="material-icons arrow">arrow_right_alt</span> Type</label>
+        <div class="right">
+            <div class="radio_form">
+                <label for="unique">Bouton radio (choix unique)</label>
+                <input id="unique" type="radio" name="statep" value="unique" onchange=""  onclick="colorizeNB4()"/>
+            </div>
+            <div class="radio_form">
+                <label for="multi">Checkbox</label>
+                <input id="multi" type="radio" name="statep" value="multi" onchange=""  onclick="colorizeNB4()"/>
+            </div>
+        </div>
+        <script src="<?php echo base_url(); ?>js/nb_colored.js"></script>
+
     </div>
+
     <div class="final_btn">
         <div class="container">
             <input type="submit" name="save" value="Enregistrer" class="save_btn">
