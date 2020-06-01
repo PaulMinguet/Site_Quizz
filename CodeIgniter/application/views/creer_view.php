@@ -34,10 +34,10 @@
         <label for="reponse"><span class="nb" id="nb4">4</span> Réponse</label>
     </div>
     <div class="line reponse">
-        <label for="nb_rep"><span class="material-icons arrow">arrow_right_alt</span> Type</label>
+        <label for="nb_rep" class="sous_q"><span class="material-icons arrow">arrow_right_alt</span> Type</label>
         <div class="right">
             <div class="radio_form">
-                <label for="unique">Bouton radio (choix unique)</label>
+                <label for="unique">Bouton radio (réponse unique)</label>
                 <input id="unique" type="radio" name="statep" value="unique" onchange=""  onclick="colorizeNB4()" required/>
             </div>
             <div class="radio_form">
@@ -50,7 +50,8 @@
             </div>
         </div>
         <script src="<?php echo base_url(); ?>js/nb_colored.js"></script>
-
+        
+        <label for="nb_rep" class="sous_q"><span class="material-icons arrow">arrow_right_alt</span> Choix</label>
     </div>
 
     <div class="final_btn">

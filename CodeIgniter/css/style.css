@@ -469,8 +469,13 @@ textarea {
 }
 .reponse {
     position: relative;
-    top: -22px;
     left: 25px;
+    top: -22px;
+}
+.reponse .sous_q {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 72px;
 }
 .reponse .arrow {
     position: relative;
@@ -489,7 +494,7 @@ textarea {
 .right {
     position: absolute;
     top: 0;
-    right: 50px;
+    right: 30px;
 }
 .right > div {
     margin: 12px 0;
