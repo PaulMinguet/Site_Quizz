@@ -5,12 +5,12 @@
     <hr class="separate"/>
     <div class="line">
         <label for="nomqz"><span class="nb" id="nb1">1</span> Nom du Quizz</label>
-        <input type="text" name="nomqz" id="nomqz" class="area_qz" placeholder="Nom"  onclick="colorizeNB1()"/>
+        <input type="text" name="nomqz" id="nomqz" class="area_qz" placeholder="Nom"  onclick="colorizeNB1()" required/>
     </div>
     <div class="line">
         <label for="nombre"><span class="nb" id="nb2">2</span> Nombre de questions</label>
         <div class="custom-select quizz-select" onclick="colorizeNB2()">
-            <select name="nbr" id="nbr" onclick="colorizeNB2()">
+            <select name="nbr" id="nbr" onclick="colorizeNB2()" required>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -27,7 +27,7 @@
     </div>
     <div class="line">
         <label for="enonce"><span class="nb" id="nb3">3</span> Enoncé de la Q1</label>
-        <textarea rows="2" cols="22" name="enonce" id="enonce" maxlength="500" placeholder="(500 caractères max.)" class="area_qz" onclick="colorizeNB3()"></textarea>
+        <textarea rows="2" cols="22" name="enonce" id="enonce" maxlength="500" placeholder="(500 caractères max.)" class="area_qz" onclick="colorizeNB3()" required></textarea>
     </div>
     
     <div class="line">
@@ -38,7 +38,7 @@
         <div class="right">
             <div class="radio_form">
                 <label for="unique">Bouton radio (choix unique)</label>
-                <input id="unique" type="radio" name="statep" value="unique" onchange=""  onclick="colorizeNB4()"/>
+                <input id="unique" type="radio" name="statep" value="unique" onchange=""  onclick="colorizeNB4()" required/>
             </div>
             <div class="radio_form">
                 <label for="multi">Checkbox</label>
