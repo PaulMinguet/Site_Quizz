@@ -2,7 +2,7 @@
 	<body>
 		<h1 class="title">Espace Log In</h1>
 
-		<form action="../home/jeu" method="post" class="login">
+		<form method="post" class="login">
 		    <label for="email" class="lab">Email</label>
 		    <input id="email" type="email" name="email" placeholder="Votre adresse mail" value="<?php $email ?>" class="area" />
 		    <label for="password" class="lab">Mot de passe</label>

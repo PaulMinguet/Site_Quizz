@@ -10,5 +10,5 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Quizz</title>
 </head>
-<body onload="onStart();">
+<body>
      
