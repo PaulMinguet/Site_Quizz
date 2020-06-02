@@ -1,15 +1,4 @@
 var x, i, j, l, ll, selElmnt, a, b, c, body;
-var nb1 = document.getElementById('nb1');
-var nb2 = document.getElementById('nb2');
-var nb3 = document.getElementById('nb3');
-var nb4 = document.getElementById('nb4');
-
-var area1 = document.getElementById('nomqz');
-var area2 = document.getElementById('nbr');
-var area3 = document.getElementById('enonce');
-var area4 = document.getElementById('unique');
-var area5 = document.getElementById('multi');
-
 /* Look for any elements with the class "custom-select": */
 x = document.getElementsByClassName("custom-select");
 l = x.length;
@@ -60,7 +49,6 @@ for (i = 0; i < l; i++) {
         and open/close the current select box: */
         e.stopPropagation();
         closeAllSelect(this);
-        colorizeNB2();
         this.nextSibling.classList.toggle("select-hide");
         this.classList.toggle("select-arrow-active");
     });
@@ -71,12 +59,7 @@ for (i = 0; i < l; i++) {
         a.classList.add("select-arrow-active");
     })
 }
-function colorizeNB2() {
-	nb2.style.backgroundColor = 'red';
-	nb1.style.backgroundColor = '#1A73E8';
-	nb3.style.backgroundColor = '#1A73E8';
-	nb4.style.backgroundColor = '#1A73E8';
-}
+
 function closeAllSelect(elmnt) {
     /* A function that will close all select boxes in the document,
     except the current select box: */

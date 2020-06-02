@@ -1,10 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-define("URL","http://localhost/pt_wim21/CodeIgniter/");
 
-define('CSS',URL.'css/');
-define('IMAGES',URL.'img/');
-define('JS',URL.'js/');
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace
