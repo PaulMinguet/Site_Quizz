@@ -30,7 +30,6 @@
             <label for="enonce"><span class="nb" id="nb3">3</span> Enoncé de la Q1</label>
             <textarea rows="2" cols="22" name="enonce" id="enonce" maxlength="500" placeholder="(500 caractères max.)" class="area_qz" onclick="colorizeNB3()" required></textarea>
         </div>
-        
         <div class="line">
             <label for="reponse"><span class="nb" id="nb4">4</span> Réponse</label>
         </div>
