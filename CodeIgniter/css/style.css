@@ -152,14 +152,15 @@ nav ul li a {
 }
 
 .title2 {
-    position: relative;
+    position: absolute;
     font-family: 'Jost',
     sans-serif;
     font-weight: normal;
-    
+    top: 520px;    
     font-size: 18px;
     padding: 16px;
     left: 50%;
+    line-height: 34px;
     text-align: center;
     border-radius: 8px;
     width: 250px;
@@ -175,6 +176,7 @@ nav ul li a {
 }
 
 .title2.alert {
+
     color: red;
     border: 1px dashed red;
     background-color: rgb(255, 202, 202);
@@ -321,10 +323,11 @@ nav ul li a {
     top: 8px;
 }
 
-.login>.area {
+.area {
+    position: relative;
     border-color: transparent transparent #FFF transparent;
-    margin-left: 32px;
-    width: 164px;
+    left: 26px;
+    width: 174px;
     padding: 8px;
     margin-bottom: 22px;
 }
