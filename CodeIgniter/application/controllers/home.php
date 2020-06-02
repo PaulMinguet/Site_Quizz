@@ -3,7 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends CI_Controller {
     public function index() {
-
         $this->load->database('default');
         $this->accueil();
     }
@@ -13,7 +12,6 @@ class Home extends CI_Controller {
     	$this->load->view('header');
         $this->load->model('accueil');
         $this->load->view('accueil_view');
-        $this->load->view('cactus.php');
         $this->load->view('footer.php');
     }
     
@@ -21,7 +19,6 @@ class Home extends CI_Controller {
         $this->load->view('nav');
         $this->load->view('header');
         $this->load->model('jeu');
-        $this->load->view('cactus.php');
         $this->load->view('jeu_view');
         $this->load->view('questions');
         $this->load->view('footer.php');

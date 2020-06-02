@@ -90,19 +90,22 @@
         }
 
         public function deconnexion(){
-            $_SESSION['username'] = null;
+            if(isset($_SESSION['username']))
+                $_SESSION['username'] = null;
         }
 
         public function elepro(){
-            $builder = $this->db->select("utilisateur_statut
-                                        FROM Utilisateur
-                                        WHERE utilisateur_mail = '".$_SESSION['email']."'", FALSE);
-            $query = $builder->get();
-            if($query->num_rows() > 0){
-                foreach ($query->result_array() as $row)
-                    $_SESSION['statut'] = $row["utilisateur_statut"];
+            if(isset($_SESSION['email'])){
+                $builder = $this->db->select("utilisateur_statut
+                                            FROM Utilisateur
+                                            WHERE utilisateur_mail = '".$_SESSION['email']."'", FALSE);
+                $query = $builder->get();
+                if($query->num_rows() > 0){
+                    foreach ($query->result_array() as $row)
+                        $_SESSION['statut'] = $row["utilisateur_statut"];
 
-                //echo "Session statut = ".$_SESSION['statut'];
+                    //echo "Session statut = ".$_SESSION['statut'];
+                }
             }
         }
 
