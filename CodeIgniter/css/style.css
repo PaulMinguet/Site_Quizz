@@ -429,6 +429,9 @@ input[type="radio"]:hover {
     cursor: pointer;
 }
 
+.each_quest {
+    display: none;
+}
 .quizz {
     font-family: 'Jost', sans-serif;
     position: relative;

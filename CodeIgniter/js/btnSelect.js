@@ -2,31 +2,33 @@ var nb1 = document.getElementById('nb1');
 var nb2 = document.getElementById('nb2');
 var nb3 = document.getElementById('nb3');
 var nb4 = document.getElementById('nb4');
+var each_quest = document.getElementsByClassName('each_quest');
 
 var x, i, j, l, ll, selElmnt, a, b, c, body;
-/* Look for any elements with the class "custom-select": */
+/* Rechercher tous les éléments avec la classe "custom-select": */
 x = document.getElementsByClassName("custom-select");
 l = x.length;
 for (i = 0; i < l; i++) {
     selElmnt = x[i].getElementsByTagName("select")[0];
     ll = selElmnt.length;
-    /* For each element, create a new DIV that will act as the selected item: */
+    /* Pour chaque élément, créer un nouveau DIV qui agira comme l'élément sélectionné: */
     a = document.createElement("DIV");
     body = document.querySelector("body");
     a.setAttribute("class", "select-selected");
     a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
     x[i].appendChild(a);
-    /* For each element, create a new DIV that will contain the option list: */
+    /* Pour chaque élément, créer un nouveau DIV qui contiendra la liste d'options: */
     b = document.createElement("DIV");
     b.setAttribute("class", "select-items select-hide");
     for (j = 1; j < ll; j++) {
-        /* For each option in the original select element,
-        create a new DIV that will act as an option item: */
+        /* Pour chaque option de l'élément de sélection d'origine,
+        créer un nouveau DIV qui agira comme un élément optionnel: */
         c = document.createElement("DIV");
         c.innerHTML = selElmnt.options[j].innerHTML;
         c.addEventListener("click", function (e) {
-            /* When an item is clicked, update the original select box,
-            and the selected item: */
+            /* Lorsqu'un élément est cliqué, 
+            mettre à jour la boîte de sélection d'origine,
+            et l'élément sélectionné: */
             var y, i, k, s, h, sl, yl;
             s = this.parentNode.parentNode.getElementsByTagName("select")[0];
             sl = s.length;
@@ -51,8 +53,11 @@ for (i = 0; i < l; i++) {
     
     x[i].appendChild(b);
     a.addEventListener("click", function (e) {
-        /* When the select box is clicked, close any other select boxes,
-        and open/close the current select box: */
+        /* Lorsque la case de sélection est cliquée, 
+        fermer toutes les autres cases de sélection,
+        et ouvrir / fermer la boîte de sélection actuelle
+        en colorant le numero correspondant : */
+        // addQt();
         colorizeNB2();
         e.stopPropagation();
         closeAllSelect(this);
@@ -64,17 +69,26 @@ for (i = 0; i < l; i++) {
         closeAllSelect(a);
         a.nextSibling.classList.add("select-hide");
         a.classList.add("select-arrow-active");
-    })
+    });
 }
+
+// function addQt() {
+//     each_quest.style.display = "none";
+//     alert(i); // alert val clickée
+    
+// }
 function colorizeNB2() {
 	nb2.style.backgroundColor = 'red';
 	nb1.style.backgroundColor = '#1A73E8';
 	nb3.style.backgroundColor = '#1A73E8';
 	nb4.style.backgroundColor = '#1A73E8';
 }
+
+
+
 function closeAllSelect(elmnt) {
-    /* A function that will close all select boxes in the document,
-    except the current select box: */
+    /* Fermer toutes les cases de sélection du document,
+    sauf la case de sélection actuelle: */
     var x, y, i, xl, yl, arrNo = [];
     x = document.getElementsByClassName("select-items");
     y = document.getElementsByClassName("select-selected");
@@ -94,6 +108,6 @@ function closeAllSelect(elmnt) {
     // }
 }
 
-/* If the user clicks anywhere outside the select box,
-then close all select boxes: */
+/* Si l'utilisateur clique n'importe où en dehors de la zone de sélection,
+fermer toutes les cases de sélection: */
 document.addEventListener("click", closeAllSelect);
