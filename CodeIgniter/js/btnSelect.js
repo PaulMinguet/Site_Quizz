@@ -47,6 +47,7 @@ for (i = 0; i < l; i++) {
     a.addEventListener("click", function (e) {
         /* When the select box is clicked, close any other select boxes,
         and open/close the current select box: */
+        colorizeNB2();
         e.stopPropagation();
         closeAllSelect(this);
         this.nextSibling.classList.toggle("select-hide");
@@ -58,6 +59,13 @@ for (i = 0; i < l; i++) {
         a.nextSibling.classList.add("select-hide");
         a.classList.add("select-arrow-active");
     })
+}
+
+function colorizeNB2() {
+	nb2.style.backgroundColor = 'red';
+	nb1.style.backgroundColor = '#1A73E8';
+	nb3.style.backgroundColor = '#1A73E8';
+	nb4.style.backgroundColor = '#1A73E8';
 }
 
 function closeAllSelect(elmnt) {
