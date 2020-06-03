@@ -2,7 +2,6 @@ var nb1 = document.getElementById('nb1');
 var nb2 = document.getElementById('nb2');
 var nb3 = document.getElementById('nb3');
 var nb4 = document.getElementById('nb4');
-var each_quest = document.getElementsByClassName('each_quest');
 
 var x, i, j, l, ll, selElmnt, a, b, c, body;
 /* Rechercher tous les éléments avec la classe "custom-select": */
@@ -15,6 +14,8 @@ for (i = 0; i < l; i++) {
     a = document.createElement("DIV");
     body = document.querySelector("body");
     a.setAttribute("class", "select-selected");
+    var each_quest = document.getElementsByClassName('each_quest');
+
     a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
     x[i].appendChild(a);
     /* Pour chaque élément, créer un nouveau DIV qui contiendra la liste d'options: */
@@ -32,7 +33,6 @@ for (i = 0; i < l; i++) {
             var y, i, k, s, h, sl, yl;
             s = this.parentNode.parentNode.getElementsByTagName("select")[0];
             sl = s.length;
-            alert(sl);
             h = this.parentNode.previousSibling;
             for (i = 0; i < sl; i++) {
                 if (s.options[i].innerHTML == this.innerHTML) {
@@ -48,6 +48,12 @@ for (i = 0; i < l; i++) {
                 }
             }
             h.click();
+            if (i==4) {
+                console.log(i);
+                each_quest.style.display = none;
+            } else {
+                console.log("rien");
+            }
         });
         b.appendChild(c);
     }
@@ -72,11 +78,11 @@ for (i = 0; i < l; i++) {
     });
 }
 
-// function addQt() {
-//     each_quest.style.display = none;
-//     alert(i); // alert val clickée
+function addQt() {
+    each_quest.style.display = block;
+    alert(i); // alert val clickée
     
-// }
+}
 function colorizeNB2() {
 	nb2.style.backgroundColor = 'red';
 	nb1.style.backgroundColor = '#1A73E8';
