@@ -14,8 +14,7 @@ for (i = 0; i < l; i++) {
     a = document.createElement("DIV");
     body = document.querySelector("body");
     a.setAttribute("class", "select-selected");
-    var each_quest = document.getElementsByClassName('each_quest');
-
+    
     a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
     x[i].appendChild(a);
     /* Pour chaque élément, créer un nouveau DIV qui contiendra la liste d'options: */
@@ -29,8 +28,9 @@ for (i = 0; i < l; i++) {
         c.addEventListener("click", function (e) {
             /* Lorsqu'un élément est cliqué, 
             mettre à jour la boîte de sélection d'origine,
-            et l'élément sélectionné: */
+            et l'élément sélectionné: */
             var y, i, k, s, h, sl, yl;
+            var each_quest = document.getElementsByClassName('each_quest');
             s = this.parentNode.parentNode.getElementsByTagName("select")[0];
             sl = s.length;
             h = this.parentNode.previousSibling;
@@ -40,20 +40,17 @@ for (i = 0; i < l; i++) {
                     h.innerHTML = this.innerHTML;
                     y = this.parentNode.getElementsByClassName("same-as-selected");
                     yl = y.length;
+                    console.log(i);
                     for (k = 0; k < yl; k++) {
                         y[k].removeAttribute("class");
                     }
                     this.setAttribute("class", "same-as-selected");
                     break;
+                } else { 
+                    console.log('rien');
                 }
             }
             h.click();
-            if (i==4) {
-                console.log(i);
-                each_quest.style.display = none;
-            } else {
-                console.log("rien");
-            }
         });
         b.appendChild(c);
     }
