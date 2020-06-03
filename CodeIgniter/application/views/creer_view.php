@@ -33,7 +33,20 @@
                 <textarea rows="2" cols="22" name="enonce" id="enonce" maxlength="500" placeholder="(500 caractères max.)" class="area_qz" onclick="colorizeNB3()" required></textarea>
             </div>
             <div class="line">
-                <label for="reponse"><span class="nb" id="nb4">4</span> Réponse</label>
+                <label for="image"><span class="nb" id="nb4">4</span> Ajouter une image</label>
+                <div class="right add_img">
+                    <div class="radio_form">
+                        <label for="oui">Oui</label>
+                        <input id="oui" type="radio" name="statep" value="oui" onchange=""  onclick="colorizeNB4()" required/>
+                    </div>
+                    <div class="radio_form">
+                        <label for="non">Non</label>
+                        <input id="non" type="radio" name="statep" value="non" onchange=""  onclick="colorizeNB4()"/>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <label for="reponse"><span class="nb" id="nb5">5</span> Réponse</label>
             </div>
             <div class="line reponse">
                 <label for="nb_rep" class="sous_q"><span class="material-icons arrow">arrow_right_alt</span> Type</label>
