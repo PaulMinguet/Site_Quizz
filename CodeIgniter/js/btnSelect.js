@@ -32,6 +32,7 @@ for (i = 0; i < l; i++) {
             var y, i, k, s, h, sl, yl;
             s = this.parentNode.parentNode.getElementsByTagName("select")[0];
             sl = s.length;
+            alert(sl);
             h = this.parentNode.previousSibling;
             for (i = 0; i < sl; i++) {
                 if (s.options[i].innerHTML == this.innerHTML) {
@@ -57,7 +58,6 @@ for (i = 0; i < l; i++) {
         fermer toutes les autres cases de sélection,
         et ouvrir / fermer la boîte de sélection actuelle
         en colorant le numero correspondant : */
-        // addQt();
         colorizeNB2();
         e.stopPropagation();
         closeAllSelect(this);
@@ -73,7 +73,7 @@ for (i = 0; i < l; i++) {
 }
 
 // function addQt() {
-//     each_quest.style.display = "none";
+//     each_quest.style.display = none;
 //     alert(i); // alert val clickée
     
 // }
@@ -81,7 +81,7 @@ function colorizeNB2() {
 	nb2.style.backgroundColor = 'red';
 	nb1.style.backgroundColor = '#1A73E8';
 	nb3.style.backgroundColor = '#1A73E8';
-	nb4.style.backgroundColor = '#1A73E8';
+    nb4.style.backgroundColor = '#1A73E8';
 }
 
 

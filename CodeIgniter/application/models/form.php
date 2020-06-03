@@ -1,26 +1,26 @@
 <?php
-
-class Form {
-    private $data;
-    private $errors;
-
-    public function __construct($data) {
-        $this->data = $data;
-        $this->errors = $errors;
-    }
-
-    public function input(string $name, string $label): string {
-        return <<<HTML
-            
-        
-        HTML;
-    }
-    public function text(string $name, string $label): string {
-        
-        return '';
-    }
-}
-
+/**
+*class Form {
+*    private $data;
+*    private $errors;
+*
+*    public function __construct($data) {
+*        $this->data = $data;
+*        $this->errors = $errors;
+*    }
+*
+*    public function input(string $name, string $label): string {
+*        return <<<HTML
+*            
+*        
+*        HTML;
+*    }
+*    public function text(string $name, string $label): string {
+*        
+*        return '';
+*    }
+*}
+*/
 /**
  * <div class="line">
  *           <label for="enonce"><span class="nb" id="nb3">3</span> Enoncé de la Q1</label>
@@ -50,3 +50,4 @@ class Form {
  *           <label for="nb_rep" class="sous_q"><span class="material-icons arrow">arrow_right_alt</span> Choix</label>
  *       </div>
  */
+?>

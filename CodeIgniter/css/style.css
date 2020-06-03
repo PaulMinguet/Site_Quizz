@@ -430,7 +430,7 @@ input[type="radio"]:hover {
 }
 
 .each_quest {
-    display: none;
+    display: block;
 }
 .quizz {
     font-family: 'Jost', sans-serif;
