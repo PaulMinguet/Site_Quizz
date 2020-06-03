@@ -123,8 +123,9 @@ nav ul li a {
 /* -40 */
 #btn-dec {
 	right: 10px;
-	color: #cf000f;
-	background-color: #EEE;
+    color: #FFF;
+    background-color: #ff3845;
+	/* background-color: #EEE;*/
 }
 
 #btn-log {
