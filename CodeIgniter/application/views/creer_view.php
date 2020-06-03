@@ -53,15 +53,15 @@
                 <div class="right">
                     <div class="radio_form">
                         <label for="unique">Bouton radio (réponse unique)</label>
-                        <input id="unique" type="radio" name="statep" value="unique" onchange=""  onclick="colorizeNB4()" required/>
+                        <input id="unique" type="radio" name="statep" value="unique" onchange=""  onclick="colorizeNB5()" required/>
                     </div>
                     <div class="radio_form">
                         <label for="multi">Checkbox</label>
-                        <input id="multi" type="radio" name="statep" value="multi" onchange=""  onclick="colorizeNB4()"/>
+                        <input id="multi" type="radio" name="statep" value="multi" onchange=""  onclick="colorizeNB5()"/>
                     </div>
                     <div class="radio_form">
                         <label for="multi">Réponse texte</label>
-                        <input id="multi" type="radio" name="statep" value="multi" onchange=""  onclick="colorizeNB4()"/>
+                        <input id="multi" type="radio" name="statep" value="multi" onchange=""  onclick="colorizeNB5()"/>
                     </div>
                 </div>
                 <script src="<?php echo base_url(); ?>js/nb_colored.js"></script>
