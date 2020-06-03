@@ -53,10 +53,10 @@
                 $q = $this->db->get('Utilisateur');
                 if($q->num_rows() > 0){
                     $this->error = "Compte déjà existant";
-                    echo "<script>alert('Compte déjà existant !')</script>";
+                    echo "<script>alert('Compte déjà existant ! \nRéessayez 😈)</script>";
                 }else if (empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['statep'])) {
                     $this->error = "Veuillez vous enregistrer";
-                    echo "<script>alert('Veuillez entrer toutes les informations')</script>";
+                    echo "<script>alert('Veuillez entrer toutes les informations\nEncore un effort 😉')</script>";
                 }else if(!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['statep']) && (!empty($_POST['matiere']) ||!empty($_POST['group']))){
                     $this->db->query("INSERT INTO Utilisateur(utilisateur_mail, utilisateur_nom, utilisateur_prenom, utilisateur_mdp, utilisateur_statut, utilisateur_group, utilisateur_matiere) VALUES('".$this->email."', '".$this->nom."', '".$this->prenom."', '".$this->password."', '".$this->statep."', '".$this->group."', '".$this->matiere."')");
                 }
@@ -89,10 +89,11 @@
                 }
             } else{}
         }
-
+        
         public function deconnexion(){
             if(isset($_SESSION['username']))
                 $_SESSION['username'] = null;
+                echo "<div class='title2 success deco'>Déconnecté ! "."<br>". "À la prochaine 🖐</div>";
         }
 
         public function elepro(){
