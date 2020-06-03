@@ -74,19 +74,20 @@
                 $query = $builder->get();
 
 
-                if($query->num_rows() > 0){
+                             if($query->num_rows() > 0){
                     foreach ($query->result_array() as $row)
                             $_SESSION['username'] = $row["username"];
                             
                     
                     $_SESSION['email'] = $this->email;
-                    echo "Session username : ".$_SESSION['username']."<br>";
-                    echo "Session mail : ".$_SESSION['email']."<br>";
-                }else{
-                    echo "<script>alert('Adresse email ou mot de passe incorrect')</script>";
-                    echo "connexion impossible avec mail : ".$this->email." et mdp : ".$this->password;
+                    echo "<div class='title2 success'>Vous revoilà ".$_SESSION['username']." !"."<br>"."Email : ".$_SESSION['email']." 😇"."</div>";
+                    // echo "<div class='title2 success'>Session username : ".$_SESSION['username']."<br>"."Session mail : ".$_SESSION['email']."<br>"."</div>";
+                } else{
+                    // echo "<script>alert('Adresse email ou mot de passe incorrect')</script>";
+                    echo "<div class='title2 alert'>Connexion impossible ! "."<br>". "Inconnu au bataillon 😈</div>";
+                    // echo "<div class='title2 alert'>Connexion impossible avec mail : ".$this->email." et mdp : ".$this->password."</div>";
                 }
-            }else{}
+            } else{}
         }
 
         public function deconnexion(){
