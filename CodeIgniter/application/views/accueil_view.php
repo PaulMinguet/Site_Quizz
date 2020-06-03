@@ -1,6 +1,6 @@
 <html>
 	<body>
-		<h1 class="title">Bienvenue <?php echo $_SESSION['username']?></h1>
+		<h1 class="title">Bienvenue <?php if(isset($_SESSION['username']))echo $_SESSION['username']?></h1>
 	    <h3 class="text">Cette application web permet à des professeurs inscrits sur le site de créer des quizz (questionnaires à choix multiples).</h3>
 
 	    <div class="launch">

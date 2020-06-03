@@ -54,12 +54,10 @@
                 if($q->num_rows() > 0){
                     $this->error = "Compte déjà existant";
                     echo "<script>alert('Compte déjà existant !')</script>";
-                }
-                else if (empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['statep'])) {
+                }else if (empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['statep'])) {
                     $this->error = "Veuillez vous enregistrer";
                     echo "<script>alert('Veuillez entrer toutes les informations')</script>";
-                }
-                else if(!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['statep']) && (!empty($_POST['matiere']) ||!empty($_POST['group']))){
+                }else if(!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['statep']) && (!empty($_POST['matiere']) ||!empty($_POST['group']))){
                     $this->db->query("INSERT INTO Utilisateur(utilisateur_mail, utilisateur_nom, utilisateur_prenom, utilisateur_mdp, utilisateur_statut, utilisateur_group, utilisateur_matiere) VALUES('".$this->email."', '".$this->nom."', '".$this->prenom."', '".$this->password."', '".$this->statep."', '".$this->group."', '".$this->matiere."')");
                 }
                 $this->auth->connexion();
@@ -82,14 +80,13 @@
                             
                     
                     $_SESSION['email'] = $this->email;
-                    echo "<div class='title2 success'>Vous revoilà ".$_SESSION['username']." !"."<br>"."Email : ".$_SESSION['email']." 😇"."</div>";
-                    // echo "<div class='title2 success'>Session username : ".$_SESSION['username']."<br>"."Session mail : ".$_SESSION['email']."<br>"."</div>";
-                } else{
-                    // echo "<script>alert('Adresse email ou mot de passe incorrect')</script>";
-                    echo "<div class='title2 alert'>Connexion impossible ! "."<br>". "Inconnu au bataillon 😈</div>";
-                    // echo "<div class='title2 alert'>Connexion impossible avec mail : ".$this->email." et mdp : ".$this->password."</div>";
+                    echo "Session username : ".$_SESSION['username']."<br>";
+                    echo "Session mail : ".$_SESSION['email']."<br>";
+                }else{
+                    echo "<script>alert('Adresse email ou mot de passe incorrect')</script>";
+                    echo "connexion impossible avec mail : ".$this->email." et mdp : ".$this->password;
                 }
-            } else{}
+            }else{}
         }
 
         public function deconnexion(){

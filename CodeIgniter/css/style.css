@@ -61,7 +61,7 @@ nav {
     width: 100%;
     top: 0;
     margin-top: 0;
-    background-color: #007453;
+    background-color: #CCC;
 }
 
 nav ul {
@@ -84,52 +84,38 @@ nav ul li a {
 
 #btn-acc {
     position: relative;
-    left: 10px;
+    left: 50px;
     color: #1A73E8;
     background-color: #222;
     padding: 6px 12px 6px 8px;
     border-radius: 4px;
 }
 
-.point_vert {
-    position: relative;
-    width: 10px;
-    height: 10px;
-    background-color: #2ECC72;
-    display: inline-block;
-    left: 0;
-    top: -2px;
-    margin-right: 12px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-}
 #nomnav {
     position: relative;
-    left: 30px;
+    left: 30%;
     padding: 6px 12px 6px 8px;
-    color: #FFF;
+    color: #2ECC72;
 }
 
-
-/* -40 */
-#btn-dec {
-    right: 10px;
-    color: #cf000f;
-    background-color: #EEE;
-}
 #btn-log { 
-    right: 200px;
+    right: 240px;
     color: #2ECC72;
     background-color: #222;
 }
+
 #btn-sign {
-    right: 320px;
+    right: 360px;
     color: #2EAAAA;
     background-color: #222;
 }
+
+#btn-dec {
+    right: 50px;
+    color: red;
+    background-color: #EEE;
+}
+
 #btn-dec,
 #btn-log,
 #btn-sign {
@@ -145,6 +131,7 @@ nav ul li a {
     -o-border-radius: 4px;
 }
 
+
 .title {
     font-family: 'DM Mono', monospace;
     margin: 22px;
@@ -152,15 +139,14 @@ nav ul li a {
 }
 
 .title2 {
-    position: absolute;
+    position: relative;
     font-family: 'Jost',
     sans-serif;
     font-weight: normal;
-    top: 520px;    
+    
     font-size: 18px;
     padding: 16px;
     left: 50%;
-    line-height: 34px;
     text-align: center;
     border-radius: 8px;
     width: 250px;
@@ -176,7 +162,6 @@ nav ul li a {
 }
 
 .title2.alert {
-
     color: red;
     border: 1px dashed red;
     background-color: rgb(255, 202, 202);
@@ -323,11 +308,10 @@ nav ul li a {
     top: 8px;
 }
 
-.area {
-    position: relative;
+.login>.area {
     border-color: transparent transparent #FFF transparent;
-    left: 26px;
-    width: 174px;
+    margin-left: 32px;
+    width: 164px;
     padding: 8px;
     margin-bottom: 22px;
 }
@@ -429,9 +413,6 @@ input[type="radio"]:hover {
     cursor: pointer;
 }
 
-.each_quest {
-    display: block;
-}
 .quizz {
     font-family: 'Jost', sans-serif;
     position: relative;
@@ -499,14 +480,6 @@ textarea {
     -moz-border-radius: 6px;
     -ms-border-radius: 6px;
     -o-border-radius: 6px;
-}
-.add_img {
-    position: absolute;
-    margin-top: 230px;
-    margin-right: 180px;
-}
-.add_img > .radio_form > label {
-    margin-left: -22px;
 }
 .reponse {
     position: relative;
