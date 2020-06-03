@@ -90,21 +90,25 @@ nav ul li a {
 	padding: 6px 12px 6px 8px;
 	border-radius: 4px;
 }
-
+.point_co {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    left: 0;
+    top: -2px;
+    margin-right: 12px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
 .point_vert {
-	position: relative;
-	width: 10px;
-	height: 10px;
 	background-color: #2ECC72;
-	display: inline-block;
-	left: 0;
-	top: -2px;
-	margin-right: 12px;
-	border-radius: 50%;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-ms-border-radius: 50%;
-	-o-border-radius: 50%;
+}
+.point_rouge {
+    background-color: #ff3845;
 }
 
 #nomnav {
