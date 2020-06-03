@@ -108,7 +108,7 @@ nav ul li a {
 }
 #nomnav {
     position: relative;
-    left: 30%;
+    left: 30px;
     padding: 6px 12px 6px 8px;
     color: #FFF;
 }
@@ -499,6 +499,14 @@ textarea {
     -moz-border-radius: 6px;
     -ms-border-radius: 6px;
     -o-border-radius: 6px;
+}
+.add_img {
+    position: absolute;
+    margin-top: 230px;
+    margin-right: 180px;
+}
+.add_img > .radio_form > label {
+    margin-left: -22px;
 }
 .reponse {
     position: relative;
