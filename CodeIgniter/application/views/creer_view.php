@@ -237,6 +237,7 @@
                     <!--<input type="time" name="durée" id="durée" min="12:00:00" max="18:00:00" required class="area_qz" onclick="colorizeNBStart()" required/> -->
                     <script src="<?php echo base_url(); ?>js/nb_colored.js"></script>
                 </div>
+            </div>
         </div>
         <button class="add">+<span>Ajouter une question</span></button>
         <div class="final_btn">

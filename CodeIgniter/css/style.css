@@ -697,10 +697,10 @@ textarea {
 	color: #8c14fc;
 	background-color: #ffcc00;
 	transition: all .3s;
-	-webkit-transition: all .3s;
-	-moz-transition: all .3s;
-	-ms-transition: all .3s;
-	-o-transition: all .3s;
+	-webkit-transition:;
+	-moz-transition:;
+	-ms-transition:;
+	-o-transition:;
 }
 
 .add:hover {
@@ -708,10 +708,10 @@ textarea {
 	background-color: #8c14fc;
 	color: #ffcc00;
 	transition: all .3s;
-	-webkit-transition: ;
-	-moz-transition: ;
-	-ms-transition: ;
-	-o-transition: ;
+	-webkit-transition:;
+	-moz-transition:;
+	-ms-transition:;
+	-o-transition:;
 }
 
 /*  ---- infobulle ----- */
