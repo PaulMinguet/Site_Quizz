@@ -4,10 +4,10 @@
 		public function __construct() {
 			parent::__construct();
 
-			$title = "Quiz | Homepage";
+			$title = "Quiz | Homepage";	//On défini le titre de la page
 			
-			$this->load->model('auth');
-			$this->auth->elepro();			
+			$this->load->model('auth');	//On charge le model "auth"
+			$this->auth->elepro();		//On charge la fonction elepro de auth (cf. auth.php)
 		}
 	}
 ?>
