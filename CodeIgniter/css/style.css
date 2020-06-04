@@ -716,15 +716,15 @@ textarea {
 
 /*  ---- infobulle ----- */
 .add span {
-	opacity: 0;
+	opacity: 1;
 	font-size: 18px;
-	position: absolute;
 	width: 200px;
+	position: absolute;
 	padding: 10px;
 	background-color: #8c14fc;
 	color: #FFF;
-	margin-top: -64px;
-	margin-left: -120px;
+	margin-top: 514px;
+	margin-left: 10px;
 	border-radius: 10px;
 	transform: scale(1) rotate(-12deg);
 	transition: transform .2s;
