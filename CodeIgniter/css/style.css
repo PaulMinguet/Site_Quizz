@@ -553,10 +553,15 @@ textarea {
 	margin-left: -22px;
 }
 
+.line5 {
+    position: relative;
+    top: 20px;
+}
+
 .reponse {
 	position: relative;
 	left: 25px;
-	top: -22px;
+	top: 12px;
 }
 
 .reponse .sous_q {

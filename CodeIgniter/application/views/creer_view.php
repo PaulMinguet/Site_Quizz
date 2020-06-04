@@ -48,7 +48,7 @@
                     <script src="<?php echo base_url(); ?>js/dragDrop.js"></script>
                 </div>
             </div>
-            <div class="line">
+            <div class="line line5">
                 <label for="reponse"><span class="nb" id="nb5">5</span> Réponse</label>
             </div>
             <div class="line reponse">
