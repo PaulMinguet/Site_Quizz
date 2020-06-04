@@ -10,6 +10,9 @@ a {
 	text-decoration: none;
 }
 
+button {
+    overflow: hidden;
+}
 li {
 	text-decoration: none;
 }
@@ -507,6 +510,7 @@ input[type="radio"]:hover {
 }
 
 textarea {
+    top: 148px;
 	width: 38%;
 	font-size: 16px;
 	padding: 6px;
@@ -542,6 +546,24 @@ textarea {
     text-align: center;
     margin-top: 34px;
     color: rgb(78, 90, 118);
+}
+.dropper span {
+    border: none;
+    top: -14px;
+    left: 242px;
+    position: absolute;
+    background-color: #ff3845;
+    color: #FFF;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.dropper span:hover {
+    cursor: pointer;
 }
 .add_img {
 	position: absolute;
