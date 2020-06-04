@@ -1,3 +1,8 @@
+@font-face {
+	font-family: 'sevenSegment';
+	src: url(fonts/seven-segment.ttf);
+}
+
 html,
 body {
 	margin: 0;
@@ -749,6 +754,31 @@ textarea {
 #cac_right {
 	position: fixed;
 	right: 0;
+}
+
+.container-time {
+    position: relative;
+    left: 50%;
+    width: 150px;
+    background-color: rgb(34, 39, 50);
+    border-radius: 40px;
+    border: 1px dashed #2ECC72;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+}
+.timer {
+    text-align: center;
+    font-family: sevenSegment;
+    font-size: 55px;
+    color: #2ECC72;
+    /* color: #ffa200; */
 }
 
 .footer {

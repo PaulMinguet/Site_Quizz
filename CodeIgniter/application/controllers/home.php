@@ -31,6 +31,7 @@ class Home extends CI_Controller {
         $this->load->view('nav');
         $this->load->view('msg_log_view');
         $this->load->view('cactus');
+        $this->load->view('timer');
         $this->load->model('creer');
         $this->load->view('creer_view');
         $this->load->view('footer');
