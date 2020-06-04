@@ -528,6 +528,21 @@ textarea {
 	-o-border-radius: 6px;
 }
 
+.add_img .dropper {
+    position: absolute;
+    top: -17px;
+    left: -50px;
+    width: 261px;
+    height: 100px;
+    background-color: rgb(34, 39, 50);
+    border-radius: 6px;
+	border: 1px dashed rgb(82, 180, 255);
+}
+.dropper h2 {
+    text-align: center;
+    margin-top: 34px;
+    color: rgb(78, 90, 118);
+}
 .add_img {
 	position: absolute;
 	margin-top: 230px;

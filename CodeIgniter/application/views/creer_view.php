@@ -37,12 +37,15 @@
                 <div class="right add_img">
                     <div class="radio_form">
                         <label for="oui">Oui</label>
-                        <input id="oui" type="radio" name="statep" value="oui" onchange=""  onclick="colorizeNB4()" required/>
+                        <input id="oui" type="radio" name="statep" value="oui" onchange=""  onclick="colorizeNB4(); dragDrop();" required/>
                     </div>
                     <div class="radio_form">
                         <label for="non">Non</label>
                         <input id="non" type="radio" name="statep" value="non" onchange=""  onclick="colorizeNB4()"/>
                     </div>
+                    <div class="dropper" id="dropper"><h2>Drag & Drop</h2></div>
+                    
+                    <script src="<?php echo base_url(); ?>js/dragDrop.js"></script>
                 </div>
             </div>
             <div class="line">
