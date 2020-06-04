@@ -1,8 +1,8 @@
-const startMin = 5;  // Nbre de minutes de base
+const startMin = .5;  // Nbre de minutes de base
 let time = startMin * 60;
 
 
-let refresh = setInterval(countDown, 1000);
+let refresh = setInterval(countDown, 300);
 
 function countDown() {
     time--;
@@ -28,7 +28,16 @@ function countDown() {
     timer.innerHTML = display;
     if (time === 0){
         // alert("OVER !");
-        timer.innerHTML = "OVER !";
+        timer.innerHTML = "<span id='over' style='visibility:visible;'>OVER !</span>";
+        let over = document.getElementById('over');
         clearInterval(refresh);
+        function clignoter() {
+            if (over.style.visibility=='visible') {
+                over.style.visibility='hidden';
+            } else {
+                over.style.visibility='visible';
+            }
+        }
+        periode = setInterval(clignoter, 400);
     }
 }
