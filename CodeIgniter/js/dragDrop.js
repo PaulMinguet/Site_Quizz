@@ -1,4 +1,5 @@
 var dropper = document.getElementById('dropper');
+var btn = document.getElementById('btn_quit');
 
 dropper.addEventListener('dragover', function (e) {
 	e.preventDefault(); // Annule l'interdiction de "drop"
@@ -17,3 +18,9 @@ dropper.addEventListener('drop', function (e) {
 
 	alert(files.length + ' fichier(s) :\n' + filenames);
 }, false);
+
+function btnQuit() {
+    dropper.style.display = 'none';
+}
+btn.addEventListener.onclick = btnQuit();
+
