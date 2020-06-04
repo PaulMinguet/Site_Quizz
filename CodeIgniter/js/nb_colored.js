@@ -12,6 +12,7 @@ var area4 = document.getElementById('oui');
 var area5 = document.getElementById('non');
 var area6 = document.getElementById('unique');
 var area7 = document.getElementById('multi');
+var dropper = document.getElementById('dropper');
 
 function onStart() {
 	// for (let i = 1; i < 5; i++) {
@@ -22,8 +23,9 @@ function onStart() {
 	nb2.style.backgroundColor = '#1A73E8';
 	nb3.style.backgroundColor = '#1A73E8';
 	nb4.style.backgroundColor = '#1A73E8';
-	nb5.style.backgroundColor = '#1A73E8';
-
+    nb5.style.backgroundColor = '#1A73E8';
+    dropper.style.display = 'none';
+    non.setAttribute("checked", "checked");
 }
 
 function colorizeNB1() {
@@ -61,10 +63,13 @@ function colorizeNB5() {
 	nb3.style.backgroundColor = '#1A73E8';
 	nb4.style.backgroundColor = '#1A73E8';
 }
+function dragDrop() {
+    dropper.style.display = 'block';
+}
 
 area1.addEventListener.onclick = colorizeNB1();
 area2.addEventListener.onclick = colorizeNB2();
-area4.addEventListener.onclick = colorizeNB4();
+area4.addEventListener.onclick = colorizeNB4(), dragDrop();
 area5.addEventListener.onclick = colorizeNB4();
 area6.addEventListener.onclick = colorizeNB5();
 area7.addEventListener.onclick = colorizeNB5();

@@ -1,3 +1,8 @@
+@font-face {
+	font-family: 'sevenSegment';
+	src: url(fonts/seven-segment.ttf);
+}
+
 html,
 body {
 	margin: 0;
@@ -10,6 +15,9 @@ a {
 	text-decoration: none;
 }
 
+button {
+    overflow: hidden;
+}
 li {
 	text-decoration: none;
 }
@@ -507,6 +515,7 @@ input[type="radio"]:hover {
 }
 
 textarea {
+    top: 148px;
 	width: 38%;
 	font-size: 16px;
 	padding: 6px;
@@ -528,6 +537,39 @@ textarea {
 	-o-border-radius: 6px;
 }
 
+.add_img .dropper {
+    position: absolute;
+    top: -17px;
+    left: -50px;
+    width: 261px;
+    height: 100px;
+    background-color: rgb(34, 39, 50);
+    border-radius: 6px;
+	border: 1px dashed rgb(82, 180, 255);
+}
+.dropper h2 {
+    text-align: center;
+    margin-top: 34px;
+    color: rgb(78, 90, 118);
+}
+.dropper span {
+    border: none;
+    top: -14px;
+    left: 242px;
+    position: absolute;
+    background-color: #ff3845;
+    color: #FFF;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.dropper span:hover {
+    cursor: pointer;
+}
 .add_img {
 	position: absolute;
 	margin-top: 230px;
@@ -538,10 +580,15 @@ textarea {
 	margin-left: -22px;
 }
 
+.line5 {
+    position: relative;
+    top: 20px;
+}
+
 .reponse {
 	position: relative;
 	left: 25px;
-	top: -22px;
+	top: 12px;
 }
 
 .reponse .sous_q {
@@ -707,6 +754,31 @@ textarea {
 #cac_right {
 	position: fixed;
 	right: 0;
+}
+
+.container-time {
+    position: relative;
+    left: 50%;
+    width: 150px;
+    background-color: rgb(34, 39, 50);
+    border-radius: 40px;
+    border: 1px dashed #2ECC72;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+}
+.timer {
+    text-align: center;
+    font-family: sevenSegment;
+    font-size: 55px;
+    color: #2ECC72;
+    /* color: #ffa200; */
 }
 
 .footer {
