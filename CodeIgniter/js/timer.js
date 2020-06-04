@@ -1,13 +1,14 @@
-const startMin = .5;  // Nbre de minutes de base
+const startMin = 5;  // Nbre de minutes de base
 let time = startMin * 60;
 
-const timer = document.getElementById("timer");
 
-setInterval(countDown, 1000);
+let refresh = setInterval(countDown, 1000);
 
 function countDown() {
+    time--;
     let minutes = Math.floor(time / 60);
     let secondes = time % 60;
+    let timer = document.getElementById("timer");
     
     secondes = secondes < 10 ? '0' + secondes : secondes;
     
@@ -22,9 +23,12 @@ function countDown() {
         timer.style.color = '#ff3845';
         // timer.style.color = '#ffa200';
         timer.style.transition ="all .5s"
-    } else if ((minutes === 0) && (secondes === 0)){
+    } 
+    display = `${minutes}:${secondes}`;
+    timer.innerHTML = display;
+    if (time === 0){
+        // alert("OVER !");
         timer.innerHTML = "OVER !";
+        clearInterval(refresh);
     }
-    timer.innerHTML = `${minutes}:${secondes}`;
-    time--;
 }
