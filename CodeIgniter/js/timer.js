@@ -1,4 +1,4 @@
-const startMin = 10;  // Nbre de minutes de base
+const startMin = .5;  // Nbre de minutes de base
 let time = startMin * 60;
 
 const timer = document.getElementById("timer");
