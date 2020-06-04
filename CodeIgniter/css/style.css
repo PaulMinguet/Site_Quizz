@@ -562,6 +562,9 @@ textarea {
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 }
+.dropper span:hover {
+    cursor: pointer;
+}
 .add_img {
 	position: absolute;
 	margin-top: 230px;

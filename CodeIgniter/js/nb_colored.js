@@ -25,6 +25,7 @@ function onStart() {
 	nb4.style.backgroundColor = '#1A73E8';
     nb5.style.backgroundColor = '#1A73E8';
     dropper.style.display = 'none';
+    non.setAttribute("checked", "checked");
 }
 
 function colorizeNB1() {

@@ -37,11 +37,11 @@
                 <div class="right add_img">
                     <div class="radio_form">
                         <label for="oui">Oui</label>
-                        <input id="oui" type="radio" name="statep" value="oui" onchange=""  onclick="colorizeNB4(); dragDrop();" required/>
+                        <input id="oui" type="radio" name="statep" value="oui" onchange=""  onclick="colorizeNB4(); dragDrop();" />
                     </div>
                     <div class="radio_form">
                         <label for="non">Non</label>
-                        <input id="non" type="radio" name="statep" value="non" onchange=""  onclick="colorizeNB4()" checked/>
+                        <input id="non" type="radio" name="statep" value="non" onchange=""  onclick="colorizeNB4(); dragDrop();" />
                     </div>
                     <div class="dropper" id="dropper">
                         <span id="btn_quit" onclick="btnQuit();">×</span>
