@@ -2,7 +2,7 @@
 	<body>
 		<h1 class="title">Espace Log In</h1>
 
-		<form method="post" class="login">
+		<form method="post" class="login">						<!--Création du formulaire de connexion-->
 		    <label for="email" class="lab">Email</label>
 		    <input id="email" type="email" name="email" placeholder="Votre adresse mail" value="<?php $email ?>" class="area" />
 		    <label for="password" class="lab">Mot de passe</label>
