@@ -41,7 +41,7 @@
                     </div>
                     <div class="radio_form">
                         <label for="non">Non</label>
-                        <input id="non" type="radio" name="statep" value="non" onchange=""  onclick="colorizeNB4()"/>
+                        <input id="non" type="radio" name="statep" value="non" onchange=""  onclick="colorizeNB4()" checked/>
                     </div>
                     <div class="dropper" id="dropper">
                         <span id="btn_quit" onclick="btnQuit();">×</span>
