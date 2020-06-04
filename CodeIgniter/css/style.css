@@ -503,6 +503,37 @@ input[type="radio"]:hover {
 	-ms-border-radius: 100%;
 	-o-border-radius: 100%;
 }
+#nbStart > i {
+    background-color: #1A73E8;
+    color: #FFF;
+    padding: 12px 14px;
+    margin-right: 12px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+}
+
+.time-select {
+    position: relative;
+    display: inline;
+    margin-left: 140px;
+}
+.separ_tps {
+        font-family: sevenSegment;
+        color: #FFF;
+        font-size: 60px;
+    }
+.tps {
+        font-family: sevenSegment;
+        font-size: 32px;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+}
 
 .quizz input {
 	border-color: transparent transparent #FFF transparent;
@@ -610,6 +641,12 @@ textarea {
 	-moz-border-radius: 50%;
 	-ms-border-radius: 50%;
 	-o-border-radius: 50%;
+}
+
+#area_choix {
+    position: absolute;
+    top: 160px;
+    right: 56px;
 }
 
 .right {

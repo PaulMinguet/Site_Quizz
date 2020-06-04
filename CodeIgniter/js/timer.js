@@ -1,8 +1,8 @@
-const startMin = .5;  // Nbre de minutes de base
+const startMin = 60;  // Nbre de minutes de base
 let time = startMin * 60;
 
 
-let refresh = setInterval(countDown, 300);
+let refresh = setInterval(countDown, 1000);
 
 function countDown() {
     time--;
