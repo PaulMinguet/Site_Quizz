@@ -22,7 +22,7 @@ dropper.addEventListener('drop', function (e) {
 
 function btnQuit() {
     dropper.style.display = 'none';
-    non.setAttribute("checked", "checked");
+    non.checked=true;
 }
 btn.addEventListener.onclick = btnQuit();
 
