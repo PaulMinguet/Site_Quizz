@@ -11,40 +11,55 @@
         public $statep = null;
         public $matiere = null;
         public $group = null;
+        public $nom_quizz = null;
+        public $nb_questions = null;
+        public $enonce = null;
+        public $codeAleatoire = null;
+        public $duree = null;
 
         public function __construct() {
             parent::__construct();
 
-            if (isset($_POST['nom'])) {                     //Si la variable nom a une valeur,
-                $this->nom = $_POST['nom'];                 //Alors $nom dans auth.php = nom envoyée depuis un autre fichier (signin ou login par exemple)
-            }
-            if (isset($_POST['prenom'])) {                  //Idem pour prenom
+            if (isset($_POST['nom']))                               //Si la variable nom a une valeur,
+                $this->nom = $_POST['nom'];                         //Alors $nom dans auth.php = nom envoyée depuis un autre fichier (signin ou login par exemple)
+
+            if (isset($_POST['prenom']))                            //Idem pour prenom
                 $this->prenom = $_POST['prenom'];
-            }
-            if (isset($_POST['email'])) {                   //Idem pour email
+
+            if (isset($_POST['email'])) {                           //Idem pour email
                 $this->email = $_POST['email'];
-                if (filter_var($this->email, FILTER_VALIDATE_EMAIL)) {      //Si l'email correspond à une adresse email
+                if (filter_var($this->email, FILTER_VALIDATE_EMAIL)) {        //Si l'email correspond à une adresse email
                     $this->success = "Votre compte a bien été enregistré !";  //Alors tout va bien
                 } else {
                     $this->error = "Email invalide";                          //Sinon erreur
                 }
             }
-            if (isset($_POST['password'])) {                //Idem pour password
-                $this->password = md5($_POST['password']);  //Ici, on crypte le mot de passe pour des raisons de confidentialité
+            if (isset($_POST['password']))                          //Idem pour password
+                $this->password = md5($_POST['password']);          //Ici, on crypte le mot de passe pour des raisons de confidentialité
                 // $password.password_hash("$password", password_DEFAULT);
-            }
-
-            if (isset($_POST['statep'])) {                  //Idem pour statep (statut : eleve ou professeur)
+            
+            if (isset($_POST['statep']))                            //Idem pour statep (statut : eleve ou professeur)
                 $this->statep = $_POST['statep'];
-            }
 
-            if (isset($_POST['matiere'])) {                 //Idem pour matiere
+            if (isset($_POST['matiere']))                           //Idem pour matiere
                 $this->matiere = $_POST['matiere'];
-            }
 
-            if (isset($_POST['group'])) {                   //Idem pour group
+            if (isset($_POST['group']))                             //Idem pour group
                 $this->group = $_POST['group'];
-            }
+
+
+            /*-----------------------------------------------Quizz--------------------------------------*/
+            if (isset($_POST['nomqz']))                             //Idem pour nomqz
+                $this->nom_quizz = $_POST['nomqz'];
+
+            if (isset($_POST['nombreQ']))                           //Idem pour le nombre de questions nombre
+                $this->nb_questions = $_POST['nombreQ'];
+
+            if (isset($_POST['enonce']))                            //Idem pour enonce
+                $this->enonce = $_POST['enonce'];
+
+            if (isset($_POST['hrs']) && isset($_POST['min']) && isset($_POST['sec']))  
+                $this->duree = $_POST['hrs']*3600 + $_POST['min']*60 + $_POST['sec'];
         }
 
         public function inscription(){                              //Fonction pour l'inscription
@@ -111,7 +126,20 @@
         }
 
         public function creer(){                                    //Fonction de création de quizz
-
+            if(isset($this->nom_quizz)){
+                $this->load->model('fonctions');
+                $codeAleatoire = $this->fonctions->codeal();
+                echo $this->codeAleatoire;
+                echo "<br>temps : ".$this->duree."<br>";
+                $data = array(
+                    'quizz_nom'         => $this->nom_quizz,
+                    'quizz_cle'         => $this->codeAleatoire,
+                    'quizz_duree'       => $this->duree,
+                    'quizz_nbQuestions' => $this->nb_questions
+                );
+                $this->db->insert('Quizz', $data);
+                //echo "<script>alert(Voici le code de votre quizz : ".$string." )</script>";
+            }
         }
     }
 ?>
