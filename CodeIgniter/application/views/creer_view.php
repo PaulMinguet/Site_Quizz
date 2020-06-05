@@ -12,17 +12,9 @@
             <label for="nombre"><span class="nb" id="nb2">2</span> Nombre de questions</label>
             <div class="custom-select quizz-select" onclick="colorizeNB2()">
                 <select name="nombreQ" id="nombreQ" onclick="colorizeNB2()" required>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
+                    <?php for($i = 0; $i <= 10; $i++){
+                        echo "<option value='".$i."'>".$i."</option>";
+                    }?>
                 </select>
                 <script src="<?php echo base_url(); ?>js/btnSelect.js"></script>
             </div>
@@ -79,19 +71,28 @@
                 <label for="duree"><span id="nbStart"><i class="fas fa-stopwatch" id="nbStart2"></i></span> Chronomètre</label>
                 <div class="time-select">
                     <select name="hrs" id="hrs" class="tps hrs"  onclick="colorizeChrono()">
-                        <?php for($i = 0; $i <= 24; $i++){
+                        <?php for($i = 0; $i <= 9; $i++){
+                            echo "<option value='".$i."'>0".$i."</option>";
+                        }?>
+                        <?php for($i = 10; $i <= 24; $i++){
                             echo "<option value='".$i."'>".$i."</option>";
                         }?>
                     </select>
                     <span class="separ_tps">:</span>
                     <select name="min" id="min" class="tps min"  onclick="colorizeChrono()">
-                        <?php for($i = 0; $i <= 60; $i++){
+                        <?php for($i = 0; $i <= 9; $i++){
+                            echo "<option value='".$i."'>0".$i."</option>";
+                        }?>
+                        <?php for($i = 10; $i <= 60; $i++){
                             echo "<option value='".$i."'>".$i."</option>";
                         }?>
                     </select>
                     <span class="separ_tps">:</span>
                     <select name="sec" id="sec" class="tps sec"  onclick="colorizeChrono()">
-                        <?php for($i = 0; $i <= 60; $i++){
+                        <?php for($i = 0; $i <= 9; $i++){
+                            echo "<option value='".$i."'>0".$i."</option>";
+                        }?>
+                        <?php for($i = 10; $i <= 60; $i++){
                             echo "<option value='".$i."'>".$i."</option>";
                         }?>
                     </select>

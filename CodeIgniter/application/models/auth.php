@@ -128,7 +128,7 @@
         public function creer(){                                    //Fonction de création de quizz
             if(isset($this->nom_quizz)){
                 $this->load->model('fonctions');
-                $codeAleatoire = $this->fonctions->codeal();
+                $this->codeAleatoire = $this->fonctions->codeal();
                 echo $this->codeAleatoire;
                 echo "<br>temps : ".$this->duree."<br>";
                 $data = array(
@@ -138,7 +138,7 @@
                     'quizz_nbQuestions' => $this->nb_questions
                 );
                 $this->db->insert('Quizz', $data);
-                //echo "<script>alert(Voici le code de votre quizz : ".$string." )</script>";
+                echo "<script>alert('Voici le code de votre quizz : ".$this->codeAleatoire."')</script>";
             }
         }
     }
