@@ -2,7 +2,7 @@
     
     <h1 class="title">Créer le Quizz !</h1>
             
-    <form action="questions" method="post" class="quizz">
+    <form method="post" class="quizz">
         <hr class="separate"/>
         <div class="line">
             <label for="nomqz"><span class="nb" id="nb1">1</span> Nom du Quizz</label>
@@ -11,7 +11,7 @@
         <div class="line">
             <label for="nombre"><span class="nb" id="nb2">2</span> Nombre de questions</label>
             <div class="custom-select quizz-select" onclick="colorizeNB2()">
-                <select name="nbr" id="nbr" onclick="colorizeNB2()" required>
+                <select name="nombreQ" id="nombreQ" onclick="colorizeNB2()" required>
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -70,16 +70,41 @@
                         <input id="multi" type="radio" name="statep" value="multi" onchange=""  onclick="colorizeNB5()"/>
                     </div>
                 </div>
-                <script src="<?php echo base_url(); ?>js/nb_colored.js"></script>
                 
                 <label for="nb_rep" class="sous_q"><span class="material-icons arrow">arrow_right_alt</span> Choix</label>
+                <input type="text" name="choix" id="area_choix" class="area_qz" placeholder="Entrez la réponse" onclick="colorizeNB5()" required/>
+                <script src="<?php echo base_url(); ?>js/nb_colored.js"></script>
+            </div>
+            <div class="line">
+                <label for="duree"><span id="nbStart"><i class="fas fa-stopwatch" id="nbStart2"></i></span> Chronomètre</label>
+                <div class="time-select">
+                    <select name="hrs" id="hrs" class="tps hrs"  onclick="colorizeChrono()">
+                        <?php for($i = 0; $i <= 24; $i++){
+                            echo "<option value='".$i."'>".$i."</option>";
+                        }?>
+                    </select>
+                    <span class="separ_tps">:</span>
+                    <select name="min" id="min" class="tps min"  onclick="colorizeChrono()">
+                        <?php for($i = 0; $i <= 60; $i++){
+                            echo "<option value='".$i."'>".$i."</option>";
+                        }?>
+                    </select>
+                    <span class="separ_tps">:</span>
+                    <select name="sec" id="sec" class="tps sec"  onclick="colorizeChrono()">
+                        <?php for($i = 0; $i <= 60; $i++){
+                            echo "<option value='".$i."'>".$i."</option>";
+                        }?>
+                    </select>
+                    <!--<input type="time" name="durée" id="durée" min="12:00:00" max="18:00:00" required class="area_qz" onclick="colorizeNBStart()" required/> -->
+                    <script src="<?php echo base_url(); ?>js/nb_colored.js"></script>
+                </div>
             </div>
         </div>
         <button class="add">+<span>Ajouter une question</span></button>
         <div class="final_btn">
             <div class="container">
                 <input type="submit" name="save" value="Enregistrer" class="save_btn">
-                <input type="submit" name="reset" value="Reset" class="reset_btn">
+                <input type="submit" name="reset" value="Abandonner" class="reset_btn">
             </div>
         </div>
     </form>

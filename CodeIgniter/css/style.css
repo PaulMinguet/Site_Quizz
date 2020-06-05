@@ -503,6 +503,37 @@ input[type="radio"]:hover {
 	-ms-border-radius: 100%;
 	-o-border-radius: 100%;
 }
+#nbStart > i {
+    background-color: #1A73E8;
+    color: #FFF;
+    padding: 12px 14px;
+    margin-right: 12px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+}
+
+.time-select {
+    position: relative;
+    display: inline;
+    margin-left: 140px;
+}
+.separ_tps {
+        font-family: sevenSegment;
+        color: #FFF;
+        font-size: 60px;
+    }
+.tps {
+        font-family: sevenSegment;
+        font-size: 32px;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+}
 
 .quizz input {
 	border-color: transparent transparent #FFF transparent;
@@ -612,6 +643,12 @@ textarea {
 	-o-border-radius: 50%;
 }
 
+#area_choix {
+    position: absolute;
+    top: 160px;
+    right: 56px;
+}
+
 .right {
 	position: absolute;
 	top: 0;
@@ -660,10 +697,10 @@ textarea {
 	color: #8c14fc;
 	background-color: #ffcc00;
 	transition: all .3s;
-	-webkit-transition: all .3s;
-	-moz-transition: all .3s;
-	-ms-transition: all .3s;
-	-o-transition: all .3s;
+	-webkit-transition:;
+	-moz-transition:;
+	-ms-transition:;
+	-o-transition:;
 }
 
 .add:hover {
@@ -671,23 +708,23 @@ textarea {
 	background-color: #8c14fc;
 	color: #ffcc00;
 	transition: all .3s;
-	-webkit-transition: ;
-	-moz-transition: ;
-	-ms-transition: ;
-	-o-transition: ;
+	-webkit-transition:;
+	-moz-transition:;
+	-ms-transition:;
+	-o-transition:;
 }
 
 /*  ---- infobulle ----- */
 .add span {
-	opacity: 0;
+	opacity: 1;
 	font-size: 18px;
-	position: absolute;
 	width: 200px;
+	position: absolute;
 	padding: 10px;
 	background-color: #8c14fc;
 	color: #FFF;
-	margin-top: -64px;
-	margin-left: -120px;
+	margin-top: 514px;
+	margin-left: 10px;
 	border-radius: 10px;
 	transform: scale(1) rotate(-12deg);
 	transition: transform .2s;
