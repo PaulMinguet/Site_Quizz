@@ -796,7 +796,7 @@ textarea {
 .container-time {
     position: relative;
     left: 50%;
-    width: 150px;
+    width: 200px;
     background-color: rgb(34, 39, 50);
     border-radius: 40px;
     border: 1px dashed #2ECC72;
