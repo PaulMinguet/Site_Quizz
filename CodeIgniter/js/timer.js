@@ -1,6 +1,11 @@
 const startMin = 60;  // Nbre de minutes de base
+const startMin = 60;  // Nbre de minutes de base
 let time = startMin * 60;
-
+choice = select.selectedIndex // Récupération de l'index du <option> choisi
+valeur_cherchee = select.options[choice].value; // Récupération du texte du <option> d'index "choice"
+document.getElementById('hrs').value = valeur_cherchee;
+document.getElementById('min').value = valeur_cherchee;
+document.getElementById('sec').value = valeur_cherchee;
 
 let refresh = setInterval(countDown, 1000);
 
