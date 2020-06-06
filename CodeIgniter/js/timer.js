@@ -8,7 +8,7 @@ if (tempsmax > 60) {
 }
 
 let refresh = setInterval(countDown, 500);
-
+ 
 if (heures < 10) {
     heures = '0' + heures;
 }
