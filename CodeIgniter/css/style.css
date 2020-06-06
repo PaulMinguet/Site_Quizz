@@ -503,6 +503,7 @@ input[type="radio"]:hover {
 	-ms-border-radius: 100%;
 	-o-border-radius: 100%;
 }
+
 #nbStart > i {
     background-color: #1A73E8;
     color: #FFF;
@@ -553,8 +554,22 @@ textarea {
 }
 
 .quizz input,
-.quizz textarea,
 .custom-select.quizz-select {
+	margin: 0;
+	position: absolute;
+	right: 30px;
+	align-self: flex-end;
+	display: inline-block;
+	font-family: 'Jost', sans-serif;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	-ms-border-radius: 6px;
+	-o-border-radius: 6px;
+}
+
+.quizz textarea {
+	top: 2%;
 	margin: 0;
 	position: absolute;
 	right: 30px;
@@ -603,7 +618,7 @@ textarea {
 }
 .add_img {
 	position: absolute;
-	margin-top: 230px;
+	margin-top: 13%;
 	margin-right: 180px;
 }
 
@@ -619,7 +634,7 @@ textarea {
 .reponse {
 	position: relative;
 	left: 25px;
-	top: 12px;
+	top: 0;
 }
 
 .reponse .sous_q {
@@ -645,14 +660,14 @@ textarea {
 
 #area_choix {
     position: absolute;
-    top: 160px;
-    right: 56px;
+    top: 56%;
+    right: 8%;
 }
 
 .right {
 	position: absolute;
 	top: 0;
-	right: 30px;
+	right: 4%;
 }
 
 .right>div {
@@ -677,7 +692,7 @@ textarea {
 .quizz .add {
 	border: none;
 	position: absolute;
-	top: 78%;
+	top: 2%;
 	left: 50%;
 	font-size: 34px;
 	padding: 12px 22px;

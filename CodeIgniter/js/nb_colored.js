@@ -41,6 +41,15 @@ function colorizeNB1() {
     iChrono.style.backgroundColor = '#1A73E8';
 }
 
+function colorizeNB2() {
+	nb1.style.backgroundColor = '#1A73E8';
+	nb2.style.backgroundColor = 'red';
+	nb3.style.backgroundColor = '#1A73E8';
+	nb4.style.backgroundColor = '#1A73E8';
+	nb5.style.backgroundColor = '#1A73E8';
+    iChrono.style.backgroundColor = '#1A73E8';
+}
+
 function colorizeNB3() {
 	nb3.style.backgroundColor = 'red';
 	nb2.style.backgroundColor = '#1A73E8';
@@ -68,12 +77,12 @@ function colorizeNB5() {
     iChrono.style.backgroundColor = '#1A73E8';
 }
 function colorizeChrono() {
-	iChrono.style.backgroundColor = 'red';
 	nb1.style.backgroundColor = '#1A73E8';
 	nb2.style.backgroundColor = '#1A73E8';
 	nb3.style.backgroundColor = '#1A73E8';
 	nb4.style.backgroundColor = '#1A73E8';
 	nb5.style.backgroundColor = '#1A73E8';
+	iChrono.style.backgroundColor = 'red';
 }
 
 
