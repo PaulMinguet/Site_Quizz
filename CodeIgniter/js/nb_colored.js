@@ -26,10 +26,10 @@ function onStart() {
 	nb2.style.backgroundColor = '#1A73E8';
 	nb3.style.backgroundColor = '#1A73E8';
 	nb4.style.backgroundColor = '#1A73E8';
-    nb5.style.backgroundColor = '#1A73E8';
-    iChrono.style.backgroundColor = '#1A73E8';
-    dropper.style.display = 'none';
-    non.setAttribute("checked", "checked");
+	nb5.style.backgroundColor = '#1A73E8';
+	iChrono.style.backgroundColor = '#1A73E8';
+	dropper.style.display = 'none';
+	non.setAttribute("checked", "checked");
 }
 
 function colorizeNB1() {
@@ -38,16 +38,7 @@ function colorizeNB1() {
 	nb3.style.backgroundColor = '#1A73E8';
 	nb4.style.backgroundColor = '#1A73E8';
 	nb5.style.backgroundColor = '#1A73E8';
-    iChrono.style.backgroundColor = '#1A73E8';
-}
-
-function colorizeNB2() {
-	nb1.style.backgroundColor = '#1A73E8';
-	nb2.style.backgroundColor = 'red';
-	nb3.style.backgroundColor = '#1A73E8';
-	nb4.style.backgroundColor = '#1A73E8';
-	nb5.style.backgroundColor = '#1A73E8';
-    iChrono.style.backgroundColor = '#1A73E8';
+	iChrono.style.backgroundColor = '#1A73E8';
 }
 
 function colorizeNB3() {
@@ -56,7 +47,7 @@ function colorizeNB3() {
 	nb1.style.backgroundColor = '#1A73E8';
 	nb4.style.backgroundColor = '#1A73E8';
 	nb5.style.backgroundColor = '#1A73E8';
-    iChrono.style.backgroundColor = '#1A73E8';
+	iChrono.style.backgroundColor = '#1A73E8';
 }
 
 function colorizeNB4() {
@@ -65,7 +56,7 @@ function colorizeNB4() {
 	nb3.style.backgroundColor = '#1A73E8';
 	nb1.style.backgroundColor = '#1A73E8';
 	nb5.style.backgroundColor = '#1A73E8';
-    iChrono.style.backgroundColor = '#1A73E8';
+	iChrono.style.backgroundColor = '#1A73E8';
 }
 
 function colorizeNB5() {
@@ -74,20 +65,21 @@ function colorizeNB5() {
 	nb2.style.backgroundColor = '#1A73E8';
 	nb3.style.backgroundColor = '#1A73E8';
 	nb4.style.backgroundColor = '#1A73E8';
-    iChrono.style.backgroundColor = '#1A73E8';
+	iChrono.style.backgroundColor = '#1A73E8';
 }
+
 function colorizeChrono() {
+	iChrono.style.backgroundColor = 'red';
 	nb1.style.backgroundColor = '#1A73E8';
 	nb2.style.backgroundColor = '#1A73E8';
 	nb3.style.backgroundColor = '#1A73E8';
 	nb4.style.backgroundColor = '#1A73E8';
 	nb5.style.backgroundColor = '#1A73E8';
-	iChrono.style.backgroundColor = 'red';
 }
 
 
 function dragDrop() {
-    dropper.style.display = 'block';
+	dropper.style.display = 'block';
 }
 
 area1.addEventListener.onclick = colorizeNB1();

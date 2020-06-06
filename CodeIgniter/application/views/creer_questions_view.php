@@ -65,12 +65,12 @@ echo "
 ";
 }
 echo "
-<div class='quizz' style='height: 150px;'>
-    <button class='add'>+<span>Ajouter une question</span></button>
+<div class='quizz' style='height: 150px; width: 500px'>
+    <button class='add' style='top: 8px; z-index: 100'>+<span>Ajouter une question</span></button>
     <hr class='separate'/>
     <br><br><br>
     <div class='final_btn'>
-        <div class='container'>
+        <div class='container' style='top: 50px;'>
             <input type='submit' name='save' value='Enregistrer' class='save_btn'>
             <input type='submit' name='reset' value='Abandonner' class='reset_btn'>
         </div>

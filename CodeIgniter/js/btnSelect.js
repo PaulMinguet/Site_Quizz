@@ -3,12 +3,12 @@ var nb2 = document.getElementById('nb2');
 var nb3 = document.getElementById('nb3');
 var nb4 = document.getElementById('nb4');
 
-var x, i, j, l, ll, selElmnt, a, b, c, body;
+var i, j, l, ll, elmt, selElmnt, a, b, c, body;
 /* Rechercher tous les éléments avec la classe "custom-select": */
-x = document.getElementsByClassName("custom-select");
-l = x.length;
+elmt = document.getElementsByClassName("custom-select");
+l = elmt.length;
 for (i = 0; i < l; i++) {
-	selElmnt = x[i].getElementsByTagName("select")[0];
+	selElmnt = elmt[i].getElementsByTagName("select")[0];
 	ll = selElmnt.length;
 	/* Pour chaque élément, créer un nouveau DIV qui agira comme l'élément sélectionné: */
 	a = document.createElement("DIV");
@@ -16,7 +16,7 @@ for (i = 0; i < l; i++) {
 	a.setAttribute("class", "select-selected");
 
 	a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-	x[i].appendChild(a);
+	elmt[i].appendChild(a);
 	/* Pour chaque élément, créer un nouveau DIV qui contiendra la liste d'options: */
 	b = document.createElement("DIV");
 	b.setAttribute("class", "select-items select-hide");
@@ -30,7 +30,7 @@ for (i = 0; i < l; i++) {
 			mettre à jour la boîte de sélection d'origine,
 			et l'élément sélectionné: */
 			var y, i, k, s, h, sl, yl;
-			var each_quest = document.getElementsByClassName('each_quest');
+			// var each_quest = document.getElementsByClassName('each_quest');
 			s = this.parentNode.parentNode.getElementsByTagName("select")[0];
 			sl = s.length;
 			h = this.parentNode.previousSibling;
