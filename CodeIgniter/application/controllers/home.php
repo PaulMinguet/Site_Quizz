@@ -33,9 +33,10 @@ class Home extends CI_Controller {
         //$this->load->view('timer');
         $this->load->model('creer');
         $this->load->view('creer_view');
+        $this->load->view('submit_view');
         $this->load->view('footer');
     }
-
+    
     public function creer_question() {                       //idem pour la page creer question
         $this->load->view('header');
         $this->load->view('nav');
@@ -43,6 +44,7 @@ class Home extends CI_Controller {
         //$this->load->view('timer');
         $this->load->model('creer_question');
         $this->load->view('creer_questions_view');
+        $this->load->view('submit_view');
         $this->load->view('footer');
     }
     

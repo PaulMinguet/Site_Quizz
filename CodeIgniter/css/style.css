@@ -362,69 +362,6 @@ nav ul li a {
 	border-color: #2E712E;
 }
 
-/* --------------------------- select -------------- */
-
-.custom-select {
-	position: relative;
-	font-family: Arial;
-	width: 200px;
-	margin: 0 22px 22px 22px;
-}
-
-.custom-select select {
-	display: none;
-}
-
-.select-selected {
-	background-color: #FFF;
-	border-radius: 6px;
-
-}
-
-.select-selected:after {
-	position: absolute;
-	content: "";
-	top: 14px;
-	right: 10px;
-	width: 0;
-	height: 0;
-	border: 6px solid transparent;
-	border-color: #333 transparent transparent transparent;
-}
-
-.select-selected.select-arrow-active:after {
-	border-color: transparent transparent #333 transparent;
-	top: 7px;
-}
-
-.select-items div,
-.select-selected {
-	padding: 8px 16px 8px 10px;
-	border: 1px solid transparent;
-	border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-	cursor: pointer;
-}
-
-.select-items {
-	position: absolute;
-	background-color: #EDEDED;
-	top: 100%;
-	left: 0;
-	right: 0;
-	z-index: 99;
-}
-
-
-.select-hide {
-	display: none;
-}
-
-.select-items div:hover,
-.same-as-selected {
-	background-color: rgba(0, 0, 0, 0.1);
-}
-
-
 input[type="submit"] {
 	margin: 0 auto;
 	padding: 13px;
@@ -520,8 +457,8 @@ input[type="radio"]:hover {
 	-o-border-radius: 100%;
 }
 
-.time-select {
-	position: relative;
+.time-select, .select-nb {
+    position: relative;
 	display: inline;
 	margin-left: 140px;
 }
@@ -532,7 +469,7 @@ input[type="radio"]:hover {
 	font-size: 60px;
 }
 
-.tps {
+.tps, #nombreQ {
 	font-family: sevenSegment;
 	font-size: 32px;
 	border-radius: 8px;
@@ -722,10 +659,10 @@ textarea {
 	color: #8c14fc;
 	background-color: #ffcc00;
 	transition: all .3s;
-	-webkit-transition: ;
-	-moz-transition: ;
-	-ms-transition: ;
-	-o-transition: ;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-ms-transition: all .3s;
+	-o-transition: all .3s;
 }
 
 .add:hover {
@@ -733,10 +670,10 @@ textarea {
 	background-color: #8c14fc;
 	color: #ffcc00;
 	transition: all .3s;
-	-webkit-transition: ;
-	-moz-transition: ;
-	-ms-transition: ;
-	-o-transition: ;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-ms-transition: all .3s;
+	-o-transition: all .3s;
 }
 
 /*  ---- infobulle ----- */
