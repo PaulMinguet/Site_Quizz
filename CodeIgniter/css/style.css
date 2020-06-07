@@ -659,13 +659,14 @@ input[type="radio"]:hover {
 }
 .moyen {
     width: 50%;
-    background-color: #ff3845;
+    background-color: #ffcc00;
+
 }
 .bof {
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
-    background-color: #ffcc00 ;
     width: 30%;
+    background-color: #ff3845;
 }
 
 .tps, #nombreQ {
