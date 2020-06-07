@@ -208,7 +208,7 @@ nav ul li a {
 	font-weight: normal;
 	top: 520px;
 	font-size: 18px;
-	padding: 16px;
+    padding: 16px;
 	left: 50%;
 	line-height: 34px;
 	text-align: center;
@@ -226,13 +226,13 @@ nav ul li a {
 }
 
 .title2.alert {
-	color: rgb(255, 116, 116);
+    color: rgb(255, 116, 116);
 	border: 1px dashed rgb(255, 116, 116);
 	background-color: rgb(77, 0, 0);
 }
 
 .title2.success {
-	color: rgb(0, 225, 0);
+    color: rgb(0, 225, 0);
 	border: 1px dashed rgb(0, 225, 0);
 	background-color: rgb(10, 62, 0);
 }
@@ -1008,7 +1008,8 @@ textarea {
 
 .footer {
     position: relative;
-    top: 200px;
+    margin-top: 54px;
+    top: 170px;
     bottom: 0;
     width: 100%;
 }
