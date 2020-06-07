@@ -49,6 +49,7 @@ class Home extends CI_Controller {
     public function stats() {                       //idem pour la page statistiques
         $this->load->view('header');
         $this->load->view('nav');
+        $this->load->view('cactus');
         //$this->load->view('timer');
         $this->load->model('stats');
         $this->load->view('stats_view');
@@ -76,6 +77,7 @@ class Home extends CI_Controller {
     public function deco() {                        //idem pour la page deco
         $this->load->view('nav');
         $this->load->view('header');
+        $this->load->view('cactus');
         $this->load->model('deco');
         $this->load->view('footer');
     }
