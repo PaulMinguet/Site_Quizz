@@ -141,5 +141,9 @@
                 echo "<script>alert('Voici le code de votre quizz : ".$this->codeAleatoire."')</script>";
             }
         }
+
+        public function stats() {
+            # code...
+        }
     }
 ?>

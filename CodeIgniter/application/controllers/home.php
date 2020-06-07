@@ -46,6 +46,15 @@ class Home extends CI_Controller {
         $this->load->view('footer');
     }
     
+    public function stats() {                       //idem pour la page statistiques
+        $this->load->view('header');
+        $this->load->view('nav');
+        //$this->load->view('timer');
+        $this->load->model('stats');
+        $this->load->view('stats_view');
+        $this->load->view('footer');
+    }
+    
     public function login() {                       //idem pour la page login
         $this->load->view('nav');
         $this->load->view('header');

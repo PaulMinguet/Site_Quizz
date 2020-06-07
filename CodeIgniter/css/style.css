@@ -32,6 +32,7 @@ input:focus {
 	overflow: hidden;
 }
 
+
 .visible {
 	display: block;
 }
@@ -48,10 +49,10 @@ input:focus {
 	top: 2px;
 	left: 50%;
 	transform: translateX(-50%);
-	-webkit-transform: translateX(-50%);
-	-moz-transform: translateX(-50%);
-	-ms-transform: translateX(-50%);
-	-o-transform: translateX(-50%);
+	-webkit-transform:;
+	-moz-transform:;
+	-ms-transform:;
+	-o-transform:;
 }
 
 .bienvenue img {
@@ -152,8 +153,32 @@ nav ul li a {
 	background-color: #222;
 }
 
+#btn-stats {
+    right: 450px;
+    background-color: #fff;
+    color: rgb(49, 138, 255);
+}
+
+#btn-stats:not(hover) {
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+}
+#btn-stats:hover {
+    background-color: rgb(49, 138, 255);
+    color: #FFF;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+}
+
 #btn-dec,
 #btn-log,
+#btn-stats,
 #btn-sign {
 	position: absolute;
 	top: 12px;
@@ -380,7 +405,7 @@ input[type="submit"]:hover {
 }
 
 .login input[type="radio"] {
-	/*position: relative;*/
+    /*position: relative;*/
 	top: 44px;
 	left: -60px;
 	margin: 0 auto 70px;
@@ -391,15 +416,75 @@ input[type="submit"]:hover {
 }
 
 input[type="radio"]:hover {
-	cursor: pointer;
+    cursor: pointer;
+}
+.nbQuizz {
+    position: relative;
+    margin-bottom: 40px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    
+}
+.nbQuizz h1 {
+    transform: translateX(-50%);
 }
 
 .each_quest {
 	display: block;
 }
 
+.right_rep .rep_text {
+    background-color: #333;
+    padding: 4px 12px;
+    max-width: 260px;
+    background-color: rgb(34, 39, 50);
+    border-radius: 4px;
+    border: 1px dashed #2ECC72;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.rep_nb {
+    width: 56px;
+    height: 56px;
+    background-color: rgb(34, 39, 50);
+    left: 50%;
+    border-radius: 4px;
+    border-radius: 50%;
+    border: 1px dashed #2ECC72;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.rep_nb h1 {
+    font-family: sevenSegment;
+    color: #FFF;
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+
+
 .quizz {
-	font-family: 'Jost', sans-serif;
+    font-family: 'Jost', sans-serif;
 	position: relative;
 	background-color: #333333bd;
 	box-shadow: 0 4px 4px #222;
@@ -424,6 +509,10 @@ input[type="radio"]:hover {
 .quizz .line {
 	display: block;
 	padding: 22px 0;
+}
+
+.quizz .line h1 {
+    color: #FFF;
 }
 
 .quizz label {
@@ -463,6 +552,24 @@ input[type="radio"]:hover {
 	margin-left: 140px;
 }
 
+.time-select-affich {
+    position: relative;
+    display: inline;
+    padding: 18px 10px 6px;
+    top: -12px;
+    background-color: rgb(34, 39, 50);
+    border-radius: 4px;
+    border: 1px dashed #2ECC72;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.time-select-affich h1 {
+    display: inline;
+    color: #FFF;
+}
+
 .separ_tps {
 	font-family: sevenSegment;
 	color: #FFF;
@@ -483,10 +590,6 @@ input[type="radio"]:hover {
 	border-color: transparent transparent #FFF transparent;
 	padding: 6px;
 	width: 37.5% !important;
-}
-
-.custom-select.quizz-select {
-	width: 40% !important;
 }
 
 textarea {
@@ -609,6 +712,34 @@ textarea {
 	position: absolute;
 	top: 56%;
 	right: 8%;
+}
+
+.right_rep {
+    display: inline-block;
+    position: absolute;
+    width: 325px;
+    right: 0;
+    text-align: center;
+}
+
+.right_rep .rep_nb h1 {
+    display: inline-block;
+}
+.right_rep .rep_nb {
+    position: relative;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+.nomquizz {
+    font-size: 22px;
+    margin: 0;
+    padding: 0 22px;
+    display: block;
 }
 
 .right {
