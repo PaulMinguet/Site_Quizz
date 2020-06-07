@@ -354,6 +354,12 @@ nav ul li a {
 	margin-bottom: 22px;
 }
 
+
+.area_qz{
+	top: 57%;
+	left: 50%;
+}
+
 .login>.area:focus {
 	border-color: #2E712E;
 }

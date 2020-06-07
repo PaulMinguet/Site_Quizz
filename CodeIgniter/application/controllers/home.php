@@ -35,7 +35,7 @@ class Home extends CI_Controller {
         $this->load->view('creer_view');
         $this->load->view('footer');
     }
-
+    
     public function creer_question() {                       //idem pour la page creer question
         $this->load->view('header');
         $this->load->view('nav');

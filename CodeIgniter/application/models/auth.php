@@ -16,6 +16,9 @@
         public $enonce = null;
         public $codeAleatoire = null;
         public $duree = null;
+        public $insert_id = null;
+        public $image_question = null;
+        public $choix1 = null;
 
         public function __construct() {
             parent::__construct();
@@ -55,11 +58,19 @@
             if (isset($_POST['nombreQ']))                           //Idem pour le nombre de questions nombre
                 $this->nb_questions = $_POST['nombreQ'];
 
+            if (isset($_POST['hrs']) && isset($_POST['min']) && isset($_POST['sec']))  
+                $this->duree = $_POST['hrs']*3600 + $_POST['min']*60 + $_POST['sec'];
+
+            /*-----------------------------------------------Questions--------------------------------------*/
+
             if (isset($_POST['enonce']))                            //Idem pour enonce
                 $this->enonce = $_POST['enonce'];
 
-            if (isset($_POST['hrs']) && isset($_POST['min']) && isset($_POST['sec']))  
-                $this->duree = $_POST['hrs']*3600 + $_POST['min']*60 + $_POST['sec'];
+            if (isset($_POST['image']))                            //Idem pour enonce
+                $this->image_question = $_POST['image'];
+
+            if (isset($_POST['choix1']))                            //Idem pour enonce
+                $this->choix1 = $_POST['choix1'];
         }
 
         public function inscription(){                              //Fonction pour l'inscription
@@ -129,8 +140,8 @@
             if(isset($this->nom_quizz)){
                 $this->load->model('fonctions');
                 $this->codeAleatoire = $this->fonctions->codeal();
-                echo $this->codeAleatoire;
-                echo "<br>temps : ".$this->duree."<br>";
+                //echo $this->codeAleatoire;
+                //echo "<br>temps : ".$this->duree."<br>";
                 $data = array(
                     'quizz_nom'         => $this->nom_quizz,
                     'quizz_cle'         => $this->codeAleatoire,
@@ -138,7 +149,29 @@
                     'quizz_nbQuestions' => $this->nb_questions
                 );
                 $this->db->insert('Quizz', $data);
-                echo "<script>alert('Voici le code de votre quizz : ".$this->codeAleatoire."')</script>";
+
+                $this->insert_id = $this->db->insert_id();
+
+                //echo "ID : ".$this->insert_id;
+
+                echo "<script>alert('Voici le code de votre quizz : ".$this->codeAleatoire." (Vous allez pouvoir la retrouver dans la section \"gérer mes quizz\")')</script>";
+            }
+        }
+
+        public function get_last_id(){
+            return $this->insert_id;
+        }
+
+        public function creer_question(){                                    //Fonction de création de quizz
+            if(isset($this->enonce)){
+                $num = 1;
+                $data = array(
+                    'question_num'      => $num,
+                    'question_enonce'   => $this->enonce,
+                    'question_image'    => $this->image,
+                    'quizz_id'          => $this->insert_id
+                );
+                $this->db->insert('Question', $data);
             }
         }
     }

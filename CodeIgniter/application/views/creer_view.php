@@ -1,8 +1,8 @@
-<body onload="onStart();">
+<body onload="onStart(); reset();">
     
     <h1 class="title">Créer le Quizz !</h1>
             
-    <form method="post">
+    <form action="creer_question" method="post">
         <div class="quizz">
             <hr class="separate"/>
             <div class="line">
@@ -11,13 +11,16 @@
             </div>
             <div class="line">
                 <label for="nombre"><span class="nb" id="nb2">2</span> Nombre de questions</label>
-                <div class="custom-select quizz-select" onclick="colorizeNB2()">
+                <div class="select-nb">
                     <select name="nombreQ" id="nombreQ" onclick="colorizeNB2()" required>
-                        <?php for($i = 0; $i <= 10; $i++){
-                            echo "<option value='".$i."'>".$i."</option>";
-                        }?>
+                        <?php for($i = 0; $i <= 9; $i++){
+                                echo "<option value='".$i."'>0".$i."</option>";
+                            }
+                            for($i = 10; $i <= 30; $i++){
+                                echo "<option value='".$i."'>".$i."</option>";
+                            }
+                        ?>
                     </select>
-                    <script src="<?php echo base_url(); ?>js/btnSelect.js"></script>
                 </div>
             </div>
             <div class="line">
@@ -57,18 +60,16 @@
         </div>
         <br>
         
-        <span id="nb3"></span>
-        <span id="nb4"></span>
-        <script src="<?php echo base_url(); ?>js/nb_colored.js"></script>
 
-        <div class="quizz" style="height: 150px;">
-            <button class="add">+<span>Ajouter une question</span></button>
-            <hr class="separate"/>
+        <div class='quizz' style='height: 150px; width: 500px'>
+            <button class='add' style='top: 8px; z-index: 100'>+<span>Ajouter une question</span></button>
+            <hr class='separate'/>
             <br><br><br>
-            <div class="final_btn">
-                <div class="container">
-                    <input type="submit" name="save" value="Enregistrer" class="save_btn">
-                    <input type="submit" name="reset" value="Abandonner" class="reset_btn">
+            <div class='final_btn'>
+                <div class='container' style='top: 50px;'>
+                    <input type='submit' name='save' value='Enregistrer' class='save_btn' id='save_btn'>
+                    <input type='submit' name='reset' value='Abandonner' class='reset_btn' id='reset_btn' onclick="reset();">
+                    <script src='<?php echo base_url(); ?>js/reload.js'></script>
                 </div>
             </div>
             </hr>
