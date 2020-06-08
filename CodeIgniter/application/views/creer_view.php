@@ -2,7 +2,7 @@
     
     <h1 class="title">Créer le Quizz !</h1>
             
-    <form action="creer_question" method="post">
+    <form method="post">
         <div class="quizz">
             <hr class="separate"/>
             <div class="line">
@@ -62,7 +62,8 @@
         
 
         <div class='quizz' style='height: 150px; width: 500px'>
-            <button class='add' style='top: 8px; z-index: 100'>+<span>Ajouter une question</span></button>
+            <button class='add' style='top: 8px; z-index: 100;'>+</button>
+            <span class='add-span' style=" z-index: 200;">Ajouter un quizz</span>
             <hr class='separate'/>
             <br><br><br>
             <div class='final_btn'>
