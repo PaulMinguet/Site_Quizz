@@ -19,10 +19,10 @@ class Home extends CI_Controller {
     public function jeu() {                         //idem pour la page jeu
         $this->load->view('nav');
         $this->load->view('header');
-        $this->load->view('timer');
         $this->load->model('jeu');
         $this->load->view('jeu_view');
         $this->load->view('cactus');
+        $this->load->view('questions');
         $this->load->view('footer');
     }
     
@@ -45,7 +45,7 @@ class Home extends CI_Controller {
         $this->load->view('creer_questions_view');
         $this->load->view('footer');
     }
-    
+
     public function stats() {                       //idem pour la page statistiques
         $this->load->view('header');
         $this->load->view('nav');
@@ -77,7 +77,6 @@ class Home extends CI_Controller {
     public function deco() {                        //idem pour la page deco
         $this->load->view('nav');
         $this->load->view('header');
-        $this->load->view('cactus');
         $this->load->model('deco');
         $this->load->view('footer');
     }

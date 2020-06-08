@@ -2,7 +2,7 @@
     
     <h1 class="title">Créer le Quizz !</h1>
             
-    <form method="post">
+    <form action="creer_question" method="post">
         <div class="quizz">
             <hr class="separate"/>
             <div class="line">
