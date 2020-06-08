@@ -86,6 +86,7 @@ function dragDrop() {
 	dropper.style.display = 'block';
 }
 
+
 area1.addEventListener.onclick = colorizeNB1();
 area2.addEventListener.onclick = colorizeNB2();
 area4.addEventListener.onclick = colorizeNB2(), dragDrop();
