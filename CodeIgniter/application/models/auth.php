@@ -174,5 +174,9 @@
                 $this->db->insert('Question', $data);
             }
         }
+
+        public function stats() {
+            # code...
+        }
     }
 ?>
