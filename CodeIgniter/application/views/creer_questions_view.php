@@ -21,7 +21,7 @@ echo "Last ID = ".$last_id;
             <div class='each_quest'>
                 <div class='line'>
                     <label for='enonce'><span class='nb' id='nb1'>1</span> Enoncé de la Q".$i."</label>
-                    <textarea rows='2' cols='22' name='enonce' id='enonce' maxlength='500' placeholder='(500 caractères max.)' class='area_qz' onclick='colorizeNB1()' style='right:0;' required></textarea>
+                    <textarea rows='2' cols='22' name='enonce' id='enonce' maxlength='500' placeholder='(500 caractères max.)' onclick='colorizeNB1()' style='left:55%;' required></textarea>
                 </div>
                 <div class='line'>
                     <label for='image'><span class='nb' id='nb2'>2</span> Ajouter une image</label>
