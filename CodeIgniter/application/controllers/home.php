@@ -14,8 +14,7 @@ class Home extends CI_Controller {
         $this->load->view('accueil_view');          //Chargement de la vue d'accueil
         $this->load->view('cactus');                //Chargement de la vue cactus
         $this->load->view('footer');                //Chargement du footer
-        $this->load->view('progress_bar');                //Chargement du footer
-
+        $this->load->view('progress_bar');          //Chargement de la barre de progression
     }
     
     public function jeu() {                         //idem pour la page jeu

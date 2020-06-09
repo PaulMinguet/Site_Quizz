@@ -11,8 +11,6 @@
 $last_id = null;
 $last_id = $this->auth->get_last_id();
 
-echo "Last ID = ".$last_id;
-
     for($i = 1; $i <= 10; $i++){
     echo "
     
