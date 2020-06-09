@@ -129,8 +129,8 @@ nav ul li a {
 
 #nomnav {
 	position: relative;
-	left: 30px;
-	padding: 6px 12px 6px 8px;
+	left: -4px;
+	padding: 6px 12px 6px 2px;
 	letter-spacing: 1px;
 	color: #FFF;
 }
@@ -164,10 +164,10 @@ nav ul li a {
 
 #btn-stats:not(hover) {
     transition: all .4s;
-    -webkit-transition: all .4s;
-    -moz-transition: all .4s;
-    -ms-transition: all .4s;
-    -o-transition: all .4s;
+    -webkit-transition:;
+    -moz-transition:;
+    -ms-transition:;
+    -o-transition:;
 }
 #btn-stats:hover {
     background-color: rgb(49, 138, 255);
@@ -178,7 +178,13 @@ nav ul li a {
     -ms-transition: all .4s;
     -o-transition: all .4s;
 }
+#btn-play {
+    right: 620px;
+    color: rgb(255, 225, 0);
+    background-color: rgb(44, 0, 106);
+}
 
+#btn-play,
 #btn-dec,
 #btn-log,
 #btn-stats,
@@ -534,6 +540,7 @@ input[type="radio"]:hover {
 
 
 .quizz {
+    z-index: 10000;
     font-family: 'Jost', sans-serif;
 	position: relative;
 	background-color: #333333bd;
@@ -635,6 +642,7 @@ input[type="radio"]:hover {
 /* ---- Barre de réussite ---- */
 
 .bar_reussite {
+    z-index: 10000;
     position: relative;
     left: 50%;
     width: 660px;
@@ -845,6 +853,10 @@ textarea {
     padding: 0 22px;
     display: block;
 }
+.cle {
+    font-size: 12px;
+    padding: 0 52px;
+}
 
 .right {
 	position: absolute;
@@ -994,17 +1006,14 @@ textarea {
 }
 
 .container-time {
-	position: relative;
-	left: 50%;
+	position: fixed;
+    right: 10px;
+    top: 70px;
 	width: 200px;
 	background-color: rgb(34, 39, 50);
 	border-radius: 40px;
 	border: 1px dashed #2ECC72;
-	transform: translateX(-50%);
-	-webkit-transform: translateX(-50%);
-	-moz-transform: translateX(-50%);
-	-ms-transform: translateX(-50%);
-	-o-transform: translateX(-50%);
+	
 	-webkit-border-radius: 40px;
 	-moz-border-radius: 40px;
 	-ms-border-radius: 40px;

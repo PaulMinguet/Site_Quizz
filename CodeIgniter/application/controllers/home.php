@@ -20,10 +20,11 @@ class Home extends CI_Controller {
     public function jeu() {                         //idem pour la page jeu
         $this->load->view('nav');
         $this->load->view('header');
+        $this->load->view('timer');
+
         $this->load->model('jeu');
         $this->load->view('jeu_view');
         $this->load->view('cactus');
-        $this->load->view('questions');
         $this->load->view('footer');
         $this->load->view('progress_bar');
     }
@@ -32,7 +33,6 @@ class Home extends CI_Controller {
         $this->load->view('header');
         $this->load->view('nav');
         $this->load->view('cactus');
-        //$this->load->view('timer');
         $this->load->model('creer');
         $this->load->view('creer_view');
         $this->load->view('footer');

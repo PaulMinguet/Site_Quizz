@@ -20,7 +20,7 @@ if (secondes < 10) {
 } else {
 }
 function countDown() {
-    secondes--;
+    //secondes--;
     if (secondes == 0) {
         minutes--;
     	secondes = 59;
