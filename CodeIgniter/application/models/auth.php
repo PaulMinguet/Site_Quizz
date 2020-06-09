@@ -169,7 +169,7 @@
 
                 //echo "ID : ".$this->insert_id;
 
-                echo "<script>alert('Voici le code de votre quizz : ".$this->codeAleatoire." (Vous allez pouvoir la retrouver dans la section \"gérer mes quizz\")')</script>";
+                echo "<script>alert('Voici le code de votre quizz : ".$this->codeAleatoire." (Vous allez pouvoir la retrouver dans la section \"statistiques\")')</script>";
             }
         }
 
@@ -224,7 +224,7 @@
                                 <div class='line'>
                                     <label for='nomqz'><span class='nb' id='nb2'>2</span> Clé du Quizz</label>
                                     <div class='right_rep'>
-                                        <h1 class='nomquizz rep_text'>".$row["quizz_cle"]."</h1>
+                                        <h1 class='nomquizz rep_text cle'>".$row["quizz_cle"]."</h1>
                                     </div>
                                 </div>
                                 <div class='line'>
