@@ -11,14 +11,13 @@
         <div class="quizz">
             <hr class="separate"/>
             <div class="line">
-                <label for="nomqz"><span class="nb" id="nb1">1</span> Nom du Quizz</label>
+                <label for="nomqz"><span class="nb" id="nb1" style="background-color: #2c006a; color: #ffe100; padding: 12px 13px;"><i class="fas fa-bahai"></i></span> Nom du Quizz</label>
                 <div class="right_rep">
-                    <h1 class="nomquizz rep_text">Tarabistouilles</h1>
+                    <h1 class="nomquizz rep_text">Nom du TRUDDDZS DXS ffr</h1>
                 </div>
-                <!--<input type="text" name="nomqz" id="nomqz" class="area_qz" placeholder="Nom" onclick="colorizeNB1()" required autofocus/>-->
             </div>
             <div class="line">
-                <label for="nombre"><span class="nb" id="nb2">2</span> Nombre de questions</label>
+                <label for="nombre"><span class="nb" id="nb2" style="background-color: #2c006a; color: #ffe100; padding: 12px 13px;"><i class="fas fa-bahai"></i></span> Nombre de questions</label>
                 <div class="right_rep">
                     <div class="rep_nb">
                         <h1>3</h1>
@@ -50,46 +49,39 @@
     <div class="container">
         <div class="nbQuizz rep_nb"><h1><?php echo "Q1";?> </h1></div>
        
-        <div class="quizz">
-            <hr class="separate"/>
+        <form class="quizz">
             <div class="line">
-                <label for="nomqz"><span class="nb" id="nb1">1</span> Énoncé de la question</label>
-                <div class="right_rep">
-                    <h1 class="nomquizz rep_text">Crazy Frog</h1>
+                <div class="enonce">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quam pariatur reiciendis ea labore esse assumenda excepturi dicta, fuga aliquam. Architecto molestias ea itaque eius error velit hic adipisci sit?</p>
                 </div>
-                <!--<input type="text" name="nomqz" id="nomqz" class="area_qz" placeholder="Nom" onclick="colorizeNB1()" required autofocus/>-->
             </div>
-            <div class="line">
-                <label for="nombre"><span class="nb" id="nb2">2</span> Votre réponse</label>
-                <div class="right_rep">
-                    <div class="rep_nb">
-                        <h1>3</h1>
-                    </div>
-                </div>
+            <div class="line-rep">
+                <label for="choix1">Choix 1</label>
+                <input type="radio" name="choix1" id="" class='input_rep'>
+                <label for="choix1">Choix 2</label>
+                <input type="radio" name="choix2" id="" class='input_rep'>
             </div>
             
-        </div>
+        </form>
     </div>
     <div class="container">
         <div class="nbQuizz rep_nb"><h1><?php echo "Q2";?> </h1></div>
         <div class="quizz">
-            <hr class="separate"/>
             <div class="line">
-                <label for="nomqz"><span class="nb" id="nb1">1</span> Énoncé de la question</label>
-                <div class="right_rep">
-                    <h1 class="nomquizz rep_text">Jacquouille</h1>
+                <div class="enonce">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quam pariatur reiciendis ea labore esse assumenda excepturi dicta, fuga aliquam. Architecto molestias ea itaque eius error velit hic adipisci sit?</p>
                 </div>
-                <!--<input type="text" name="nomqz" id="nomqz" class="area_qz" placeholder="Nom" onclick="colorizeNB1()" required autofocus/>-->
             </div>
-            <div class="line">
-                <label for="nombre"><span class="nb" id="nb2">2</span> Votre réponse</label>
-                <div class="right_rep">
-                    <div class="rep_nb">
-                        <h1>3</h1>
-                    </div>
-                </div>
+            <div class="line-rep">
+                <label for="choix1">Choix 1</label>
+                <input type="radio" name="choix1" id="" class='input_rep'>
+                <label for="choix1">Choix 2</label>
+                <input type="radio" name="choix2" id="" class='input_rep'>
             </div>
             
         </div>
     </div>
+
+    <input type='submit' name='send' value='Envoyer' class='send_btn' id='send_btn'>
+
 </body>
