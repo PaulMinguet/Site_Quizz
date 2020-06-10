@@ -20,11 +20,7 @@ if (secondes < 10) {
 } else {
 }
 function countDown() {
-<<<<<<< HEAD
     //secondes--;
-=======
-    secondes--;
->>>>>>> origin/paul
     if (secondes == 0) {
         minutes--;
     	secondes = 59;

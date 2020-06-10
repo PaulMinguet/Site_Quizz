@@ -3,6 +3,6 @@
     <h1 class="title">Statistiques</h1>
     <br>
     <?php 
-        echo $this->auth->getStatsQuizz();
+        echo $this->stats_bd->getStatsQuizz();
     ?>
 </body>

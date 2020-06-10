@@ -6,8 +6,8 @@
 
             $title = "Quiz | SIGN IN";
 
-            $this->load->model('auth');		//Chargement du modele auth.php
-           	$this->auth->inscription();		//Chargement de la fonction inscription() de auth.php
+            $this->load->model('inscription_bd');		//Chargement du modele inscription_bd
+           	$this->inscription_bd->inscription();		//Chargement de la fonction inscription() de inscription_bd
 		} 
 	}
 ?>

@@ -6,8 +6,8 @@
 
 			$title = "Quiz | LOG IN";
 
-			$this->load->model('auth');		//Chargement du modele auth.php
-	        $this->auth->connexion();		//Chargement de la fonction connexion() de auth.php
+			$this->load->model('connexion_bd');		//Chargement du modele connexion_bd.php
+	        $this->connexion_bd->connexion();		//Chargement de la fonction connexion() de connexion_bd.php
 		} 
 	}
 ?>

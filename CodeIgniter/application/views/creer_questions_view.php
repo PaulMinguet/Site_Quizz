@@ -10,16 +10,12 @@
 <?php
 $last_id = null;
 $last_id = $this->auth->get_last_id();
+echo "ID = ".$last_id."<br>";
 
-<<<<<<< HEAD
-=======
-echo "Last ID = ".$last_id;
-
->>>>>>> origin/paul
     for($i = 1; $i <= 10; $i++){
     echo "
     
-        <div class='quizz' style='height: 575px;'>
+        <div class='quizz' style='height: 500px;'>
             <hr class='separate'/>
             <div class='each_quest'>
                 <div class='line'>
@@ -45,26 +41,17 @@ echo "Last ID = ".$last_id;
                     </div>
                 </div>
                 <div class='line line5'>
-                    <label for='reponse'><span class='nb' id='nb3'>3</span> Réponse</label>
+                    <label for='reponse'><span class='nb' id='nb3'>3</span> Réponse(s)<br><br>(Chochez les bonnes réponses)</label>
                 </div>
                 <div class='line reponse'>
-                    <label for='nb_rep' class='sous_q'><span class='material-icons arrow'>arrow_right_alt</span> Type</label>
-                    <div class='right'>
-                        <div class='radio_form'>
-                            <label for='unique'>Bouton radio (réponse unique)</label>
-                            <input id='unique' type='radio' name='statep' value='unique' onchange='choixUnique()'  onclick=''/>
-                        </div>
-                        <div class='radio_form'>
-                            <label for='multi'>Checkbox</label>
-                            <input id='multi' type='radio' name='statep' value='multi' onchange='choixMultiple()'  onclick=''/>
-                        </div>
-                    </div>
-                    
-                    <label for='nb_rep' class='sous_q'><span class='material-icons arrow'>arrow_right_alt</span> Choix</label>
-                    <input type='text' name='choix1' id='area_choix1' class='area_qz' placeholder='Entrez la possibilité 1' onclick='' required/>
-                    <input type='text' name='choix2' id='area_choix2' class='area_qz' style='margin-top:8%;' placeholder='Entrez la possibilité 2' onclick='' required/>
-                    <input type='text' name='choix3' id='area_choix3' class='area_qz' style='margin-top:16%;' placeholder='Entrez la possibilité 3' onclick='' required/>
-                    <input type='text' name='choix4' id='area_choix4' class='area_qz' style='margin-top:24%;' placeholder='Entrez la possibilité 4' onclick='' required/>
+                    <input type='checkbox' name='bonneRep".(($i-1)*4+1)."' value='1' style='right: 32%; margin-top: 2%'>
+                    <input type='text' name='choix1' id='area_choix".(($i-1)*4+1)."' class='area_qz' placeholder='Entrez la possibilité 1' onclick='' required/>
+                    <input type='checkbox' name='bonneRep".(($i-1)*4+2)."'' value='1' style='right: 32%; margin-top: 10%'>
+                    <input type='text' name='choix2' id='area_choix".(($i-1)*4+2)."' class='area_qz' style='margin-top:8%;' placeholder='Entrez la possibilité 2' onclick='' required/>
+                    <input type='checkbox' name='bonneRep".(($i-1)*4+3)."' value='1' style='right: 32%; margin-top: 18%'>
+                    <input type='text' name='choix3' id='area_choix".(($i-1)*4+3)."' class='area_qz' style='margin-top:16%;' placeholder='Entrez la possibilité 3' onclick='' required/>
+                    <input type='checkbox' name='bonneRep".(($i-1)*4+4)."' value='1' style='right: 32%; margin-top: 26%'>
+                    <input type='text' name='choix4' id='area_choix".(($i-1)*4+4)."' class='area_qz' style='margin-top:24%;' placeholder='Entrez la possibilité 4' onclick='' required/>
                 </div>
             </div>
             </hr>
@@ -73,7 +60,7 @@ echo "Last ID = ".$last_id;
     ";
     }
     ?>
-    </form>
+    </form>""
     <br><br><br>
     <div class='quizz' style='height: 150px; width: 500px'>
         <button class='add' style='top: 8px; z-index: 100;'>+</button>
