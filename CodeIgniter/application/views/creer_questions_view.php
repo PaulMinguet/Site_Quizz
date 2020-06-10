@@ -11,6 +11,11 @@
 $last_id = null;
 $last_id = $this->auth->get_last_id();
 
+<<<<<<< HEAD
+=======
+echo "Last ID = ".$last_id;
+
+>>>>>>> origin/paul
     for($i = 1; $i <= 10; $i++){
     echo "
     

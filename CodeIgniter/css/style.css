@@ -129,8 +129,13 @@ nav ul li a {
 
 #nomnav {
 	position: relative;
+<<<<<<< HEAD
 	left: -4px;
 	padding: 6px 12px 6px 2px;
+=======
+	left: 30px;
+	padding: 6px 12px 6px 8px;
+>>>>>>> origin/paul
 	letter-spacing: 1px;
 	color: #FFF;
 }
@@ -164,6 +169,7 @@ nav ul li a {
 
 #btn-stats:not(hover) {
     transition: all .4s;
+<<<<<<< HEAD
     -webkit-transition:;
     -moz-transition:;
     -ms-transition:;
@@ -171,6 +177,15 @@ nav ul li a {
 }
 #btn-stats:hover {
     background-color: #318aff;
+=======
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+}
+#btn-stats:hover {
+    background-color: rgb(49, 138, 255);
+>>>>>>> origin/paul
     color: #FFF;
     transition: all .4s;
     -webkit-transition: all .4s;
@@ -178,6 +193,7 @@ nav ul li a {
     -ms-transition: all .4s;
     -o-transition: all .4s;
 }
+<<<<<<< HEAD
 #btn-play {
     right: 620px;
     color: #ffe100;
@@ -185,6 +201,9 @@ nav ul li a {
 }
 
 #btn-play,
+=======
+
+>>>>>>> origin/paul
 #btn-dec,
 #btn-log,
 #btn-stats,
@@ -540,7 +559,10 @@ input[type="radio"]:hover {
 
 
 .quizz {
+<<<<<<< HEAD
     z-index: 10000;
+=======
+>>>>>>> origin/paul
     font-family: 'Jost', sans-serif;
 	position: relative;
 	background-color: #333333bd;
@@ -595,6 +617,7 @@ input[type="radio"]:hover {
     position: relative;
     top: -2px;
     left: 112px;
+<<<<<<< HEAD
 }
 
 #nbStart>i {
@@ -615,6 +638,28 @@ input[type="radio"]:hover {
 	margin-left: 140px;
 }
 
+=======
+}
+
+#nbStart>i {
+	background-color: #1A73E8;
+	color: #FFF;
+	padding: 12px 14px;
+	margin-right: 12px;
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	-ms-border-radius: 100%;
+	-o-border-radius: 100%;
+}
+
+.time-select, .select-nb {
+    position: relative;
+	display: inline;
+	margin-left: 140px;
+}
+
+>>>>>>> origin/paul
 .time-select-affich {
     position: relative;
     display: inline;
@@ -642,17 +687,27 @@ input[type="radio"]:hover {
 /* ---- Barre de réussite ---- */
 
 .bar_reussite {
+<<<<<<< HEAD
     z-index: 10000;
+=======
+>>>>>>> origin/paul
     position: relative;
     left: 50%;
     width: 660px;
     border-radius: 12px;
     box-shadow: 0 3px 6px #333;
     transform: translateX(-50%);
+<<<<<<< HEAD
     -webkit-transform:;
     -moz-transform:;
     -ms-transform:;
     -o-transform:;
+=======
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+>>>>>>> origin/paul
 }
 
 .bar_reussite ul {
@@ -848,6 +903,7 @@ textarea {
     -o-transform: translateX(-50%);
 }
 .nomquizz {
+<<<<<<< HEAD
     top: -8px;
     font-size: 18px;
     margin: 0;
@@ -885,6 +941,12 @@ textarea {
     left: 0;
     margin: 0;
     padding: 0;
+=======
+    font-size: 22px;
+    margin: 0;
+    padding: 0 22px;
+    display: block;
+>>>>>>> origin/paul
 }
 
 .right {
@@ -950,6 +1012,7 @@ textarea {
 	-moz-transition: all .3s;
 	-ms-transition: all .3s;
 	-o-transition: all .3s;
+<<<<<<< HEAD
 }
 
 /* --- Send btn --- */
@@ -967,6 +1030,8 @@ textarea {
     -moz-border-radius: 6px;
     -ms-border-radius: 6px;
     -o-border-radius: 6px;
+=======
+>>>>>>> origin/paul
 }
 
 /*  ---- infobulle ----- */
@@ -1052,14 +1117,27 @@ textarea {
 }
 
 .container-time {
+<<<<<<< HEAD
 	position: fixed;
     right: 10px;
     top: 70px;
+=======
+	position: relative;
+	left: 50%;
+>>>>>>> origin/paul
 	width: 200px;
 	background-color: rgb(34, 39, 50);
 	border-radius: 40px;
 	border: 1px dashed #2ECC72;
+<<<<<<< HEAD
 	
+=======
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+>>>>>>> origin/paul
 	-webkit-border-radius: 40px;
 	-moz-border-radius: 40px;
 	-ms-border-radius: 40px;
@@ -1087,6 +1165,7 @@ textarea {
     text-align: center;
     font-family: 'Metal Mania', cursive;
     text-transform: uppercase;
+<<<<<<< HEAD
     color: #3e0094;
     font-size: 22px;
     padding: 6px 0;
@@ -1131,4 +1210,9 @@ textarea {
     right: 0;
     width: 100%;
     height: 100%;
+=======
+    color: rgb(62, 0, 148);
+    font-size: 22px;
+    padding: 6px 0;
+>>>>>>> origin/paul
 }

@@ -12,8 +12,15 @@
         <li><a href="../home/signin" id="btn-sign"><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Sign In</a></li>
         <li><a href="../home/login" id="btn-log"><i class="fas fa-key"></i>&nbsp;&nbsp;Log In</a></li>
         <?php if(isset($_SESSION['username'])){
+<<<<<<< HEAD
             if($_SESSION['statut'] == 'professeur'){
                 echo "<li><a href='../home/stats' id='btn-stats'><i class='far fa-chart-bar'></i>&nbsp;&nbsp;Statistiques</a></li>";
+=======
+            if(isset($_SESSION['statut'])){
+                if($_SESSION['statut'] == 'professeur'){
+                    echo "<li><a href='../home/stats' id='btn-stats'><i class='far fa-chart-bar'></i>&nbsp;&nbsp;Statistiques</a></li>";
+                }
+>>>>>>> origin/paul
             }
         } 
         ?>
