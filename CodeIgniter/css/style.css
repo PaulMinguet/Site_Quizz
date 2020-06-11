@@ -1057,6 +1057,9 @@ textarea {
 	position: fixed;
 	bottom: -222px;
 }
+#cac_left {
+    left: 0;
+}
 
 #cac_right {
 	position: fixed;
