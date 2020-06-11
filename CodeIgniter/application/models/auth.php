@@ -11,7 +11,9 @@
         public $duree = null;
         public $insert_id = null;
         public $image_question = null;
-        public $choix1 = null;
+        public $num = 1;
+        public $bonnerep = array();
+        public $choix = array();
 
         public function __construct() {
             parent::__construct();
@@ -26,16 +28,6 @@
             if (isset($_POST['hrs']) && isset($_POST['min']) && isset($_POST['sec']))  
                 $this->duree = $_POST['hrs']*3600 + $_POST['min']*60 + $_POST['sec'];
 
-            /*-----------------------------------------------Questions--------------------------------------*/
-
-            if (isset($_POST['enonce']))                            //Idem pour enonce
-                $this->enonce = $_POST['enonce'];
-
-            if (isset($_POST['image']))                            //Idem pour enonce
-                $this->image_question = $_POST['image'];
-
-            if (isset($_POST['choix1']))                            //Idem pour enonce
-                $this->choix1 = $_POST['choix1'];
         }
         
         public function deconnexion(){                              //Fonction de déconnexion
@@ -102,20 +94,57 @@
         }
 
         public function creer_question(){                                    //Fonction de création de quizz
-            if(isset($this->enonce)){
-                $num = 1;
-                $data = array(
-                    'question_num'      => $num,
-                    'question_enonce'   => $this->enonce,
-                    'question_image'    => $this->image,
-                    'quizz_id'          => $this->insert_id
-                );
-                $this->db->insert('Question', $data);
-            }
-        }
+            for($i = 1; $i <= 2; $i++){
 
-        public function stats() {
-            # code...
+                if (isset($_POST['enonceQ'.$i]))
+                    $this->enonce = $_POST['enonceQ'.$i];
+
+                if (isset($_POST['image']))
+                    $this->image_question = $_POST['image'];
+
+                if(isset($this->enonce)){
+                    $data = array(
+                        'question_num'      => $this->num,
+                        'question_enonce'   => $this->enonce,
+                        'question_image'    => $this->image_question,
+                        'quizz_id'          => 1
+                    );
+                    $this->db->insert('Question', $data);
+                    $this->num++;
+
+                    echo "Question ID : ".$this->num."<br>";
+                }
+
+                //echo "énoncé : ".$this->enonce."<br>";
+
+                for($j = 1; $j <= 4; $j++){
+
+                    if (isset($_POST['choix'.(($i-1)*4+$j)]))
+                        $this->choix[$i-1] = $_POST['choix'.(($i-1)*4+1+$j)];
+
+                    if (isset($_POST['bonneRep'.(($i-1)*4+1)])){
+                        if($_POST['bonneRep'.(($i-1)*4+1)] == 1){
+                            $this->bonnerep[$j-1] = 1;
+                            //echo "Bonne rep n°".$j." = 1<br>";
+                        }else{
+                            $this->bonnerep[$j-1] = 0;
+                            //echo "Bonne rep n°".$j." = 0<br>";
+                        }
+                    }
+
+
+                    if(isset($this->enonce)){
+                        $data = array(
+                            'question_id'       => $i,
+                            'reponse_texte'     => $this->choix[$i-1],
+                            'reponse_num'       => $j,
+                            'reponse_valide'    => $this->bonnerep[$j-1]
+                        );
+                        $this->db->insert('Reponse', $data);
+                    }
+                }
+                //echo "<br>";
+            }
         }
     }
 ?>
