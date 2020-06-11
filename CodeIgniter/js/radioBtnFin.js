@@ -1,1 +1,0 @@
-aff_cach_input('0');
