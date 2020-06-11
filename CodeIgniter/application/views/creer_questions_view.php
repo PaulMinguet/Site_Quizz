@@ -10,7 +10,7 @@
 <?php
 $last_id = null;
 $last_id = $this->auth->get_last_id();
-echo "ID = ".$last_id."<br>";
+//echo "ID = ".$last_id."<br>";
 
     for($i = 1; $i <= 10; $i++){
     echo "
@@ -40,8 +40,8 @@ echo "ID = ".$last_id."<br>";
                         
                     </div>
                 </div>
-                <div class='line line5'>
-                    <label for='reponse'><span class='nb' id='nb3'>3</span> Réponse(s)<br><br>(Chochez les bonnes réponses)</label>
+                <div class='line line3'>
+                    <label for='reponse'><span class='nb' id='nb3'>3</span> Réponse(s)<br><br><span class='coche'>Cochez les bonnes réponses</span></label>
                 </div>
                 <div class='line reponse'>
                     <input type='checkbox' name='bonneRep".(($i-1)*4+1)."' value='1' style='right: 32%; margin-top: 2%'>
