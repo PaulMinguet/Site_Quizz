@@ -12,7 +12,7 @@ $last_id = null;
 $last_id = $this->auth->get_last_id();
 //echo "ID = ".$last_id."<br>";  
 
-    for($i = 1; $i <= 10; $i++){
+    for($i = 1; $i <= 2; $i++){
     echo "
     
         <div class='quizz' style='height: 500px;'>

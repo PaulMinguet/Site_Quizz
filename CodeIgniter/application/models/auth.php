@@ -94,25 +94,24 @@
         }
 
         public function creer_question(){                                    //Fonction de création de quizz
-            for($i = 1; $i <= 10; $i++){
+            for($i = 1; $i <= 2; $i++){
 
-                if (isset($_POST['enonceQ'.$i]))
-                    $this->enonce = $_POST['enonceQ'.$i];
+                if (isset($_POST['enonceQ'.($i)]))
+                    $this->enonce = $_POST['enonceQ'.($i)];
 
                 if (isset($_POST['image']))
                     $this->image_question = $_POST['image'];
 
                 if(isset($this->enonce)){
                     $data = array(
-                        'question_num'      => $this->num,
+                        'question_num'      => $i,
                         'question_enonce'   => $this->enonce,
                         'question_image'    => $this->image_question,
                         'quizz_id'          => 1
                     );
                     $this->db->insert('Question', $data);
-                    $this->num++;
 
-                    echo "Question ID : ".$this->num."<br>";
+                    //echo "Question ID : ".$this->num."<br>";
                 }
 
                 //echo "énoncé : ".$this->enonce."<br>";
@@ -120,16 +119,18 @@
                 for($j = 1; $j <= 4; $j++){
 
                     if (isset($_POST['choix'.(($i-1)*4+$j)]))
-                        $this->choix[$i] = $_POST['choix'.(($i-1)*4+1+$j)];
+                        $this->choix[$i] = $_POST['choix'.(($i-1)*4+$j)];
 
-                    if (isset($_POST['bonneRep'.(($i-1)*4+1)])){
-                        if($_POST['bonneRep'.(($i-1)*4+1)] == 1){
-                            $this->bonnerep[$j] = 1;
-                            //echo "Bonne rep n°".$j." = 1<br>";
+                    if (isset($_POST['bonneRep'.(($i-1)*4+$j)])){
+                        if($_POST['bonneRep'.(($i-1)*4+$j)] == 1){
+                            $this->bonnerep[($j-1)] = 1;
+                            //echo "Rep n°".$_POST['bonneRep'.(($i-1)*4+$j)];
                         }else{
-                            $this->bonnerep[$j] = 0;
-                            //echo "Bonne rep n°".$j." = 0<br>";
+                            $this->$bonnerep[($j-1)] = 0;
+                            //echo "Rep n°".$_POST['bonneRep'.(($i-1)*4+$j)];
                         }
+                    }else{
+                        $this->bonnerep[($j-1)] = 0;
                     }
 
 
@@ -138,7 +139,7 @@
                             'question_id'       => $i,
                             'reponse_texte'     => $this->choix[$i],
                             'reponse_num'       => $j,
-                            'reponse_valide'    => $this->bonnerep[$j]
+                            'reponse_valide'    => $this->bonnerep[$j-1]
                         );
                         $this->db->insert('Reponse', $data);
                     }
