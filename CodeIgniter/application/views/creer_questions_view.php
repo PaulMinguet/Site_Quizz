@@ -62,8 +62,10 @@ for($i = 1; $i <= $nbQ; $i++){
     ?>
     <br><br><br>
     <div class='quizz' style='height: 150px; width: 500px'>
+        <!--
         <button class='add' style='top: 8px; z-index: 100;'>+</button>
         <span class='add-span' style=" z-index: 200;">Ajouter une question</span>
+        -->
         <hr class='separate'/>
         <br><br><br>
         <div class='final_btn'>
@@ -76,5 +78,8 @@ for($i = 1; $i <= $nbQ; $i++){
         </hr>
     </div>
 </form>
+<button class='add' id='add' style='top: 8px; z-index: 1000;'>+</button>
+<span class='add-span' style=" z-index: 200;">Ajouter un quizz</span>
+<script src='<?php echo base_url(); ?>js/btnAddQuizz.js'></script> 
 
 </body>

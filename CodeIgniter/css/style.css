@@ -1007,12 +1007,12 @@ label::before {
 	font-size: 22px;
 }
 
-.quizz .add {
+#add {
 	border: none;
-	position: absolute;
-	top: 2%;
-	left: 50%;
-	font-size: 34px;
+	position: relative;
+    margin-top: 12px;
+    left: 50%;
+    font-size: 34px;
 	padding: 12px 22px;
 	border-radius: 50%;
 	transform: translateX(-50%);
@@ -1026,7 +1026,7 @@ label::before {
 	-o-border-radius: 50%;
 }
 
-.add:not(:hover) {
+#add:not(:hover) {
 	color: #8c14fc;
 	background-color: #ffcc00;
 	transition: all .3s;
@@ -1036,7 +1036,7 @@ label::before {
 	-o-transition: all .3s;
 }
 
-.add:hover {
+#add:hover {
 	cursor: pointer;
 	background-color: #8c14fc;
 	color: #ffcc00;
