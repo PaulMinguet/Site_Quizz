@@ -86,8 +86,8 @@
                 //echo "ID : ".$this->insert_id;
 
                 echo "<script>alert('Voici le code de votre quizz : ".$this->codeAleatoire." (Vous allez pouvoir la retrouver dans la section \"statistiques\")')</script>";
+                header('Location: ./creer_question');
             }
-            //header('Location: ./creer_question');
         }
 
         public function get_last_id(){
@@ -110,53 +110,55 @@
 
         public function creer_question(){                                    //Fonction de création de creer_question
             //echo "last id : ".$_SESSION['last_id']."<br>";
+            if(isset($_POST['enonceQ1'])){
+                for($i = 1; $i <= $this->getNbQuestion(); $i++){
 
-            for($i = 1; $i <= $this->getNbQuestion(); $i++){
+                    if (isset($_POST['enonceQ'.($i)]))
+                        $this->enonce = $_POST['enonceQ'.($i)];
 
-                if (isset($_POST['enonceQ'.($i)]))
-                    $this->enonce = $_POST['enonceQ'.($i)];
-
-                if (isset($_POST['image']))
-                    $this->image_question = $_POST['image'];
-
-                if(isset($this->enonce)){
-                    $data = array(
-                        'question_num'      => $i,
-                        'question_enonce'   => $this->enonce,
-                        'question_image'    => $this->image_question,
-                        'quizz_id'          => $_SESSION['last_id']
-                    );
-                    $this->db->insert('Question', $data);
-                    $q_id = $this->db->insert_id();
-
-                    //echo "Question ID : ".$this->num."<br>";
-                }
-
-                //echo "énoncé : ".$this->enonce."<br>";
-
-                for($j = 1; $j <= 4; $j++){
-
-                    if (isset($_POST['choix'.(($i-1)*4+$j)]))
-                        $this->choix[$i] = $_POST['choix'.(($i-1)*4+$j)];
-
-                    if (isset($_POST['bonneRep'.(($i-1)*4+$j)])){
-                        $this->bonnerep[($j-1)] = 1;
-                    }else{
-                        $this->bonnerep[($j-1)] = 0;
-                    }
-
+                    if (isset($_POST['image']))
+                        $this->image_question = $_POST['image'];
 
                     if(isset($this->enonce)){
                         $data = array(
-                            'question_id'       => $q_id,
-                            'reponse_texte'     => $this->choix[$i],
-                            'reponse_num'       => $j,
-                            'reponse_valide'    => $this->bonnerep[$j-1]
+                            'question_num'      => $i,
+                            'question_enonce'   => $this->enonce,
+                            'question_image'    => $this->image_question,
+                            'quizz_id'          => $_SESSION['last_id']
                         );
-                        $this->db->insert('Reponse', $data);
+                        $this->db->insert('Question', $data);
+                        $q_id = $this->db->insert_id();
+
+                        //echo "Question ID : ".$this->num."<br>";
                     }
+
+                    //echo "énoncé : ".$this->enonce."<br>";
+
+                    for($j = 1; $j <= 4; $j++){
+
+                        if (isset($_POST['choix'.(($i-1)*4+$j)]))
+                            $this->choix[$i] = $_POST['choix'.(($i-1)*4+$j)];
+
+                        if (isset($_POST['bonneRep'.(($i-1)*4+$j)])){
+                            $this->bonnerep[($j-1)] = 1;
+                        }else{
+                            $this->bonnerep[($j-1)] = 0;
+                        }
+
+
+                        if(isset($this->enonce)){
+                            $data = array(
+                                'question_id'       => $q_id,
+                                'reponse_texte'     => $this->choix[$i],
+                                'reponse_num'       => $j,
+                                'reponse_valide'    => $this->bonnerep[$j-1]
+                            );
+                            $this->db->insert('Reponse', $data);
+                        }
+                    }
+                    //echo "<br>";
                 }
-                //echo "<br>";
+                echo "<script>alert('Le quizz a bien été créé ! (Vous allez pouvoir la retrouver dans la section \"statistiques\")')</script>";
             }
         }
     }
