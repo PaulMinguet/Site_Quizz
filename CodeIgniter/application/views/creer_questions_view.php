@@ -8,11 +8,11 @@
     <form method='post'>
 
 <?php
-$last_id = null;
-$last_id = $this->auth->get_last_id();
-echo "ID = ".$last_id."<br>";
+$this->load->model('auth');
+$nbQ = $this->auth->getNbQuestion();
+//echo "nb Questions : ".$nbQ."<br>";
 
-    for($i = 1; $i <= 10; $i++){
+    for($i = 1; $i <= $nbQ; $i++){
     echo "
     
         <div class='quizz' style='height: 500px;'>
@@ -20,7 +20,7 @@ echo "ID = ".$last_id."<br>";
             <div class='each_quest'>
                 <div class='line'>
                     <label for='enonce'><span class='nb' id='nb1'>1</span> Enoncé de la Q".$i."</label>
-                    <textarea rows='2' cols='22' name='enonce' id='enonce' maxlength='500' placeholder='(500 caractères max.)' onclick='colorizeNB1()' style='left:55%;' required></textarea>
+                    <textarea rows='2' cols='22' name='enonceQ".$i."' id='enonce' maxlength='500' placeholder='(500 caractères max.)' onclick='colorizeNB1()' style='left:55%;' required></textarea>
                 </div>
                 <div class='line'>
                     <label for='image'><span class='nb' id='nb2'>2</span> Ajouter une image</label>
@@ -40,18 +40,18 @@ echo "ID = ".$last_id."<br>";
                         
                     </div>
                 </div>
-                <div class='line line5'>
-                    <label for='reponse'><span class='nb' id='nb3'>3</span> Réponse(s)<br><br>(Chochez les bonnes réponses)</label>
+                <div class='line line3'>
+                    <label for='reponse'><span class='nb' id='nb3'>3</span> Réponse(s)<br><br><span class='coche'>Cochez les bonnes réponses</span></label>
                 </div>
                 <div class='line reponse'>
                     <input type='checkbox' name='bonneRep".(($i-1)*4+1)."' value='1' style='right: 32%; margin-top: 2%'>
-                    <input type='text' name='choix1' id='area_choix".(($i-1)*4+1)."' class='area_qz' placeholder='Entrez la possibilité 1' onclick='' required/>
+                    <input type='text' name='choix".(($i-1)*4+1)."' id='area_choix".(($i-1)*4+1)."' class='area_qz' placeholder='Entrez la possibilité 1' onclick=''/>
                     <input type='checkbox' name='bonneRep".(($i-1)*4+2)."'' value='1' style='right: 32%; margin-top: 10%'>
-                    <input type='text' name='choix2' id='area_choix".(($i-1)*4+2)."' class='area_qz' style='margin-top:8%;' placeholder='Entrez la possibilité 2' onclick='' required/>
+                    <input type='text' name='choix".(($i-1)*4+2)."' id='area_choix".(($i-1)*4+2)."' class='area_qz' style='margin-top:8%;' placeholder='Entrez la possibilité 2' onclick=''/>
                     <input type='checkbox' name='bonneRep".(($i-1)*4+3)."' value='1' style='right: 32%; margin-top: 18%'>
-                    <input type='text' name='choix3' id='area_choix".(($i-1)*4+3)."' class='area_qz' style='margin-top:16%;' placeholder='Entrez la possibilité 3' onclick='' required/>
+                    <input type='text' name='choix".(($i-1)*4+3)."' id='area_choix".(($i-1)*4+3)."' class='area_qz' style='margin-top:16%;' placeholder='Entrez la possibilité 3' onclick=''/>
                     <input type='checkbox' name='bonneRep".(($i-1)*4+4)."' value='1' style='right: 32%; margin-top: 26%'>
-                    <input type='text' name='choix4' id='area_choix".(($i-1)*4+4)."' class='area_qz' style='margin-top:24%;' placeholder='Entrez la possibilité 4' onclick='' required/>
+                    <input type='text' name='choix".(($i-1)*4+4)."' id='area_choix".(($i-1)*4+4)."' class='area_qz' style='margin-top:24%;' placeholder='Entrez la possibilité 4' onclick=''/>
                 </div>
             </div>
             </hr>
@@ -60,7 +60,6 @@ echo "ID = ".$last_id."<br>";
     ";
     }
     ?>
-    </form>""
     <br><br><br>
     <div class='quizz' style='height: 150px; width: 500px'>
         <button class='add' style='top: 8px; z-index: 100;'>+</button>
@@ -76,5 +75,6 @@ echo "ID = ".$last_id."<br>";
         </div>
         </hr>
     </div>
+</form>
 
 </body>
