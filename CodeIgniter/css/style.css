@@ -52,10 +52,10 @@ input:focus {
 	top: 2px;
 	left: 50%;
 	transform: translateX(-50%);
-	-webkit-transform:;
-	-moz-transform:;
-	-ms-transform:;
-	-o-transform:;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
 }
 
 .bienvenue img {
@@ -164,10 +164,10 @@ nav ul li a {
 
 #btn-stats:not(hover) {
     transition: all .4s;
-    -webkit-transition:;
-    -moz-transition:;
-    -ms-transition:;
-    -o-transition:;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
 }
 #btn-stats:hover {
     background-color: #318aff;
@@ -651,10 +651,10 @@ input[type="radio"]:hover {
     border-radius: 12px;
     box-shadow: 0 3px 6px #333;
     transform: translateX(-50%);
-    -webkit-transform:;
-    -moz-transform:;
-    -ms-transform:;
-    -o-transform:;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
 }
 
 .bar_reussite ul {
@@ -1100,18 +1100,18 @@ label::before {
 	border-radius: 10px;
 	transform: scale(0) rotate(-12deg);
 	transition: transform .2s;
-	-webkit-transition:;
-	-moz-transition:;
-	-ms-transition:;
-	-o-transition:;
+	-webkit-transition: transform .2s;
+	-moz-transition: transform .2s;
+	-ms-transition: transform .2s;
+	-o-transition: transform .2s;
 	-webkit-transform: scale(0) rotate(-12deg);
 	-moz-transform: scale(0) rotate(-12deg);
 	-ms-transform: scale(0) rotate(-12deg);
 	-o-transform: scale(0) rotate(-12deg);
-	-webkit-border-radius:;
-	-moz-border-radius:;
-	-ms-border-radius:;
-	-o-border-radius:;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
 }
 
 .add:hover~.add-span {
