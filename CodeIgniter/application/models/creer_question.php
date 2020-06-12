@@ -8,7 +8,7 @@
 
             $this->load->model('auth');		//Chargement du modele auth.php
             $this->auth->creer_question();			//Chargement de la fonction creer()) de auth.php
-            
+            $this->auth->getNbQuestion();
 		}
 	}
 ?>

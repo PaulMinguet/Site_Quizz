@@ -8,11 +8,11 @@
     <form method='post'>
 
 <?php
-$last_id = null;
-$last_id = $this->auth->get_last_id();
-//echo "ID = ".$last_id."<br>";  
+$this->load->model('auth');
+$nbQ = $this->auth->getNbQuestion();
+//echo "nb Questions : ".$nbQ."<br>";
 
-    for($i = 1; $i <= 2; $i++){
+    for($i = 1; $i <= $nbQ; $i++){
     echo "
     
         <div class='quizz' style='height: 500px;'>

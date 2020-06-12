@@ -14,6 +14,7 @@
         public $num = 1;
         public $bonnerep = array();
         public $choix = array();
+        public $nbQ = null;
 
         public function __construct() {
             parent::__construct();
@@ -80,7 +81,7 @@
                 );
                 $this->db->insert('Quizz', $data);
 
-                $this->insert_id = $this->db->insert_id();
+                $_SESSION['last_id'] = $this->db->insert_id();
 
                 //echo "ID : ".$this->insert_id;
 
@@ -90,11 +91,27 @@
         }
 
         public function get_last_id(){
-            return $this->insert_id;
+            return $_SESSION['last_id'];
         }
 
-        public function creer_question(){                                    //Fonction de création de quizz
-            for($i = 1; $i <= 2; $i++){
+        public function getNbQuestion(){
+            if(isset($_SESSION['last_id'])){
+                $builder = $this->db->select("quizz_nbQuestions
+                                    FROM Quizz
+                                    WHERE quizz_id = '".$_SESSION['last_id']."'", FALSE);
+                $query = $builder->get();
+                if($query->num_rows() > 0){                         //Si on trouve un résultat alors
+                    foreach ($query->result_array() as $row)
+                        $this->nbQ = $row["quizz_nbQuestions"];   //On assigne à la variable $_SESSION['id'] la valeur trouvée
+                }
+            }
+            return $this->nbQ;
+        }
+
+        public function creer_question(){                                    //Fonction de création de creer_question
+            //echo "last id : ".$_SESSION['last_id']."<br>";
+
+            for($i = 1; $i <= $this->getNbQuestion(); $i++){
 
                 if (isset($_POST['enonceQ'.($i)]))
                     $this->enonce = $_POST['enonceQ'.($i)];
@@ -107,9 +124,10 @@
                         'question_num'      => $i,
                         'question_enonce'   => $this->enonce,
                         'question_image'    => $this->image_question,
-                        'quizz_id'          => 1
+                        'quizz_id'          => $_SESSION['last_id']
                     );
                     $this->db->insert('Question', $data);
+                    $q_id = $this->db->insert_id();
 
                     //echo "Question ID : ".$this->num."<br>";
                 }
@@ -130,7 +148,7 @@
 
                     if(isset($this->enonce)){
                         $data = array(
-                            'question_id'       => $i,
+                            'question_id'       => $q_id,
                             'reponse_texte'     => $this->choix[$i],
                             'reponse_num'       => $j,
                             'reponse_valide'    => $this->bonnerep[$j-1]
