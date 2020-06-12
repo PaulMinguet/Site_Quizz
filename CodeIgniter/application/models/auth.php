@@ -121,14 +121,16 @@
                     if (isset($_POST['choix'.(($i-1)*4+$j)]))
                         $this->choix[$i] = $_POST['choix'.(($i-1)*4+$j)];
 
-                    if (isset($_POST['bonneRep'.(($i-1)*4+1)])){
-                        if($_POST['bonneRep'.(($i-1)*4+1)] == 1){
+                    if (isset($_POST['bonneRep'.(($i-1)*4+$j)])){
+                        if($_POST['bonneRep'.(($i-1)*4+$j)] == 1){
                             $this->bonnerep[($j-1)] = 1;
-                            //echo "Bonne rep n°".$j." = 1<br>";
+                            //echo "Rep n°".$_POST['bonneRep'.(($i-1)*4+$j)];
                         }else{
-                            $this->bonnerep[($j-1)] = 0;
-                            //echo "Bonne rep n°".$j." = 0<br>";
+                            $this->$bonnerep[($j-1)] = 0;
+                            //echo "Rep n°".$_POST['bonneRep'.(($i-1)*4+$j)];
                         }
+                    }else{
+                        $this->bonnerep[($j-1)] = 0;
                     }
 
 
