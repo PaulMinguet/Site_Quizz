@@ -1,12 +1,13 @@
-var dropper = document.getElementById('dropper');
-var btn = document.getElementById('btn_quit');
-var non = document.getElementById('non');
+var each_quest = document.querySelector('each_quest');
+var dropper = each_quest.querySelectorAll(':scope dropper');
+var btn = document.querySelectorAll('btn_quit');
+var non = document.querySelectorAll('non');
 
-dropper.addEventListener('dragover', function (e) {
+dropper.forEach.addEventListener('dragover', function (e) {
 	e.preventDefault(); // Annule l'interdiction de "drop"
 }, false);
 
-dropper.addEventListener('drop', function (e) {
+dropper.forEach.addEventListener('drop', function (e) {
 	e.preventDefault();
 
 	var files = e.dataTransfer.files,
