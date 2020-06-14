@@ -30,7 +30,6 @@
         public function creer_question(){                                    //Fonction de création de quizz
             if(isset($this->enonce)){
                 $num = 1;
-                for()
                 $data = array(
                     'question_num'      => $num,
                     'question_enonce'   => $this->enonce,

@@ -1,11 +1,14 @@
 <?php
+
 	class Jeu extends CI_Model{
+		public function __construct() {
+			parent::__construct();
 
-		function affiche_jeu() {
+			$title = "Quiz | QUIZZ";
 
-            require $this->load->views('msg_log.php');		//Chargement de la vue msg_log.php
-            require $this->load->views('jeu_view.php');	//Chargement de la vue questions.php
-			require $this->load->views('footer.php');		//Chargement de la vue footer.php
+            $this->load->model('jeu_bd');
+            
 		}
 	}
+
 ?>

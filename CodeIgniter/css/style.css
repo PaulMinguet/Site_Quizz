@@ -52,10 +52,10 @@ input:focus {
 	top: 2px;
 	left: 50%;
 	transform: translateX(-50%);
-	-webkit-transform:;
-	-moz-transform:;
-	-ms-transform:;
-	-o-transform:;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
 }
 
 .bienvenue img {
@@ -164,10 +164,10 @@ nav ul li a {
 
 #btn-stats:not(hover) {
     transition: all .4s;
-    -webkit-transition:;
-    -moz-transition:;
-    -ms-transition:;
-    -o-transition:;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
 }
 #btn-stats:hover {
     background-color: #318aff;
@@ -639,6 +639,8 @@ input[type="radio"]:hover {
 	font-size: 60px;
 }
 
+
+
 /* ---- Barre de réussite ---- */
 
 .bar_reussite {
@@ -649,10 +651,10 @@ input[type="radio"]:hover {
     border-radius: 12px;
     box-shadow: 0 3px 6px #333;
     transform: translateX(-50%);
-    -webkit-transform:;
-    -moz-transform:;
-    -ms-transform:;
-    -o-transform:;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
 }
 
 .bar_reussite ul {
@@ -877,26 +879,107 @@ textarea {
     border: 1px dashed #2ECC72;
     margin: 0 12px;
 }
+.enonce > * {
+    display: inline-block;
+}
 .enonce > p {
     position: relative;
     padding: 2px 12px;
-    font-family: 'Jost',
-    sans-serif;
+    font-family: 'Jost',sans-serif;
     letter-spacing: 2px;
     font-weight: normal;
     color: #FFF;
+    text-align: center;
 }
-
-.line-rep {
-    padding: 12px;
-}
-
-.line-rep input, .line-rep label {
-    display: inline-block;
+.quizz .img_added {
     position: relative;
-    left: 0;
-    margin: 0;
-    padding: 0;
+    background-color: rgb(34, 39, 50);
+    border-radius: 8px;
+    border: 1px dashed #2ECC72;
+    width: 150px;
+    height: 150px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.quizz .img_added img {
+    width: inherit;
+    height: 150px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.line_rep {
+    position: relative;
+    margin-top: -18px;
+    padding-top: 0;
+    padding-bottom: 12px;
+    width: 100%;
+}
+
+.line_rep .container2 {
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.line_rep > .container2 > .each_rep {
+    position: relative;
+    display: inline-block;
+    background-color: #2C006A;
+	border: 1px dashed #ffcc00;
+    margin: 10px auto;
+    width: 200px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.line_rep label {
+    display: block;
+    margin: 6px 0;
+    text-align: center;
+}
+
+.line_rep input {
+    display: block;
+    position: relative;
+    margin-bottom: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.line_rep .input_rep_text {
+    padding: 12px !important;
+    width: 180px !important;
+}
+
+
+label::before {
+    content: '';
+    color: #FFF;
+}
+
+.line_rep .container2 .each_rep .input-rep:focus + label {
+    background-color: #007453;
 }
 
 .right {
@@ -967,7 +1050,9 @@ textarea {
 /* --- Send btn --- */
 
 .send_btn {
+    background-color: #9f007f !important;
     position: relative;
+    width: 200px;
     left: 50%;
     border-radius: 6px;
     transform: translateX(-50%);
@@ -979,6 +1064,24 @@ textarea {
     -moz-border-radius: 6px;
     -ms-border-radius: 6px;
     -o-border-radius: 6px;
+}
+
+.send_btn:not(hover) {
+    box-shadow: 0 2px 8px #555;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+}
+.send_btn:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 12px #222;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
 }
 
 /*  ---- infobulle ----- */
@@ -997,18 +1100,18 @@ textarea {
 	border-radius: 10px;
 	transform: scale(0) rotate(-12deg);
 	transition: transform .2s;
-	-webkit-transition:;
-	-moz-transition:;
-	-ms-transition:;
-	-o-transition:;
+	-webkit-transition: transform .2s;
+	-moz-transition: transform .2s;
+	-ms-transition: transform .2s;
+	-o-transition: transform .2s;
 	-webkit-transform: scale(0) rotate(-12deg);
 	-moz-transform: scale(0) rotate(-12deg);
 	-ms-transform: scale(0) rotate(-12deg);
 	-o-transform: scale(0) rotate(-12deg);
-	-webkit-border-radius:;
-	-moz-border-radius:;
-	-ms-border-radius:;
-	-o-border-radius:;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
 }
 
 .add:hover~.add-span {
@@ -1056,6 +1159,11 @@ textarea {
 .cactus {
 	position: fixed;
 	bottom: -222px;
+}
+
+#cac_left {
+    position: fixed;
+    left: 0;
 }
 
 #cac_right {
