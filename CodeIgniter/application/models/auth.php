@@ -15,6 +15,10 @@
         public $bonnerep = array();
         public $choix = array();
         public $nbQ = null;
+        public $choixUsr = array();
+        public $faute = null;
+        public $bon = null;
+        public $scoreUsr = null;
 
         public function __construct() {
             parent::__construct();
@@ -160,6 +164,57 @@
                 }
                 echo "<script>alert('Le quizz a bien été créé ! (Vous allez pouvoir la retrouver dans la section \"statistiques\")')</script>";
             }
+        }
+
+        public function getNbQuestionAcCle(){
+            if(isset($_GET['cle'])){
+                $builder = $this->db->select("quizz_nbQuestions
+                                    FROM Quizz
+                                    WHERE quizz_cle = '".$_GET['cle']."'", FALSE);
+                $query = $builder->get();
+                if($query->num_rows() > 0){                         //Si on trouve un résultat alors
+                    foreach ($query->result_array() as $row)
+                        $this->nbQ = $row["quizz_nbQuestions"];   //On assigne à la variable $_SESSION['id'] la valeur trouvée
+                }
+            }
+            return $this->nbQ;
+        }
+
+        public function terminerQuizz(){
+            for($i = 1; $i <= $this->getNbQuestionAcCle(); $i++){
+                $this->faute = 0;
+                for($j = 1; $j <= 4; $j++){
+                    if(isset($_POST['choix'.$i.'-'.$j])){
+                        //echo "chx".$i."-".$j." : ".$_POST['choix'.$i.'-'.$j]."<br>";
+                        $this->choixUsr[$i][$j] = 1;
+                    }else{
+                        $this->choixUsr[$i][$j] = 0;
+                    }
+                        $builder = $this->db->select("Rep.reponse_valide
+                                    FROM Reponse Rep INNER JOIN Question Ques ON Rep.question_id = Ques.question_id INNER JOIN Quizz Q ON Ques.quizz_id = Q.Quizz_id
+                                    WHERE quizz_cle = '".$_GET['cle']."' AND Ques.question_num = '".$i."' AND Rep.reponse_num = '".$j."'", FALSE);
+                        $query = $builder->get();
+                        if($query->num_rows() > 0){                         //Si on trouve un résultat alors
+                            foreach ($query->result_array() as $row){
+                                //echo "rep valide = ".$row['reponse_valide']."<br>";
+                                if($this->choixUsr[$i][$j] == $row['reponse_valide']){
+                                    //echo "Bonne rep +1<br>";
+                                }else{
+                                    $this->faute++;
+                                    //echo "Mauvaise rep -1<br>";
+                                }
+                            }
+                        }
+
+                }
+                //echo "faute = ".$this->faute."<br>";
+                if($this->faute == 0){
+                    $this->scoreUsr++;
+                    //echo "score = ".$this->scoreUsr."<br><br>";
+                }
+            }
+            if(isset($this->scoreUsr))
+                echo "<h1 class='title'>Votre score : ".($this->scoreUsr*20/$this->getNbQuestionAcCle())."/20</h1>";
         }
     }
 ?>
