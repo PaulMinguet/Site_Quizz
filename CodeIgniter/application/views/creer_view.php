@@ -61,13 +61,10 @@
         <br>
         
 
-        <div class='quizz' style='height: 150px; width: 500px'>
-            <button class='add' style='top: 8px; z-index: 100;'>+</button>
-            <span class='add-span' style=" z-index: 200;">Ajouter un quizz</span>
-            <hr class='separate'/>
-            <br><br><br>
+        <div class='quizz' style='height: 80px; width: 500px'>
+            <hr class='separate' style='top: -5px;'/>
             <div class='final_btn'>
-                <div class='container' style='top: 50px;'>
+                <div class='container' style='top: 44px;'>
                     <input type='submit' name='save' value='Enregistrer' class='save_btn' id='save_btn'>
                     <input type='submit' name='reset' value='Abandonner' class='reset_btn' id='reset_btn' onclick="reset();">
                     <script src='<?php echo base_url(); ?>js/reload.js'></script>
