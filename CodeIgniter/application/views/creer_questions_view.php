@@ -2,17 +2,17 @@
 
     <h1 class='title'>Créer les questions !</h1>
 
-    <form method='post'>
     <script src='<?php echo base_url(); ?>js/dragDrop.js'></script>
     <script src='<?php echo base_url(); ?>js/nb_colored.js'></script>
     <script src='<?php echo base_url(); ?>js/choix.js'></script>
+    <form method='post'>
 
 <?php
 $this->load->model('auth');
 $nbQ = $this->auth->getNbQuestion();
 //echo "nb Questions : ".$nbQ."<br>";
 
-for($i = 1; $i <= $nbQ; $i++){
+    for($i = 1; $i <= $nbQ; $i++){
     echo "
     
         <div class='quizz' style='height: 500px;'>
@@ -27,14 +27,14 @@ for($i = 1; $i <= $nbQ; $i++){
                     <div class='right add_img'>
                         <div class='radio_form'>
                             <label for='oui'>Oui</label>
-                            <input id='oui' class='non' type='radio' name='image' value='oui' onchange=''  onclick='colorizeNB2(); dragDrop();' />
+                            <input id='oui' type='radio' name='image' value='oui' onchange=''  onclick='colorizeNB2(); dragDrop();' />
                         </div>
                         <div class='radio_form'>
                             <label for='non'>Non</label>
-                            <input id='non' class='non' type='radio' name='image' value='non' onchange=''  onclick='colorizeNB2(); dragDrop();' />
+                            <input id='non' type='radio' name='image' value='non' onchange=''  onclick='colorizeNB2(); dragDrop();' />
                         </div>
                         <div class='dropper' id='dropper'>
-                            <span id='btn_quit' class='btn_quit' onclick='btnQuit();'>×</span>
+                            <span id='btn_quit' onclick='btnQuit();'>×</span>
                             <h2>Drag & Drop</h2>
                             </div>
                         
@@ -62,10 +62,8 @@ for($i = 1; $i <= $nbQ; $i++){
     ?>
     <br><br><br>
     <div class='quizz' style='height: 150px; width: 500px'>
-        <!--
         <button class='add' style='top: 8px; z-index: 100;'>+</button>
         <span class='add-span' style=" z-index: 200;">Ajouter une question</span>
-        -->
         <hr class='separate'/>
         <br><br><br>
         <div class='final_btn'>
@@ -78,8 +76,5 @@ for($i = 1; $i <= $nbQ; $i++){
         </hr>
     </div>
 </form>
-<button class='add' id='add' style='top: 8px; z-index: 1000;'>+</button>
-<span class='add-span' style=" z-index: 200;">Ajouter un quizz</span>
-<script src='<?php echo base_url(); ?>js/btnAddQuizz.js'></script> 
 
 </body>
