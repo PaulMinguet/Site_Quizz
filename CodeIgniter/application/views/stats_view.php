@@ -7,17 +7,5 @@
     <?php 
         echo $this->stats_bd->getStatsQuizz();
     ?>
-    <script>
-        $(".actif").click(function () {
-            console.log("actif");
-            $(this).removeClass("onSelect");
-            $(".inactif").addClass("onSelect");
-        });
-        $(".inactif").click(function () {
-            console.log("inactif");
-            $(this).removeClass("onSelect");
-            $(".actif").addClass("onSelect");
-        });
-
-    </script>
+    
 </body>

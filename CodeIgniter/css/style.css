@@ -482,7 +482,12 @@ input[type="radio"]:hover {
     -ms-transition: all .4s;
     -o-transition: all .4s;
 }
-
+.actif {
+    opacity: 1;
+}
+.inactif.init {
+    opacity: .7;
+}
 .actif.onSelect,
 .inactif.onSelect {
     opacity: .7;
