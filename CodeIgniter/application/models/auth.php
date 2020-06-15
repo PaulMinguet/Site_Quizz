@@ -19,6 +19,8 @@
         public $faute = null;
         public $bon = null;
         public $scoreUsr = null;
+        public $QId = null;
+        public $scoreS20 = null;
 
         public function __construct() {
             parent::__construct();
@@ -162,7 +164,7 @@
                     }
                     //echo "<br>";
                 }
-                echo "<script>alert('Le quizz a bien été créé ! (Vous allez pouvoir la retrouver dans la section \"statistiques\")')</script>";
+                echo "<script>alert('Le quizz a bien été créé ! (Vous allez pouvoir le retrouver dans la section \"statistiques\")')</script>";
             }
         }
 
@@ -190,12 +192,13 @@
                     }else{
                         $this->choixUsr[$i][$j] = 0;
                     }
-                        $builder = $this->db->select("Rep.reponse_valide
+                        $builder = $this->db->select("Rep.reponse_valide, Q.quizz_id
                                     FROM Reponse Rep INNER JOIN Question Ques ON Rep.question_id = Ques.question_id INNER JOIN Quizz Q ON Ques.quizz_id = Q.Quizz_id
                                     WHERE quizz_cle = '".$_GET['cle']."' AND Ques.question_num = '".$i."' AND Rep.reponse_num = '".$j."'", FALSE);
                         $query = $builder->get();
                         if($query->num_rows() > 0){                         //Si on trouve un résultat alors
                             foreach ($query->result_array() as $row){
+                                $this->QId = $row['quizz_id'];
                                 //echo "rep valide = ".$row['reponse_valide']."<br>";
                                 if($this->choixUsr[$i][$j] == $row['reponse_valide']){
                                     //echo "Bonne rep +1<br>";
@@ -213,8 +216,18 @@
                     //echo "score = ".$this->scoreUsr."<br><br>";
                 }
             }
-            if(isset($this->scoreUsr))
+            if(isset($this->scoreUsr)){
+                $this->scoreS20 = $this->scoreUsr*20/$this->getNbQuestionAcCle();
+                $data = array(
+                    'quizz_id'          => $this->QId,
+                    'score_prenom'      => $_SESSION['prenom'],
+                    'score_nom'         => $_SESSION['nom'],
+                    'score'             => $this->scoreS20
+                );
+                $this->db->insert('Score', $data);
                 echo "<h1 class='title'>Votre score : ".($this->scoreUsr*20/$this->getNbQuestionAcCle())."/20</h1>";
+
+            }
         }
 
         public function accueil_url(){

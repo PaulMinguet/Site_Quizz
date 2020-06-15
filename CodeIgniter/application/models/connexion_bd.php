@@ -25,7 +25,7 @@
 
         public function connexion(){                                //Fonction pour la connexion
             if(isset($_POST['email'])){                             //Si une adresse email est envoyée[...]
-                $builder = $this->db->select("CONCAT(utilisateur_prenom, ' ', utilisateur_nom) AS username, utilisateur_mail
+                $builder = $this->db->select("utilisateur_nom, utilisateur_prenom, CONCAT(utilisateur_prenom, ' ', utilisateur_nom) AS username, utilisateur_mail
                                             FROM Utilisateur
                                             WHERE   utilisateur_mdp = '".$this->password."' AND utilisateur_mail = '".htmlentities($this->email)."'", FALSE);   //Alors on recherche dans la base de donnée si l'email et le mot de passe correspondent
                 $query = $builder->get();
@@ -34,6 +34,8 @@
                 if($query->num_rows() > 0){                         //Si on trouve un résultat, alors la connexion a réussi
                     foreach ($query->result_array() as $row)        //Alors on transforme notre résultat sous forme de variable
                             $_SESSION['username'] = $row["username"];   //Et on assigne à $_SESSION['username'] la valeur trouvée (nom et prénom)
+                            $_SESSION['nom'] = $row["utilisateur_nom"];
+                            $_SESSION['prenom'] = $row["utilisateur_prenom"];
                             
                     
                     $_SESSION['email'] = $this->email;              //Idem pour le mail
