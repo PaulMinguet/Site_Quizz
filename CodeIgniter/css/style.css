@@ -461,6 +461,38 @@ input[type="radio"]:hover {
     border: 1px dashed #2ECC72;
 }
 
+.actif:not(hover),
+.inactif:not(hover) {
+    box-shadow: none;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+
+}
+.actif:hover,
+.inactif:hover {
+    cursor: pointer;
+    opacity: 1;
+    box-shadow: 0 4px 4px #333;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+}
+.actif {
+    opacity: 1;
+}
+.inactif.init {
+    opacity: .7;
+}
+.actif.onSelect,
+.inactif.onSelect {
+    opacity: .7;
+}
+
 .actif h2 i {
     color: #2ECC72;
 }
