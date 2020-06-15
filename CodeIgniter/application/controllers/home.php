@@ -21,7 +21,6 @@ class Home extends CI_Controller {
         $this->load->view('nav');
         $this->load->view('header');
         $this->load->view('timer');
-
         $this->load->model('jeu');
         $this->load->view('jeu_view');
         $this->load->view('cactus');
@@ -69,7 +68,7 @@ class Home extends CI_Controller {
         $this->load->view('footer');
         $this->load->view('progress_bar');
     }
-    
+
     public function eleve_log() {                       //idem pour la page login élève
         $this->load->view('nav');
         $this->load->view('header');

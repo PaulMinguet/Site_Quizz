@@ -7,6 +7,8 @@
 			$title = "Quiz | QUIZZ";
 
             $this->load->model('jeu_bd');
+            $this->load->model('auth');
+            $this->auth->terminerQuizz();
             
 		}
 	}

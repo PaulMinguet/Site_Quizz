@@ -67,9 +67,12 @@
                         $query = $builder->get();
                         if($query->num_rows() > 0){                         //Si on trouve un résultat alors
                             foreach ($query->result_array() as $row){
+                                if(isset($row['question_num'])){
+                                    $nQues = $row['question_num'];
+                                }
                                 $returnHTMLJeu = $returnHTMLJeu."
                                 <form class='container'>
-                                    <div class='nbQuizz rep_nb'><h1>".$row['question_num']."</h1></div>
+                                    <div class='nbQuizz rep_nb'><h1>".$nQues."</h1></div>
                                    
                                     <div class='quizz'>
                                         <div class='line'>
@@ -85,23 +88,35 @@
 
                                             if($query->num_rows() > 0){                         //Si on trouve un résultat alors
                                                 foreach ($query->result_array() as $row){
-                                                $returnHTMLJeu = $returnHTMLJeu."
-                                                <div class='line_rep'>
-                                                    <div class='container2'>
-                                                        <div class='each_rep'>
-                                                            <label for='choixQ1'>".$row['reponse_texte']."</label>
-                                                            <input type='checkbox' name='choixQ1' value='Choix 2' id='choix1_2' class='input_rep'>                
-                                                        </div>
-                                                    </div>
-                                                </div>";
+                                                    if(!empty($row['reponse_texte'])){
+                                                        $returnHTMLJeu = $returnHTMLJeu."
+                                                        <div class='line_rep'>
+                                                            <div class='container2'>
+                                                                <div class='each_rep'>
+                                                                    <label for='choix".$row['reponse_num']."'>".$row['reponse_texte']."</label>
+                                                                    <input type='checkbox' name='choix".$nQues."-".$row['reponse_num']."' value='1' id='".$nQues."' class='input_rep'>                
+                                                                </div>
+                                                            </div>
+                                                        </div>";
+                                                        //echo "choix : ".$nQues."-".$row['reponse_num']."<br>";
+                                                    }
                                                 }
                                             }
                                             $returnHTMLJeu = $returnHTMLJeu."
-                                                </div>
-                                            </form>";
+                                                </div>";
                             }
                         }
                     }
+                    $returnHTMLJeu = $returnHTMLJeu."<br><div class='quizz' style='height: 100px; width: 500px'>
+        <div class='final_btn'>
+            <div class='container' style='top: 50px; padding-left: 225px'>
+                <input type='submit' name='save' value='Terminer' class='save_btn' id='save_btn'>
+                <script src='<?php echo base_url(); ?>js/reload.js'></script>
+            </div>
+        </div>
+        </hr>
+    </div>
+</form>";
                 }else{
                     echo "<h1>Le quizz demandé est inexistant</h1>";
                 }
