@@ -27,6 +27,15 @@ class Home extends CI_Controller {
         $this->load->view('footer');
         $this->load->view('progress_bar');
     }
+    public function note_eleve() {                         //idem pour la page note
+        $this->load->view('nav');
+        $this->load->view('header');
+        $this->load->model('note_eleve');
+        $this->load->view('note_eleve_view');
+        $this->load->view('cactus');
+        $this->load->view('footer');
+        $this->load->view('progress_bar');
+    }
     
     public function creer() {                       //idem pour la page creer
         $this->load->view('header');

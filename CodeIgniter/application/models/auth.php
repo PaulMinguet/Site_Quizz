@@ -225,8 +225,9 @@
                     'score'             => $this->scoreS20
                 );
                 $this->db->insert('Score', $data);
-                echo "<h1 class='title'>Votre score : ".($this->scoreUsr*20/$this->getNbQuestionAcCle())."/20</h1>";
-
+                echo "<div class='container-score-jeu'>
+                        <p class='score'>Votre score"."<br/>"."<span>".($this->scoreUsr*20/$this->getNbQuestionAcCle())."</span>"."/20</p>
+                    </div>";
             }
         }
 
@@ -248,5 +249,10 @@
                 header('Location: ./jeu?cle='.$_SESSION['cleQuizz']);
             }
         }
+
+        public function note_eleve() {
+            # code...
+        }
+
     }
 ?>

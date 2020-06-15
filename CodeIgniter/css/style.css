@@ -461,6 +461,38 @@ input[type="radio"]:hover {
     border: 1px dashed #2ECC72;
 }
 
+.actif:not(hover),
+.inactif:not(hover) {
+    box-shadow: none;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+
+}
+.actif:hover,
+.inactif:hover {
+    cursor: pointer;
+    opacity: 1;
+    box-shadow: 0 4px 4px #333;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+}
+.actif {
+    opacity: 1;
+}
+.inactif.init {
+    opacity: .7;
+}
+.actif.onSelect,
+.inactif.onSelect {
+    opacity: .7;
+}
+
 .actif h2 i {
     color: #2ECC72;
 }
@@ -1156,6 +1188,78 @@ label::before {
 	background-color: rgb(228, 4, 38);
 }
 
+.score_text {
+    box-shadow: 0 3px 4px #444;
+    text-align: center;
+    position: relative;
+    width: 450px;
+    margin-left: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+.score_text p {
+    font-size: 20px;
+}
+.container-score-jeu {
+    top: 70px;
+    left: 10px;
+    height: 116px;
+    position: fixed;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+.container-score-jeu p {
+    position: relative;
+    top: -36px;
+    font-size: 30px;
+    color: #FFF;
+    line-height: 56px;
+    padding: 8px;
+}
+.container-score-jeu p span {
+    color: #2ECC72;
+
+}
+.container-score,
+.container-score-jeu {
+    box-shadow: 0 3px 4px #444;
+    background-color: rgb(34, 39, 50);
+    border: 1px dashed #2ECC72;
+}
+.container-score {
+    box-shadow: 0 3px 4px #444;
+    position: relative;
+    top: 42px;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(34, 39, 50);
+    border-radius: 50%;
+    border: 1px dashed #2ECC72;
+    transform: translateX(-50%);
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
+}
+.score {
+    position: relative;
+    top: 22px;
+    text-align: center;
+    font-family: sevenSegment;
+    font-size: 45px;
+    color: #2ECC72;
+}
+.score span {
+    color: #FFF;
+}
 .cactus {
 	position: fixed;
 	bottom: -222px;
@@ -1172,18 +1276,19 @@ label::before {
 }
 
 .container-time {
-	position: fixed;
+    position: fixed;
     right: 10px;
     top: 70px;
-	width: 200px;
-	background-color: rgb(34, 39, 50);
-	border-radius: 40px;
-	border: 1px dashed #2ECC72;
-	
-	-webkit-border-radius: 40px;
-	-moz-border-radius: 40px;
-	-ms-border-radius: 40px;
-	-o-border-radius: 40px;
+    width: 200px;
+    box-shadow: 0 3px 4px #444;
+
+    background-color: rgb(34, 39, 50);
+    border-radius: 12px;
+    border: 1px dashed #2ECC72;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
 }
 
 .timer {

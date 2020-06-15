@@ -103,22 +103,14 @@
                                                 }
                                             }
                                             $returnHTMLJeu = $returnHTMLJeu."
-                                                </div>";
+                                                </div><br/><br/>";
                             }
                         }
                     }
-                    $returnHTMLJeu = $returnHTMLJeu."<br><div class='quizz' style='height: 100px; width: 500px'>
-        <div class='final_btn'>
-            <div class='container' style='top: 50px; padding-left: 225px'>
-                <input type='submit' name='save' value='Terminer' class='save_btn' id='save_btn'>
-                <script src='<?php echo base_url(); ?>js/reload.js'></script>
-            </div>
-        </div>
-        </hr>
-    </div>
-</form>";
+                    $returnHTMLJeu = $returnHTMLJeu."<br><input type='submit' name='send' value='Envoyer' class='send_btn' id='send_btn'>
+            </form>";
                 }else{
-                    echo "<h1>Le quizz demandé est inexistant</h1>";
+                    echo "<h1 class='title2 alert'>Le quizz demandé est inexistant</h1>";
                 }
             }
             return $returnHTMLJeu;
