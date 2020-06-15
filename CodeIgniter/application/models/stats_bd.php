@@ -31,10 +31,12 @@
                         $sec = (int) ($row["quizz_duree"]-$hrs*3600-$min*60);
                         $returnHTML = $returnHTML."<div class='container'>
                             <div class='nbQuizz rep_nb'><h1>".$numQuizz."</h1></div>
-                            <div class='statutQuizz actif'>
+                            <div class='statutQuizz actif' id='actif".$numQuizz."'>
                                 <h2><i class='fas fa-check-circle'></i>&nbsp;Actif</h2>
                             </div>
-
+                            <div class='statutQuizz inactif' id='inactif".$numQuizz."'>
+                                <h2><i class='fas fa-bomb'></i>&nbsp;Inactif</h2>
+                            </div>
                             <div class='quizz'>
                                 <hr class='separate'/>
                                 <div class='line'>
@@ -84,12 +86,25 @@
                                     <li class='bof'>Bof Bof</li>
                                 </ul>
                             </div>
-                        </div>";
+                        </div>
+                        <script>
+                            $('#actif".$numQuizz."').click(function () {
+                                console.log($(this).attr('id'));
+                                $(this).removeClass('onSelect');
+                                $('#inactif".$numQuizz."').addClass('onSelect');
+                            });
+                            $('#inactif".$numQuizz."').click(function () {
+                                console.log($(this).attr('id'));
+                                $(this).removeClass('onSelect');
+                                $('#actif".$numQuizz."').addClass('onSelect');
+                            });
+                        </script>";
                         $numQuizz++;
                     }
                 }
             }
             return $returnHTML;
+           
         }
     }
 ?>

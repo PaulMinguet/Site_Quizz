@@ -8,6 +8,7 @@
 			
 			$this->load->model('auth');	//On charge le model "auth"
 			$this->auth->elepro();		//On charge la fonction elepro de auth (cf. auth.php)
+			$this->auth->accueil_url();
 		}
 	}
 ?>

@@ -216,5 +216,24 @@
             if(isset($this->scoreUsr))
                 echo "<h1 class='title'>Votre score : ".($this->scoreUsr*20/$this->getNbQuestionAcCle())."/20</h1>";
         }
+
+        public function accueil_url(){
+            if(isset($_POST['lien'])){
+                $_SESSION['cleQuizz'] = $_POST['lien'];
+                if(isset($_SESSION['username'])){
+                    header('Location: ./jeu?cle='.$_POST['lien']);
+                }else{
+                    header('Location: ./eleve_log');
+                }
+            }
+        }
+
+        public function acces_quizz(){
+            if(isset($_POST['nom'])){
+                $_SESSION['nom'] = $_POST['nom'];
+                $_SESSION['prenom'] = $_POST['prenom'];
+                header('Location: ./jeu?cle='.$_SESSION['cleQuizz']);
+            }
+        }
     }
 ?>
