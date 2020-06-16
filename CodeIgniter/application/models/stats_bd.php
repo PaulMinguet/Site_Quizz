@@ -3,6 +3,8 @@
     class Stats_bd extends CI_Model {
 
         public $email = null;
+        public $moy = 0;
+        public $note = null;
 
         public function __construct() {
             parent::__construct();
@@ -78,28 +80,53 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class='bar_reussite'>
-                                <ul>
-                                    <li class='reussite'>Réussi</li>
-                                    <li class='moyen'>Moyen</li>
-                                    <li class='bof'>Bof Bof</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <script>
-                            $('#actif".$numQuizz."').click(function () {
-                                console.log($(this).attr('id'));
-                                $(this).removeClass('onSelect');
-                                $('#inactif".$numQuizz."').addClass('onSelect');
-                            });
-                            $('#inactif".$numQuizz."').click(function () {
-                                console.log($(this).attr('id'));
-                                $(this).removeClass('onSelect');
-                                $('#actif".$numQuizz."').addClass('onSelect');
-                            });
-                        </script>";
-                        $numQuizz++;
+                            </div>";
+
+                            $builder = $this->db->select("score, COUNT(score) as nbRep
+                                            FROM Score
+                                            WHERE quizz_id = ".$this->auth->getIdParCle($row['quizz_cle']), FALSE); //Alors on effectue une requête pour récupérer le statut de l'utilisateur
+                            $query = $builder->get();
+                            if($query->num_rows() > 0){                         //Si on trouve un résultat alors
+                                $numQuizz = 1;
+                                foreach ($query->result_array() as $rowSc){
+                                    if($rowSc['nbRep'] > 0){
+                                        for($i = 0; $i < $rowSc['nbRep']; $i++){
+                                            $this->note = $rowSc['score'];
+                                            echo "quizz id : ".$this->auth->getIdParCle($row['quizz_cle'])."<br>";
+                                            echo "nbNotes : ".$rowSc['nbRep']."<br>";
+                                            echo "row score : ".$rowSc['score']."<br>";
+                                            echo "note = ".$this->note."<br>";
+                                            $this->moy = $this->moy + $this->note;
+                                            echo "moyenne = ".$this->moy."<br><br>";
+}
+                                        }
+                                    }
+
+                                        $returnHTML = $returnHTML."
+                                        <div class='bar_reussite'>
+                                            <ul>
+                                                <li class='reussite'>Réussi</li>
+                                                <li class='moyen'>".($this->moy/$rowSc['nbRep'])."</li>
+                                                <li class='bof'>Bof Bof</li>
+                                            </ul>
+                                        </div>
+                                    </div>";
+
+                                $returnHTML = $returnHTML."<script>
+                                    $('#actif".$numQuizz."').click(function () {
+                                        console.log($(this).attr('id'));
+                                        $(this).removeClass('onSelect');
+                                        $('#inactif".$numQuizz."').addClass('onSelect');
+                                    });
+                                    $('#inactif".$numQuizz."').click(function () {
+                                        console.log($(this).attr('id'));
+                                        $(this).removeClass('onSelect');
+                                        $('#actif".$numQuizz."').addClass('onSelect');
+                                    });
+                                </script>";
+                                $numQuizz++;
+                            }
+                        
                     }
                 }
             }

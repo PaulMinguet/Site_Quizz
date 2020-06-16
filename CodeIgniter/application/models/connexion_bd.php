@@ -42,7 +42,7 @@
                     echo "<div class='title2 success'>Vous revoilà ".$_SESSION['username']." !"."<br>"."Email : ".$_SESSION['email']." 😇"."</div>"; //Affiche un message de bienvenue
                     // echo "<div class='title2 success'>Session username : ".$_SESSION['username']."<br>"."Session mail : ".$_SESSION['email']."<br>"."</div>";
                 } else{                                             //Si on ne trouve pas de résultat alors la connexion échoue
-                    echo "<div class='title2 alert'>Connexion impossible ! "."<br>". "Inconnu au bataillon 😈<br>(Adresse email ou mot de passe incorrect)</div>";
+                    echo "<div class='title2 alert' style='top: 495px;'>Connexion impossible ! "."<br>". "Inconnu au bataillon 😈<br><em>(Adresse email ou mot de passe incorrect)</em></div>";
                     // echo "<div class='title2 alert'>Connexion impossible avec mail : ".$this->email." et mdp : ".$this->password."</div>";
                 }
             } else{}                                                //[...]Sinon rien
