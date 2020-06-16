@@ -8,8 +8,8 @@ class Home extends CI_Controller {
     }
     public function accueil()
     {
+        $this->load->view('Header');                //Chargement du Header : css, js, ...
     	$this->load->view('Nav');                   //Chargement de la vue "Nav" : barre de Navigation
-    	$this->load->view('Header');                //Chargement du Header : css, js, ...
         $this->load->model('Accueil');              //Chargement du model "accueil"
         $this->load->view('Accueil_view');          //Chargement de la vue d'accueil
         $this->load->view('Cactus');                //Chargement de la vue Cactus
@@ -18,8 +18,8 @@ class Home extends CI_Controller {
     }
     
     public function jeu() {                         //idem pour la page jeu
-        $this->load->view('Nav');
         $this->load->view('Header');
+        $this->load->view('Nav');
         $this->load->view('Timer');
         $this->load->model('Jeu');
         $this->load->view('Jeu_view');
@@ -28,8 +28,8 @@ class Home extends CI_Controller {
         $this->load->view('Progress_bar');
     }
     public function note_eleve() {                         //idem pour la page note
-        $this->load->view('Nav');
         $this->load->view('Header');
+        $this->load->view('Nav');
         $this->load->model('Note_eleve');
         $this->load->view('Note_eleve_view');
         $this->load->view('Cactus');
@@ -69,8 +69,8 @@ class Home extends CI_Controller {
     }
     
     public function login() {                       //idem pour la page login
-        $this->load->view('Nav');
         $this->load->view('Header');
+        $this->load->view('Nav');
         $this->load->model('Login');
         $this->load->view('Cactus');
         $this->load->view('Login_view');
@@ -79,8 +79,8 @@ class Home extends CI_Controller {
     }
 
     public function eleve_log() {                       //idem pour la page login élève
-        $this->load->view('Nav');
         $this->load->view('Header');
+        $this->load->view('Nav');
         $this->load->model('Eleve_log');
         $this->load->view('Cactus');
         $this->load->view('Eleve_log_view');
@@ -89,8 +89,8 @@ class Home extends CI_Controller {
     }
     
     public function signin() {                      //idem pour la page signin
-        $this->load->view('Nav');
         $this->load->view('Header');
+        $this->load->view('Nav');
         $this->load->model('Signin');
         $this->load->view('Cactus');
         $this->load->view('Signin_view');
@@ -99,8 +99,8 @@ class Home extends CI_Controller {
     }
     
     public function deco() {                        //idem pour la page deco
-        $this->load->view('Nav');
         $this->load->view('Header');
+        $this->load->view('Nav');
         $this->load->model('Deco');
         $this->load->view('Footer');
         $this->load->view('Progress_bar');

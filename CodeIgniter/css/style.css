@@ -86,26 +86,30 @@ nav ul li {
 	/* text-align: center; */
 	display: inline;
 	padding: 0 12px 0;
+    font-family: 'Jost', sans-serif;
+    font-size: 22px;
 }
 
 nav ul li a {
-	color: #FFF;
-	font-family: 'Jost', sans-serif;
-	font-weight: normal;
-	font-size: 22px;
+    color: #FFF;
 }
 
 #btn-acc {
-	position: relative;
-	left: 10px;
-	color: #1A73E8;
-	background-color: #222;
+    position: relative;
+    left: 10px;
+    font-style: italic;
+	background-color: #00214d;
+	color: #FFF;
 	padding: 6px 12px 6px 8px;
 	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
 }
 
 .point_co {
-	position: relative;
+    position: relative;
 	width: 10px;
 	height: 10px;
 	display: inline-block;
@@ -120,32 +124,37 @@ nav ul li a {
 }
 
 .point_vert {
-	background-color: #2ECC72;
+    background-color: #2ECC72;
 }
 
 .point_rouge {
-	background-color: #ff3845;
+    background-color: #ff3845;
 }
 
 #nomnav {
-	position: relative;
+    position: relative;
 	left: -4px;
 	padding: 6px 12px 6px 2px;
 	letter-spacing: 1px;
 	color: #FFF;
 }
 
+.btn_nav {
+    font-family: 'Jost',
+    sans-serif;
+    top: 18px;
+    font-weight: 600;
+}
 
 /* -40 */
 #btn-dec {
-	right: 10px;
+    right: 10px;
 	color: #FFF;
 	background-color: #ff3845;
-	/* background-color: #EEE;*/
 }
 
 #btn-log {
-	right: 200px;
+    right: 200px;
 	color: #2ECC72;
 	background-color: #222;
 }
@@ -157,7 +166,7 @@ nav ul li a {
 }
 
 #btn-stats {
-    right: 450px;
+    right: 446px;
     background-color: #fff;
     color: rgb(49, 138, 255);
 }
@@ -190,7 +199,6 @@ nav ul li a {
 #btn-stats,
 #btn-sign {
 	position: absolute;
-	top: 12px;
 	font-size: 20px;
 	font-style: italic;
 	padding: 6px 12px 6px 8px;
@@ -518,7 +526,7 @@ input[type="radio"]:hover {
 }
 
 .each_quest {
-	display: block;
+    display: block;
 }
 
 .right_rep .rep_text {
@@ -588,8 +596,8 @@ input[type="radio"]:hover {
 
 .quizz .separate {
 	position: absolute;
-	top: 0;
-	height: 90%;
+	top: 2px;
+	height: 94%;
 	left: 50%;
 	border-style: dashed;
 	color: #2ECC72;
@@ -774,56 +782,13 @@ textarea {
 	-o-border-radius: 6px;
 }
 
-.add_img .dropper {
-	position: absolute;
-	top: -17px;
-	left: -50px;
-	width: 261px;
-	height: 100px;
-	background-color: rgb(34, 39, 50);
-	border-radius: 6px;
-	border: 1px dashed rgb(82, 180, 255);
-}
-
-.dropper h2 {
-	text-align: center;
-	margin-top: 34px;
-	color: rgb(78, 90, 118);
-}
-
-.dropper span {
-	border: none;
-	top: -14px;
-	left: 242px;
-	position: absolute;
-	background-color: #ff3845;
-	color: #FFF;
-	font-size: 16px;
-	padding: 8px 12px;
-	border-radius: 50%;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-ms-border-radius: 50%;
-	-o-border-radius: 50%;
-}
-
-.dropper span:hover {
-	cursor: pointer;
-}
-
-.add_img {
-	position: absolute;
-	margin-top: 13%;
-	margin-right: 180px;
-}
-
-.add_img>.radio_form>label {
-	margin-left: -22px;
+.lien_img {
+    position: relative;
 }
 
 .line3 {
 	position: relative;
-	top: 120px;
+	top: 0px;
 }
 .line3 .coche {
     position: absolute;
@@ -841,7 +806,7 @@ textarea {
 .reponse {
 	position: relative;
 	left: 25px;
-	top: 0;
+	top: -115px;
 }
 
 .reponse .sous_q {
@@ -971,7 +936,6 @@ textarea {
     display: inline-block;
     background-color: #2C006A;
 	border: 1px dashed #ffcc00;
-    margin: 10px auto;
     width: 200px;
     border-radius: 8px;
     -webkit-border-radius: 8px;
