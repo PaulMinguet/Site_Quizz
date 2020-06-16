@@ -23,4 +23,4 @@
         ?>   <!--Si l'utilisateur est connecté, alors on affiche le bouton déconnection et stats-->
         
     </ul>
-</nav> 
+</nav>

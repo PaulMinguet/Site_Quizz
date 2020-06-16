@@ -21,13 +21,14 @@
         public function getStatsQuizz(){
             $returnHTML = "";
             if(isset($_SESSION['email'])){                          //Si l'adresse email est renseignée
-                $builder = $this->db->select("quizz_id, quizz_nom, quizz_etat, quizz_cle, quizz_duree, quizz_nbQuestions, COUNT(score) as nbRep
-                                            FROM Quizz NATURAL JOIN Score
+                $builder = $this->db->select("quizz_id, quizz_nom, quizz_etat, quizz_cle, quizz_duree, quizz_nbQuestions
+                                            FROM Quizz
                                             WHERE quizz_cree_par = ".$this->Auth->getIdUser(), FALSE); //Alors on effectue une requête pour récupérer le statut de l'utilisateur
                 $query = $builder->get();
                 if($query->num_rows() > 0){                         //Si on trouve un résultat alors
                     $numQuizz = 1;
                     foreach ($query->result_array() as $row){
+                        //echo "id user : ".$this->Auth->getIdUser()."<br>";
                         $hrs = (int) ($row["quizz_duree"]/3600);
                         $min = (int) ($row["quizz_duree"]-$hrs*3600)/60;
                         $sec = (int) ($row["quizz_duree"]-$hrs*3600-$min*60);
@@ -82,7 +83,7 @@
                                 </div>
                             </div>";
 
-                            $builder = $this->db->select("score
+                            $builder = $this->db->select("score, COUNT(score) as nbRep
                                             FROM Score
                                             WHERE quizz_id = ".$this->Auth->getIdParCle($row['quizz_cle']), FALSE); //Alors on effectue une requête pour récupérer le statut de l'utilisateur
                             $query = $builder->get();
@@ -90,48 +91,49 @@
                                 $numQuizz = 1;
 
                                 foreach ($query->result_array() as $rowSc){
-                                    if($row['nbRep'] > 0){
-                                            $this->note = $rowSc['score'];
-                                            //echo "quizz id : ".$this->Auth->getIdParCle($row['quizz_cle'])."<br>";
-                                            //echo "nbNotes : ".$row['nbRep']."<br>";
-                                            //echo "row score : ".$rowSc['score']."<br>";
-                                            //echo "note = ".$this->note."<br>";
-                                            $this->moy = $this->moy + $this->note;
-                                            //echo "moyenne = ".$this->moy."<br><br>";  
-                                        }
+                                    if(!empty($rowSc['nbRep'])){
+                                        if($rowSc['nbRep'] > 0){
+                                                $this->note = $rowSc['score'];
+                                                //echo "quizz id : ".$this->Auth->getIdParCle($row['quizz_cle'])."<br>";
+                                                //echo "nbNotes : ".$rowSc['nbRep']."<br>";
+                                                //echo "row score : ".$rowSc['score']."<br>";
+                                                //echo "note = ".$this->note."<br>";
+                                                $this->moy = $this->moy + $this->note;
+                                                //echo "moyenne = ".$this->moy."<br><br>";  
+                                            }
+
+                                            $returnHTML = $returnHTML."
+                                            <div class='bar_reussite'>
+                                                <ul>
+                                                    <li class='";
+                                                    if(round($this->moy/$rowSc['nbRep'],2) > 15){
+                                                        $returnHTML = $returnHTML."reussite";
+                                                    }else if(round($this->moy/$rowSc['nbRep'],2) >= 10 && round($this->moy/$rowSc['nbRep'],2) < 15){
+                                                        $returnHTML = $returnHTML."moyen";
+                                                    }else{
+                                                        $returnHTML = $returnHTML."bof";
+                                                    }
+                                                    $returnHTML = $returnHTML."'>".(round($this->moy/$rowSc['nbRep'],2))."</li>
+                                                </ul>
+                                            </div>
+                                        </div>";
                                     }
-
-                                        $returnHTML = $returnHTML."
-                                        <div class='bar_reussite'>
-                                            <ul>
-                                                <li class='";
-                                                if(round($this->moy/$row['nbRep'],2) > 15){
-                                                    $returnHTML = $returnHTML."reussite";
-                                                }else if(round($this->moy/$row['nbRep'],2) >= 10 && round($this->moy/$row['nbRep'],2) < 15){
-                                                    $returnHTML = $returnHTML."moyen";
-                                                }else{
-                                                    $returnHTML = $returnHTML."bof";
-                                                }
-                                                $returnHTML = $returnHTML."'>".(round($this->moy/$row['nbRep'],2))."</li>
-                                            </ul>
-                                        </div>
-                                    </div>";
-
-                                $returnHTML = $returnHTML."<script>
-                                    $('#actif".$numQuizz."').click(function () {
-                                        console.log($(this).attr('id'));
-                                        $(this).removeClass('onSelect');
-                                        $('#inactif".$numQuizz."').addClass('onSelect');
-                                    });
-                                    $('#inactif".$numQuizz."').click(function () {
-                                        console.log($(this).attr('id'));
-                                        $(this).removeClass('onSelect');
-                                        $('#actif".$numQuizz."').addClass('onSelect');
-                                    });
-                                </script>";
-                                $numQuizz++;
+                                }
                             }
-                        
+
+                            $returnHTML = $returnHTML."<script>
+                                $('#actif".$numQuizz."').click(function () {
+                                    console.log($(this).attr('id'));
+                                    $(this).removeClass('onSelect');
+                                    $('#inactif".$numQuizz."').addClass('onSelect');
+                                });
+                                $('#inactif".$numQuizz."').click(function () {
+                                    console.log($(this).attr('id'));
+                                    $(this).removeClass('onSelect');
+                                    $('#actif".$numQuizz."').addClass('onSelect');
+                                });
+                            </script>";
+                            $numQuizz++;                        
                     }
                 }
             }

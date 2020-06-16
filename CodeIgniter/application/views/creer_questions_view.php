@@ -2,9 +2,9 @@
 
     <h1 class='title'>Créer les questions !</h1>
 
-    <script src='<?php echo base_url(); ?>js/dragDrop.js'></script>
-    <script src='<?php echo base_url(); ?>js/nb_colored.js'></script>
-    <script src='<?php echo base_url(); ?>js/choix.js'></script>
+    <script src='<?php echo base_url(); ?>../js/dragDrop.js'></script>
+    <script src='<?php echo base_url(); ?>../js/nb_colored.js'></script>
+    <script src='<?php echo base_url(); ?>../js/choix.js'></script>
     <form method='post'>
 
 <?php
