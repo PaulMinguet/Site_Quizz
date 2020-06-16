@@ -32,7 +32,8 @@
                         $hrs = (int) ($row["quizz_duree"]/3600);
                         $min = (int) ($row["quizz_duree"]-$hrs*3600)/60;
                         $sec = (int) ($row["quizz_duree"]-$hrs*3600-$min*60);
-                        $returnHTML = $returnHTML."<div class='container'>
+                        $returnHTML = $returnHTML."
+                        <div class='container'>
                             <div class='nbQuizz rep_nb'><h1>".$numQuizz."</h1></div>
                             <div class='statutQuizz actif' id='actif".$numQuizz."'>
                                 <h2><i class='fas fa-check-circle'></i>&nbsp;Actif</h2>
@@ -94,14 +95,17 @@
                                     if(!empty($rowSc['nbRep'])){
                                         if($rowSc['nbRep'] > 0){
                                                 $this->note = $rowSc['score'];
-                                                //echo "quizz id : ".$this->Auth->getIdParCle($row['quizz_cle'])."<br>";
+                                                echo "quizz id : ".$this->Auth->getIdParCle($row['quizz_cle'])."<br>";
                                                 //echo "nbNotes : ".$rowSc['nbRep']."<br>";
                                                 //echo "row score : ".$rowSc['score']."<br>";
-                                                //echo "note = ".$this->note."<br>";
+                                                echo "note = ".$this->note."<br>";
                                                 $this->moy = $this->moy + $this->note;
-                                                //echo "moyenne = ".$this->moy."<br><br>";  
+                                                echo "moyenne = ".$this->moy."<br><br>";  
                                             }
+                                        }
+                                    }
 
+                                    if(!empty($rowSc['nbRep'])){
                                             $returnHTML = $returnHTML."
                                             <div class='bar_reussite'>
                                                 <ul>
@@ -118,7 +122,6 @@
                                             </div>
                                         </div>";
                                     }
-                                }
                             }
 
                             $returnHTML = $returnHTML."<script>
@@ -132,13 +135,12 @@
                                     $(this).removeClass('onSelect');
                                     $('#actif".$numQuizz."').addClass('onSelect');
                                 });
-                            </script>";
-                            $numQuizz++;                        
+                            </script>";  
+                            $numQuizz++;                      
                     }
                 }
             }
             return $returnHTML;
-           
         }
     }
 ?>

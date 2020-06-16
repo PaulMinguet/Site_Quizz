@@ -25,7 +25,7 @@ $nbQ = $this->Auth->getNbQuestion();
                 <div class='line'>
                     <label for='image'><span class='nb' id='nb2'>2</span> Ajouter une image</label>
                     <div class='right add_img'>
-                    <div class='radio_form'>
+                        <div class='radio_form'>
                             <label for='oui'>Oui</label>
                             <input id='oui' type='radio' name='image' value='oui' onchange=''  onclick='colorizeNB2(); dragDrop();' />
                         </div>
