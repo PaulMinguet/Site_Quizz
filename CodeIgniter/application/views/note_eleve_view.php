@@ -1,5 +1,5 @@
 <body>
-    <h1 class="title">Félicitations PRENOM NOM</h1>
+    <h1 class="title"><?php echo $_SESSION['prenom']." ".$_SESSION['nom']?></h1>
 
     <div class="enonce score_text"><p>Vous avez obtenu le score suivant</p></div>
 

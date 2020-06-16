@@ -38,9 +38,10 @@
         }
         
         public function deconnexion(){                              //Fonction de déconnexion
-            if(isset($_SESSION['username']))                        //Si une personne est déjà connectée
-                $_SESSION['username'] = null;                       //Alors on met la variable $_SESSION['username'] à null pour déconnecter la personne
+            if(isset($_SESSION['username'])){                        //Si une personne est déjà connectée
+                session_destroy();
                 echo "<div class='title2 success deco'>Déconnecté ! "."<br>". "À la prochaine 🖐</div>"; //On affiche un message de déconnexion
+            }
         }
 
         public function elepro(){                                   //Fonction pour récupérer le statut d'un utilisateur
@@ -243,6 +244,10 @@
                 echo "<div class='container-score-jeu'>
                          <p class='score'>Votre score"."<br/>"."<span>".($this->scoreUsr*20/$this->getNbQuestionAcCle())."</span>"."/20</p>
                      </div>";
+                $termine = 1;
+            }
+            if(!empty($termine)){
+                header('Location: ./note_eleve');
             }
         }
 
@@ -254,11 +259,21 @@
         public function accueil_url(){
             if(isset($_POST['lien'])){
                 $_SESSION['cleQuizz'] = $_POST['lien'];
-                if(isset($_SESSION['username'])){
-                    header('Location: ./jeu?cle='.$_POST['lien']);
-                }else{
-                    header('Location: ./eleve_log');
-                }
+                $builder = $this->db->select("quizz_id
+                                    FROM Quizz
+                                    WHERE quizz_cle = '".$_POST['lien']."'", FALSE);
+                        $query = $builder->get();
+                        if($query->num_rows() > 0){                         //Si on trouve un résultat alors
+                            foreach ($query->result_array() as $row){
+                                if(isset($_SESSION['username'])){
+                                    header('Location: ./jeu?cle='.$_POST['lien']);
+                                }else{
+                                    header('Location: ./eleve_log');
+                                }
+                            }
+                        }else{
+                            echo "<script>alert(\"Le quizz demandé n'existe pas !\")</script>";
+                        }
             }
         }
 
