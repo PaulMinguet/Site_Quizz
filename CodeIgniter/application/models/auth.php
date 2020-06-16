@@ -182,6 +182,20 @@
             return $this->nbQ;
         }
 
+        public function getIdParCle($cle){
+            if(isset($cle)){
+                $builder = $this->db->select("quizz_id
+                                    FROM Quizz
+                                    WHERE quizz_cle = '".$cle."'", FALSE);
+                $query = $builder->get();
+                if($query->num_rows() > 0){                         //Si on trouve un résultat alors
+                    foreach ($query->result_array() as $row)
+                        $this->QuizzId = $row["quizz_id"];   //On assigne à la variable $_SESSION['id'] la valeur trouvée
+                }
+            }
+            return $this->QuizzId;
+        }
+
         public function terminerQuizz(){
             for($i = 1; $i <= $this->getNbQuestionAcCle(); $i++){
                 $this->faute = 0;
@@ -217,7 +231,8 @@
                 }
             }
             if(isset($this->scoreUsr)){
-                $this->scoreS20 = $this->scoreUsr*20/$this->getNbQuestionAcCle();
+                $this->scoreS20 = round($this->scoreUsr*20/$this->getNbQuestionAcCle(),2);
+                $_SESSION['note'] = $this->scoreS20;
                 $data = array(
                     'quizz_id'          => $this->QId,
                     'score_prenom'      => $_SESSION['prenom'],
@@ -225,10 +240,14 @@
                     'score'             => $this->scoreS20
                 );
                 $this->db->insert('Score', $data);
-                echo "<div class='container-score-jeu'>
-                        <p class='score'>Votre score"."<br/>"."<span>".($this->scoreUsr*20/$this->getNbQuestionAcCle())."</span>"."/20</p>
-                    </div>";
+                //echo "<h1 class='title'>Votre score : ".($this->scoreUsr*20/$this->getNbQuestionAcCle())."/20</h1>";
+
             }
+        }
+
+        public function getScore(){
+            if(isset($_SESSION['note']))
+                return $_SESSION['note'];
         }
 
         public function accueil_url(){
@@ -249,10 +268,5 @@
                 header('Location: ./jeu?cle='.$_SESSION['cleQuizz']);
             }
         }
-
-        public function note_eleve() {
-            # code...
-        }
-
     }
 ?>

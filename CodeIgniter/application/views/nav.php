@@ -1,6 +1,6 @@
 <nav>
     <ul>
-        <li><a href="../home/accueil" id="btn-acc"><i class="fas fa-home"></i>&nbsp;&nbsp;Accueil</a></li>  <!--Affichage de la barre de navigation-->
+        <li><?php echo anchor('index.php/home/accueil', '&nbsp;&nbsp;Accueil', 'id="btn-acc", class="fas fa-home"')?>
             <li><a href="../home/accueil" id="nomnav">
             <?php if(isset($_SESSION['username'])){ 
                     echo "<span class='point_co point_vert'></span>" . $_SESSION['username'];
@@ -8,17 +8,17 @@
                     echo "<span class='point_co point_rouge'></span> <span>Veuillez vous connecter</span>";
                 }
             ?></a></li>
-        <li><a href='../home/accueil' id='btn-play'><i class='fas fa-gamepad'></i>&nbsp;&nbsp;Jouer</a></li>
-        <li><a href="../home/signin" id="btn-sign"><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Sign In</a></li>
-        <li><a href="../home/login" id="btn-log"><i class="fas fa-key"></i>&nbsp;&nbsp;Log In</a></li>
+        <li><?php echo anchor('index.php/home/accueil', '&nbsp;&nbsp;Jouer', 'class="fas fa-gamepad", id="btn-play"')?></li>
+        <li><?php echo anchor('index.php/home/signin', '&nbsp;&nbsp;Sign In', 'id="btn-sign", class="fas fa-sign-in-alt"')?></li>
+        <li><?php echo anchor('index.php/home/login', '&nbsp;&nbsp;Log In', 'id="btn-log", class="fas fa-key"')?></li>
         <?php if(isset($_SESSION['username'])){
-            if(isset($_SESSION['statut']) && $_SESSION['statut'] == 'professeur'){
-                echo "<li><a href='../home/stats' id='btn-stats'><i class='far fa-chart-bar'></i>&nbsp;&nbsp;Statistiques</a></li>";
+            if(isset($_SESSION['statut']) && $_SESSION['statut'] == 'professeur'){ 
+                echo "<li>".anchor('index.php/home/stats', '&nbsp;&nbsp;Statistiques', 'id="btn-stats", class="far fa-chart-bar"')."</li>";
             }
         } 
         ?>
         <?php if(isset($_SESSION['username'])) {
-            echo "<li><a href='../home/deco' id='btn-dec'><i class='fas fa-sign-out-alt'></i>&nbsp;&nbsp;Déconnection</a></li>";
+            echo "<li>".anchor('index.php/home/deco', '&nbsp;&nbsp;Déconnection', 'id="btn-dec", class="fas fa-sign-out-alt"')."</li>";
         }
         ?>   <!--Si l'utilisateur est connecté, alors on affiche le bouton déconnection et stats-->
         
