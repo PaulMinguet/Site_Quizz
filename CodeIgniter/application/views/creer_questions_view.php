@@ -3,7 +3,6 @@
     <h1 class='title'>Créer les questions !</h1>
 
     <script src='<?php echo base_url(); ?>../js/dragDrop.js'></script>
-    <script src='<?php echo base_url(); ?>../js/nb_colored.js'></script>
     <script src='<?php echo base_url(); ?>../js/choix.js'></script>
     <form method='post'>
 
@@ -15,7 +14,7 @@ $nbQ = $this->Auth->getNbQuestion();
     for($i = 1; $i <= $nbQ; $i++){
     echo "
     
-        <div class='quizz' style='height: 500px;'>
+        <div class='quizz' style='height: 380px;'>
             <hr class='separate'/>
             <div class='each_quest'>
                 <div class='line'>
@@ -24,21 +23,9 @@ $nbQ = $this->Auth->getNbQuestion();
                 </div>
                 <div class='line'>
                     <label for='image'><span class='nb' id='nb2'>2</span> Ajouter une image</label>
-                    <div class='right add_img'>
-                    <div class='radio_form'>
-                            <label for='oui'>Oui</label>
-                            <input id='oui' type='radio' name='image' value='oui' onchange=''  onclick='colorizeNB2(); dragDrop();' />
-                        </div>
-                        <div class='radio_form'>
-                            <label for='non'>Non</label>
-                            <input id='non' type='radio' name='image' value='non' onchange=''  onclick='colorizeNB2(); dragDrop();' />
-                        </div>
-                        <div class='dropper' id='dropper'>
-                            <span id='btn_quit' onclick='btnQuit();'>×</span>
-                            <h2>Drag & Drop</h2>
-                            </div>
-                        
-                    </div>
+                    <input type='checkbox' name='add_img".(($i-1)*4+1)."' value='1' style='right: 185px; margin-top: 2%'>
+                    <input type='text' name='choix".(($i-1)*4+1)."' id='area_img".(($i-1)*4+1)."' class='area_qz lien_img' placeholder='Entrez un lien vers votre image' onclick='' style='position: relative; top: 2px; left: 72px;'/>
+                    
                 </div>
                 <div class='line line3'>
                     <label for='reponse'><span class='nb' id='nb3'>3</span> Réponse(s)<br><br><span class='coche'>Cochez les bonnes réponses</span></label>
@@ -61,11 +48,8 @@ $nbQ = $this->Auth->getNbQuestion();
     }
     ?>
     <br><br><br>
-    <div class='quizz' style='height: 150px; width: 500px'>
-        <button class='add' style='top: 8px; z-index: 100;'>+</button>
-        <span class='add-span' style=" z-index: 200;">Ajouter une question</span>
-        <hr class='separate'/>
-        <br><br><br>
+    <div class='quizz' style='height: 90px; width: 500px;'>
+        <hr class='separate' style='top: -6px;'/>
         <div class='final_btn'>
             <div class='container' style='top: 50px;'>
                 <input type='submit' name='save' value='Enregistrer' class='save_btn' id='save_btn'>

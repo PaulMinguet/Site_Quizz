@@ -26,13 +26,15 @@
                                             WHERE quizz_cree_par = ".$this->Auth->getIdUser(), FALSE); //Alors on effectue une requête pour récupérer le statut de l'utilisateur
                 $query = $builder->get();
                 if($query->num_rows() > 0){                         //Si on trouve un résultat alors
-                    $numQuizz = 1;
+                    $numQuizz = 0;
                     foreach ($query->result_array() as $row){
+                        $numQuizz++;
                         //echo "id user : ".$this->Auth->getIdUser()."<br>";
                         $hrs = (int) ($row["quizz_duree"]/3600);
                         $min = (int) ($row["quizz_duree"]-$hrs*3600)/60;
                         $sec = (int) ($row["quizz_duree"]-$hrs*3600-$min*60);
-                        $returnHTML = $returnHTML."<div class='container'>
+                        $returnHTML = $returnHTML."
+                        <div class='container'>
                             <div class='nbQuizz rep_nb'><h1>".$numQuizz."</h1></div>
                             <div class='statutQuizz actif' id='actif".$numQuizz."'>
                                 <h2><i class='fas fa-check-circle'></i>&nbsp;Actif</h2>
@@ -83,41 +85,39 @@
                                 </div>
                             </div>";
 
-                            $builder = $this->db->select("score, COUNT(score) as nbRep
+                            $builder = $this->db->select("AVG(score) as avg
                                             FROM Score
                                             WHERE quizz_id = ".$this->Auth->getIdParCle($row['quizz_cle']), FALSE); //Alors on effectue une requête pour récupérer le statut de l'utilisateur
                             $query = $builder->get();
                             if($query->num_rows() > 0){                         //Si on trouve un résultat alors
-                                $numQuizz = 1;
 
                                 foreach ($query->result_array() as $rowSc){
-                                    if(!empty($rowSc['nbRep'])){
-                                        if($rowSc['nbRep'] > 0){
-                                                $this->note = $rowSc['score'];
-                                                //echo "quizz id : ".$this->Auth->getIdParCle($row['quizz_cle'])."<br>";
-                                                //echo "nbNotes : ".$rowSc['nbRep']."<br>";
-                                                //echo "row score : ".$rowSc['score']."<br>";
-                                                //echo "note = ".$this->note."<br>";
-                                                $this->moy = $this->moy + $this->note;
-                                                //echo "moyenne = ".$this->moy."<br><br>";  
-                                            }
-
-                                            $returnHTML = $returnHTML."
-                                            <div class='bar_reussite'>
-                                                <ul>
-                                                    <li class='";
-                                                    if(round($this->moy/$rowSc['nbRep'],2) > 15){
-                                                        $returnHTML = $returnHTML."reussite";
-                                                    }else if(round($this->moy/$rowSc['nbRep'],2) >= 10 && round($this->moy/$rowSc['nbRep'],2) < 15){
-                                                        $returnHTML = $returnHTML."moyen";
-                                                    }else{
-                                                        $returnHTML = $returnHTML."bof";
-                                                    }
-                                                    $returnHTML = $returnHTML."'>".(round($this->moy/$rowSc['nbRep'],2))."</li>
-                                                </ul>
-                                            </div>
-                                        </div>";
+                                    if(!empty($rowSc['avg'])){
+                                            $this->note = $rowSc['avg'];
+                                            //echo "quizz id : ".$this->Auth->getIdParCle($row['quizz_cle'])."<br>";
+                                            //echo "nbNotes : ".$rowSc['nbRep']."<br>";
+                                            //echo "row avg : ".$rowSc['avg']."<br>";
+                                            //echo "note = ".$this->note."<br>";
+                                            $this->moy = $this->moy + $this->note;
+                                            //echo "moyenne = ".$this->moy."<br><br>";  
                                     }
+                                }
+
+                                if(!empty($rowSc['avg'])){
+                                        $returnHTML = $returnHTML."
+                                        <div class='bar_reussite'>
+                                            <ul>
+                                                <li class='";
+                                                if(round($rowSc['avg'],2) > 15){
+                                                    $returnHTML = $returnHTML."reussite";
+                                                }else if(round($rowSc['avg'],2) >= 10 && round($rowSc['avg'],2) < 15){
+                                                    $returnHTML = $returnHTML."moyen";
+                                                }else{
+                                                    $returnHTML = $returnHTML."bof";
+                                                }
+                                                $returnHTML = $returnHTML."'>".(round($rowSc['avg'],2))."</li>
+                                            </ul>
+                                        </div>";
                                 }
                             }
 
@@ -132,13 +132,13 @@
                                     $(this).removeClass('onSelect');
                                     $('#actif".$numQuizz."').addClass('onSelect');
                                 });
-                            </script>";
-                            $numQuizz++;                        
+                            </script>
+                            </div>";
+
                     }
                 }
             }
             return $returnHTML;
-           
         }
     }
 ?>

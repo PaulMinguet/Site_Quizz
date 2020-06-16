@@ -38,9 +38,10 @@
         }
         
         public function deconnexion(){                              //Fonction de déconnexion
-            if(isset($_SESSION['username']))                        //Si une personne est déjà connectée
-                $_SESSION['username'] = null;                       //Alors on met la variable $_SESSION['username'] à null pour déconnecter la personne
+            if(isset($_SESSION['username'])){                        //Si une personne est déjà connectée
+                session_destroy();
                 echo "<div class='title2 success deco'>Déconnecté ! "."<br>". "À la prochaine 🖐</div>"; //On affiche un message de déconnexion
+            }
         }
 
         public function elepro(){                                   //Fonction pour récupérer le statut d'un utilisateur
@@ -240,8 +241,9 @@
                     'score'             => $this->scoreS20
                 );
                 $this->db->insert('Score', $data);
-                //echo "<h1 class='title'>Votre score : ".($this->scoreUsr*20/$this->getNbQuestionAcCle())."/20</h1>";
-
+                echo "<div class='container-score-jeu'>
+                         <p class='score'>Votre score"."<br/>"."<span>".($this->scoreUsr*20/$this->getNbQuestionAcCle())."</span>"."/20</p>
+                     </div>";
             }
         }
 
