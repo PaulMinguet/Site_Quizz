@@ -6,8 +6,8 @@
 
             $title = "Quiz | SIGN IN";
 
-            $this->load->model('inscription_bd');		//Chargement du modele inscription_bd
-           	$this->inscription_bd->inscription();		//Chargement de la fonction inscription() de inscription_bd
+            $this->load->model('Inscription_bd');		//Chargement du modele inscription_bd
+           	$this->Inscription_bd->inscription();		//Chargement de la fonction inscription() de inscription_bd
 		} 
 	}
 ?>

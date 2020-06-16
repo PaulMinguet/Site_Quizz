@@ -74,8 +74,8 @@
 
         public function creer(){                                    //Fonction de création de quizz
             if(isset($this->nom_quizz)){
-                $this->load->model('fonctions');
-                $this->codeAleatoire = $this->fonctions->codeal();
+                $this->load->model('Fonctions');
+                $this->codeAleatoire = $this->Fonctions->codeal();
                 //echo $this->codeAleatoire;
                 //echo "<br>temps : ".$this->duree."<br>";
                 $data = array(

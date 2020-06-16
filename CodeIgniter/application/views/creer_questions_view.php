@@ -8,8 +8,8 @@
     <form method='post'>
 
 <?php
-$this->load->model('auth');
-$nbQ = $this->auth->getNbQuestion();
+$this->load->model('Auth');
+$nbQ = $this->Auth->getNbQuestion();
 //echo "nb Questions : ".$nbQ."<br>";
 
     for($i = 1; $i <= $nbQ; $i++){

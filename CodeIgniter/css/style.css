@@ -691,7 +691,7 @@ input[type="radio"]:hover {
 
 .bar_reussite ul {
     padding: 0;
-    width: 660px;
+    width: 100%;
 }
 .bar_reussite ul li {
     display: inline-block;
@@ -704,21 +704,20 @@ input[type="radio"]:hover {
     font-size: 22px;
 }
 .reussite {
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-    width: 20%;
+    border-radius: 12px;
+    width: 100%;
     background-color: #2ecc72;
     
 }
 .moyen {
-    width: 50%;
+    border-radius: 12px;
+    width: 100%;
     background-color: #ffcc00;
 
 }
 .bof {
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-    width: 30%;
+    border-radius: 12px;
+    width: 100%;
     background-color: #ff3845;
 }
 

@@ -6,9 +6,9 @@
 
 			$title = "Quiz | Homepage";	//On défini le titre de la page
 			
-			$this->load->model('auth');	//On charge le model "auth"
-			$this->auth->elepro();		//On charge la fonction elepro de auth (cf. auth.php)
-			$this->auth->accueil_url();
+			$this->load->model('Auth');	//On charge le model "auth"
+			$this->Auth->elepro();		//On charge la fonction elepro de auth (cf. auth.php)
+			$this->Auth->accueil_url();
 		}
 	}
 ?>

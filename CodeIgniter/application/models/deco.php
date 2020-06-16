@@ -6,8 +6,8 @@
 
             $title = "Quiz | DISCONNECT";
 
-            $this->load->model('auth');		//Chargement du modele auth.php
-            $this->auth->deconnexion();		//Chargement de la fonction deconnexion() de auth.php
+            $this->load->model('Auth');		//Chargement du modele auth.php
+            $this->Auth->deconnexion();		//Chargement de la fonction deconnexion() de auth.php
 		}
 	}
 ?>

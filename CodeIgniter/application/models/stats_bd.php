@@ -21,9 +21,9 @@
         public function getStatsQuizz(){
             $returnHTML = "";
             if(isset($_SESSION['email'])){                          //Si l'adresse email est renseignée
-                $builder = $this->db->select("quizz_id, quizz_nom, quizz_etat, quizz_cle, quizz_duree, quizz_nbQuestions
-                                            FROM Quizz
-                                            WHERE quizz_cree_par = ".$this->auth->getIdUser(), FALSE); //Alors on effectue une requête pour récupérer le statut de l'utilisateur
+                $builder = $this->db->select("quizz_id, quizz_nom, quizz_etat, quizz_cle, quizz_duree, quizz_nbQuestions, COUNT(score) as nbRep
+                                            FROM Quizz NATURAL JOIN Score
+                                            WHERE quizz_cree_par = ".$this->Auth->getIdUser(), FALSE); //Alors on effectue une requête pour récupérer le statut de l'utilisateur
                 $query = $builder->get();
                 if($query->num_rows() > 0){                         //Si on trouve un résultat alors
                     $numQuizz = 1;
@@ -82,32 +82,37 @@
                                 </div>
                             </div>";
 
-                            $builder = $this->db->select("score, COUNT(score) as nbRep
+                            $builder = $this->db->select("score
                                             FROM Score
-                                            WHERE quizz_id = ".$this->auth->getIdParCle($row['quizz_cle']), FALSE); //Alors on effectue une requête pour récupérer le statut de l'utilisateur
+                                            WHERE quizz_id = ".$this->Auth->getIdParCle($row['quizz_cle']), FALSE); //Alors on effectue une requête pour récupérer le statut de l'utilisateur
                             $query = $builder->get();
                             if($query->num_rows() > 0){                         //Si on trouve un résultat alors
                                 $numQuizz = 1;
+
                                 foreach ($query->result_array() as $rowSc){
-                                    if($rowSc['nbRep'] > 0){
-                                        for($i = 0; $i < $rowSc['nbRep']; $i++){
+                                    if($row['nbRep'] > 0){
                                             $this->note = $rowSc['score'];
-                                            echo "quizz id : ".$this->auth->getIdParCle($row['quizz_cle'])."<br>";
-                                            echo "nbNotes : ".$rowSc['nbRep']."<br>";
-                                            echo "row score : ".$rowSc['score']."<br>";
-                                            echo "note = ".$this->note."<br>";
+                                            //echo "quizz id : ".$this->Auth->getIdParCle($row['quizz_cle'])."<br>";
+                                            //echo "nbNotes : ".$row['nbRep']."<br>";
+                                            //echo "row score : ".$rowSc['score']."<br>";
+                                            //echo "note = ".$this->note."<br>";
                                             $this->moy = $this->moy + $this->note;
-                                            echo "moyenne = ".$this->moy."<br><br>";
-}
+                                            //echo "moyenne = ".$this->moy."<br><br>";  
                                         }
                                     }
 
                                         $returnHTML = $returnHTML."
                                         <div class='bar_reussite'>
                                             <ul>
-                                                <li class='reussite'>Réussi</li>
-                                                <li class='moyen'>".($this->moy/$rowSc['nbRep'])."</li>
-                                                <li class='bof'>Bof Bof</li>
+                                                <li class='";
+                                                if(round($this->moy/$row['nbRep'],2) > 15){
+                                                    $returnHTML = $returnHTML."reussite";
+                                                }else if(round($this->moy/$row['nbRep'],2) >= 10 && round($this->moy/$row['nbRep'],2) < 15){
+                                                    $returnHTML = $returnHTML."moyen";
+                                                }else{
+                                                    $returnHTML = $returnHTML."bof";
+                                                }
+                                                $returnHTML = $returnHTML."'>".(round($this->moy/$row['nbRep'],2))."</li>
                                             </ul>
                                         </div>
                                     </div>";
