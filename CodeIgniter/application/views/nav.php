@@ -20,7 +20,7 @@
         <?php if(isset($_SESSION['username'])) {
             echo "<li>".anchor('home/deco', '<span class="btn_nav">&nbsp;&nbsp;Déconnection</span>', 'id="btn-dec", class="fas fa-sign-out-alt"')."</li>";
         }
-        ?>   <!--Si l'utilisateur est connecté, alors on affiche le bouton déconnection et stats-->
+        ?>   <!--Si l'utilisateur est connecté, alors on affiche le bouton déconnection et statistiques-->
         
     </ul>
 </nav>
