@@ -6,8 +6,8 @@
 
 			$title = "Quiz | STATS QUIZZ";
 
-            $this->load->model('stats_bd');		//Chargement du modele stats_bd.php
-            $this->load->model('auth');
+            $this->load->model('Stats_bd');		//Chargement du modele stats_bd.php
+            $this->load->model('Auth');
             
 		}
 	}

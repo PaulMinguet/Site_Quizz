@@ -4,6 +4,6 @@
     <br>
     <form method='post'>
     <?php 
-        echo $this->jeu_bd->getJeu();
+        echo $this->Jeu_bd->getJeu();
     ?>
 </body>

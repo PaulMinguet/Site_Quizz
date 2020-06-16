@@ -1,6 +1,6 @@
 <html>
     <head>
-        <script src="<?php echo base_url(); ?>js/radioBtn.js"></script>
+        <script src="<?php echo base_url(); ?>../js/radioBtn.js"></script>
     </head>
     <body>
         <h1 class="title">Espace Sign In</h1>
@@ -24,10 +24,10 @@
             <label id="grp" for="group" class="lab">Dans quel groupe êtes-vous ?</label>
             <input id="group" type="group" name="group" placeholder="Groupe" class="area" />
 
-            <script src="<?php echo base_url(); ?>js/radioBtnFin.js"></script>
+            <script src="<?php echo base_url(); ?>../js/radioBtnFin.js"></script>
 
             <input type="submit" name="connect" value="S'inscrire" class="lab">
         </form>
     </body>
-    <script src="<?php echo base_url(); ?>js/btnSelect.js"></script>
+    <script src="<?php echo base_url(); ?>../js/btnSelect.js"></script>
 </html>

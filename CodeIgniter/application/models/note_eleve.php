@@ -6,7 +6,7 @@
 
 			$title = "Quiz | NOTE QUIZZ";
 
-            $this->load->model('auth');		//Chargement du modele auth.php
+            $this->load->model('Auth');		//Chargement du modele auth.php
             
 		}
 	}

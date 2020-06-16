@@ -2,14 +2,14 @@
 
     <h1 class='title'>Créer les questions !</h1>
 
-    <script src='<?php echo base_url(); ?>js/dragDrop.js'></script>
-    <script src='<?php echo base_url(); ?>js/nb_colored.js'></script>
-    <script src='<?php echo base_url(); ?>js/choix.js'></script>
+    <script src='<?php echo base_url(); ?>../js/dragDrop.js'></script>
+    <script src='<?php echo base_url(); ?>../js/nb_colored.js'></script>
+    <script src='<?php echo base_url(); ?>../js/choix.js'></script>
     <form method='post'>
 
 <?php
-$this->load->model('auth');
-$nbQ = $this->auth->getNbQuestion();
+$this->load->model('Auth');
+$nbQ = $this->Auth->getNbQuestion();
 //echo "nb Questions : ".$nbQ."<br>";
 
     for($i = 1; $i <= $nbQ; $i++){
@@ -25,7 +25,7 @@ $nbQ = $this->auth->getNbQuestion();
                 <div class='line'>
                     <label for='image'><span class='nb' id='nb2'>2</span> Ajouter une image</label>
                     <div class='right add_img'>
-                        <div class='radio_form'>
+                    <div class='radio_form'>
                             <label for='oui'>Oui</label>
                             <input id='oui' type='radio' name='image' value='oui' onchange=''  onclick='colorizeNB2(); dragDrop();' />
                         </div>

@@ -6,8 +6,8 @@
 
             $title = "Quiz | SIGN IN";
 
-           	$this->load->model('auth');
-           	$this->auth->acces_quizz();
+           	$this->load->model('Auth');
+           	$this->Auth->acces_quizz();
 		} 
 	}
 ?>

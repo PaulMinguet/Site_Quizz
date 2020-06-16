@@ -6,8 +6,8 @@
 
 			$title = "Quiz | LOG IN";
 
-			$this->load->model('connexion_bd');		//Chargement du modele connexion_bd.php
-	        $this->connexion_bd->connexion();		//Chargement de la fonction connexion() de connexion_bd.php
+			$this->load->model('Connexion_bd');		//Chargement du modele connexion_bd.php
+	        $this->Connexion_bd->connexion();		//Chargement de la fonction connexion() de connexion_bd.php
 		} 
 	}
 ?>
