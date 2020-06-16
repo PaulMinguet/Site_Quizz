@@ -5,10 +5,7 @@
 
 	    <div class="launch">
 	    	<?php 
-	    	if(isset($_SESSION['username']))
-	    		echo $_SESSION['username'];
 	    	if(isset($_SESSION['statut'])){									//Si la variable statut a une valeur,
-	    		echo $_SESSION['statut'];
 		    	if($_SESSION['statut'] == "professeur"){					//Qui est "professeur"
 			        echo "<a href='../home/creer'>Créer un nouveau quizz !</a>";	//Alors on affiche le bouton pour qu'il puisse créer un quizz
 			    }else{														//Qui est autre (donc élève ou rien)

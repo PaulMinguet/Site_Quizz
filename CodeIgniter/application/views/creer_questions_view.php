@@ -23,8 +23,7 @@ $nbQ = $this->Auth->getNbQuestion();
                 </div>
                 <div class='line'>
                     <label for='image'><span class='nb' id='nb2'>2</span> Ajouter une image</label>
-                    <input type='checkbox' name='add_img".(($i-1)*4+1)."' value='1' style='right: 185px; margin-top: 2%'>
-                    <input type='text' name='choix".(($i-1)*4+1)."' id='area_img".(($i-1)*4+1)."' class='area_qz lien_img' placeholder='Entrez un lien vers votre image' onclick='' style='position: relative; top: 2px; left: 72px;'/>
+                    <input type='text' name='img".$i."' id='area_img".$i."' class='area_qz lien_img' placeholder='Entrez un lien vers votre image' onclick='' style='position: relative; top: 2px; left: 72px;'/>
                     
                 </div>
                 <div class='line line3'>

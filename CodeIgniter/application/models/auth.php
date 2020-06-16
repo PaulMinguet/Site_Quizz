@@ -123,8 +123,8 @@
                     if (isset($_POST['enonceQ'.($i)]))
                         $this->enonce = $_POST['enonceQ'.($i)];
 
-                    if (isset($_POST['image']))
-                        $this->image_question = $_POST['image'];
+                    if (isset($_POST['img'.($i)]))
+                        $this->image_question = $_POST['img'.($i)];
 
                     if(isset($this->enonce)){
                         $data = array(

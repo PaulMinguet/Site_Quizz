@@ -70,6 +70,9 @@
                                 if(isset($row['question_num'])){
                                     $nQues = $row['question_num'];
                                 }
+                                if(isset($row['question_image'])){
+                                    $img = $row['question_image'];
+                                }
                                 $returnHTMLJeu = $returnHTMLJeu."
                                 <form class='container'>
                                     <div class='nbQuizz rep_nb'><h1>".$nQues."</h1></div>
@@ -77,7 +80,11 @@
                                     <div class='quizz'>
                                         <div class='line'>
                                             <div class='enonce'>
-                                                <p>".$row['question_enonce']."</p>
+                                                <p>".$row['question_enonce']."</p><br>";
+                                                if(!empty($row['question_image'])){
+                                                    $returnHTMLJeu = $returnHTMLJeu."<img class='img_affichage' src='".$img."'/>";
+                                                }
+                                                $returnHTMLJeu = $returnHTMLJeu."
                                             </div>
                                         </div>";
 
@@ -97,7 +104,8 @@
                                                                     <input type='checkbox' name='choix".$nQues."-".$row['reponse_num']."' value='1' id='".$nQues."' class='input_rep'>                
                                                                 </div>
                                                             </div>
-                                                        </div>";
+                                                        </div>
+                                                        <br>";
                                                         //echo "choix : ".$nQues."-".$row['reponse_num']."<br>";
                                                     }
                                                 }
