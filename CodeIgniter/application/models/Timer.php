@@ -27,84 +27,38 @@
                 }*/
                 echo "#######################################################################";
             echo "
-            <script language='JavaScript1.2'>
+            <!-- Display the countdown timer in an element -->
+            <p id='demo'></p>
 
-            function setcountdown(thehour,themin,thesec){
-                hr=0;min=0;sec=5
-            }
+            <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date('Jan 5, 2021 15:37:25').getTime();
 
-            ////////// CONFIGUREZ LE COMPTEUR CI-DESSOUS //////////////////
+            // Update the count down every 1 second
+            var x = setInterval(function() {
 
-            // 1°) Configurez la date dans le futur dans le format HEURES sur 24h (0=minuit,23=11pm), MINUTES, SECONDES
-            setcountdown(18,5,00)
+              // Get today's date and time
+              var now = new Date().getTime();
 
-            // 2°) Changez les deux textes ci-dessous. Le premier pour annoncer l'évènement, le second qui s'affichera à la fin du compte à rebours.
-            var occasion='Fin du quizz'
-            var message_on_occasion='Fini'
+              // Find the distance between now and the count down date
+              var distance = countDownDate - now;
 
-            // 3°) Configurez ci-dessous 5 variables pour la largeur, hauteur, la couleur de l'arrière plan, et le style du texte du champ
-            var countdownwidth='50%' // ou une valeur en % comme var countdownwidth='95%'
-            var countdownheight='12%'
-            var countdownbgcolor='#FFEBCD' // ou une couleur en texte comme : lightyellow
-            var opentags='<font face='Verdana'><small>'
-            var closetags='</small></font>'
+              // Time calculations for days, hours, minutes and seconds
+              var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+              var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            ////////// NE RIEN EDITER CI-DESSOUS //////////////////
+              // Display the result in the element with id='demo'
+              document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
+              + minutes + 'm ' + seconds + 's ';
 
-            var montharray=new Array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')
-            var crosscount=''
-
-            function start_countdown(){
-                if (document.layers)
-                    document.countdownnsmain.visibility='show'
-                else if (document.all||document.getElementById)
-                    crosscount=document.getElementById&&!document.all?document.getElementById('countdownie') : countdownie
-                countdown()
-            }
-
-            if (document.all||document.getElementById)
-                document.write('<span id='countdownie' style='width:'+countdownwidth+'; background-color:'+countdownbgcolor+''></span>')
-
-            window.onload=start_countdown
-
-
-            function countdown(){
-                var today=new Date()
-                var todayy=today.getYear()
-                if (todayy < 1000)
-                    todayy+=1900
-                var todaym=today.getMonth()
-                var todayd=today.getDate()
-                var todayh=today.getHours()
-                var todaymin=today.getMinutes()
-                var todaysec=today.getSeconds()
-                var todaystring=montharray[todaym]+' '+todayd+', '+todayy+' '+todayh+':'+todaymin+':'+todaysec
-                futurestring=montharray[todaym]+' '+todayd+', '+todayy+' '+hr+':'+min+':'+sec
-                dd=Date.parse(futurestring)-Date.parse(todaystring)
-                dhour=Math.floor((dd%(60*60*1000*24))/(60*60*1000)*1)
-                dmin=Math.floor(((dd%(60*60*1000*24))%(60*60*1000))/(60*1000)*1)
-                dsec=Math.floor((((dd%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1)
-                //if on day of occasion
-                if(dhour<=0&&dmin<=0&&dsec<=1&&todayd==da){
-                    if (document.layers){
-                        document.countdownnsmain.document.countdownnssub.document.write(opentags+message_on_occasion+closetags)
-                        document.countdownnsmain.document.countdownnssub.document.close()
-                    }
-                    else if (document.all||document.getElementById)
-                        crosscount.innerHTML=opentags+message_on_occasion+closetags
-                    return
-                }
-                //else, if not yet
-                else{
-                    if (document.layers){
-                    document.countdownnsmain.document.countdownnssub.document.write('Il reste '+opentags+dhour+' heures, '+dmin+' minutes, et '+dsec+' secondes avant '+occasion+closetags)
-                    document.countdownnsmain.document.countdownnssub.document.close()
-                    }
-                    else if (document.all||document.getElementById)
-                        crosscount.innerHTML='Il reste '+opentags+dhour+' heures, '+dmin+' minutes, et '+dsec+' secondes avant '+occasion+closetags
-                    }
-                setTimeout('countdown()',1000)
-            }
+              // If the count down is finished, write some text
+              if (distance < 0) {
+                clearInterval(x);
+                document.getElementById('demo').innerHTML = 'EXPIRED';
+              }
+            }, 1000);
             </script>";
         }
     }
