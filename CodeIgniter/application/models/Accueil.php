@@ -1,6 +1,6 @@
 <?php
 
-	class Accueil extends CI_Model{
+	class Accueil extends CI_Model{			//On déclare la classe "Accueil"
 		public function __construct() {
 			parent::__construct();
 

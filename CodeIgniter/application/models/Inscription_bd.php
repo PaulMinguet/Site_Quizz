@@ -1,8 +1,8 @@
 <?php
 
-    class Inscription_bd extends CI_Model {
+    class Inscription_bd extends CI_Model {                         //On déclare la classe "Inscription_bd"
 
-        public $error = null;               //Déclaration des différentes variables
+        public $error = null;                                       //Déclaration des différentes variables
         public $success = null;
         public $nom = null;
         public $prenom = null;

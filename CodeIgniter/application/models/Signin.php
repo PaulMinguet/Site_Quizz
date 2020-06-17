@@ -1,6 +1,6 @@
 <?php 
 
-	class Signin extends CI_Model {
+	class Signin extends CI_Model {						//On déclare la classe "Signin"
 		public function __construct() {
 			parent::__construct();
 

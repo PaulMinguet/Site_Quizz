@@ -1,6 +1,6 @@
 <?php
 
-    class Auth extends CI_Model {
+    class Auth extends CI_Model {           //On déclare la classe "Auth"
 
         public $error = null;               //Déclaration des différentes variables
         public $success = null;
@@ -81,6 +81,7 @@
                 //echo "<br>temps : ".$this->duree."<br>";
                 $data = array(
                     'quizz_nom'         => $this->nom_quizz,
+                    'quizz_etat'        => 1,
                     'quizz_cle'         => $this->codeAleatoire,
                     'quizz_duree'       => $this->duree,
                     'quizz_nbQuestions' => $this->nb_questions,
