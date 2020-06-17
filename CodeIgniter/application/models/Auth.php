@@ -170,7 +170,7 @@
             }
         }
 
-        public function getNbQuestionAcCle(){
+        public function getNbQuestionAcCle(){                       //Fonction pour récupérer le nombre de question avec la clé du quizz
             if(isset($_GET['cle'])){
                 $builder = $this->db->select("quizz_nbQuestions
                                     FROM Quizz
@@ -184,7 +184,7 @@
             return $this->nbQ;
         }
 
-        public function getIdParCle($cle){
+        public function getIdParCle($cle){                          //Fonction pour récupérer l'Id d'un quizz avec sa clé
             if(isset($cle)){
                 $builder = $this->db->select("quizz_id
                                     FROM Quizz
@@ -198,7 +198,7 @@
             return $this->QuizzId;
         }
 
-        public function terminerQuizz(){
+        public function terminerQuizz(){                            //Fonction pour envoyer les réponses 
             for($i = 1; $i <= $this->getNbQuestionAcCle(); $i++){
                 $this->faute = 0;
                 for($j = 1; $j <= 4; $j++){
@@ -233,7 +233,7 @@
                 }
             }
             if(isset($this->scoreUsr)){
-                $this->scoreS20 = round($this->scoreUsr*20/$this->getNbQuestionAcCle(),2);
+                $this->scoreS20 = round($this->scoreUsr*20/$this->getNbQuestionAcCle(),2);  //On stocke le score dans la base de données
                 $_SESSION['note'] = $this->scoreS20;
                 $data = array(
                     'quizz_id'          => $this->QId,
@@ -252,12 +252,12 @@
             }
         }
 
-        public function getScore(){
+        public function getScore(){                 //Fonction pour récupérer le score
             if(isset($_SESSION['note']))
                 return $_SESSION['note'];
         }
 
-        public function accueil_url(){
+        public function accueil_url(){              //Fonction pour la redirection lors de la connexion à un quizz
             if(isset($_POST['lien'])){
                 $_SESSION['cleQuizz'] = $_POST['lien'];
                 $builder = $this->db->select("quizz_id
@@ -266,9 +266,9 @@
                         $query = $builder->get();
                         if($query->num_rows() > 0){                         //Si on trouve un résultat alors
                             foreach ($query->result_array() as $row){
-                                if(isset($_SESSION['username'])){
+                                if(isset($_SESSION['username'])){           //Si on est connecté en tant qu'élève, pas besoin de demander le nom et le prénom
                                     header('Location: ./jeu?cle='.$_POST['lien']);
-                                }else{
+                                }else{                                      //Sinon on les demandent
                                     header('Location: ./eleve_log');
                                 }
                             }
