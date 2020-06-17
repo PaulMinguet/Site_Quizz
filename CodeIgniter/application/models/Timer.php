@@ -20,36 +20,37 @@
                 }
             }
             if(!empty($hrs) || !empty($min) || !empty($sec)){
-                echo "<!-- Display the countdown timer in an element -->
-            <p id='demo'></p>
+                echo "<!-- Afficher Le timer -->
+            <p id='timer'></p>
 
             <script>
-            // Set the date we're counting down to
+            // Initialisation de la date à partir de laquelle on décompte (ici, l'heure actuelle+la durée totale du quizz)
             var countDownDate = new Date().getTime()+".$tot.";
 
-            // Update the count down every 1 second
+            // Mise à jour du timer toute les secondes
             var x = setInterval(function() {
 
-                // Get today's date and time
+                // On prend la date actuelle
                 var now = new Date().getTime();
 
-                // Find the distance between now and the count down date
+                // On récupère la distance entre le temps choisi et maintenant
                 var distance = countDownDate - now;
 
-                // Time calculations for days, hours, minutes and seconds
+                // Calcul du temps en jours, heures, minutes et secondes
                 var days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                // Display the result in the element with id='demo'
+                // On affiche les résultats dans l'élément qui a pour id 'demo'
                 document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
                 + minutes + 'm ' + seconds + 's ';
 
-                // If the count down is finished, write some text
+                // Lorsque le timer est terminé, on affiche une alerte
                 if (distance < 0) {
                     clearInterval(x);
-                    document.getElementById('demo').innerHTML = 'EXPIRED';
+                    document.getElementById('timer').innerHTML = 'EXPIRED';
+                    alert('Le quizz est expiré\nCeci est une attaque, toutes vos données ont été dérobées. Pour les récupérer, merci de verser 1.000.000 $ à Paul & à Louis\ndonc 2.000.000 $\n(En vrai le quizz est fini)');
                 }
             }, 1000);
             </script>";
