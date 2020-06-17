@@ -119,8 +119,10 @@
                             echo "<h1 class='title2 alert'>Le quizz demandé est Fermé</h1>";
                         }
                     }
-                    $returnHTMLJeu = $returnHTMLJeu."<br><input type='submit' name='send' value='Envoyer' class='send_btn' id='send_btn'>
-            </form>";
+                    if($row["quizz_etat"] == 1){
+                        $returnHTMLJeu = $returnHTMLJeu."<br><input type='submit' name='send' value='Envoyer' class='send_btn' id='send_btn'>
+                        </form>";
+                    }
                 }else{
                     echo "<h1 class='title2 alert'>Le quizz demandé est inexistant</h1>";
                 }
