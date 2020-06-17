@@ -51,7 +51,7 @@
                   if (distance < 0) {
                     clearInterval(x);
                     document.getElementById('demo').innerHTML = 'EXPIRED';
-                    alert('Le quizz est expiré !');
+                    alert('Le quizz est expiré')
                   }
                 }, 1000);
                 </script>";
