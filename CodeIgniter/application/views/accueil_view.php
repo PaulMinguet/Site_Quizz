@@ -8,14 +8,13 @@
 	    	if(isset($_SESSION['statut'])){									//Si la variable statut a une valeur,
 		    	if($_SESSION['statut'] == "professeur"){					//Qui est "professeur"
 			        echo "<a href='../home/creer'>Créer un nouveau quizz !</a>";	//Alors on affiche le bouton pour qu'il puisse créer un quizz
-			    }else{														//Qui est autre (donc élève ou rien)
+			    }														//Qui est autre (donc élève ou rien)
 			    	echo "<form method='post' class='login'>				
                             <label for='lien' class='lab'>Lien du Quizz</label>
                             <input id='lien' type='text' name='lien' placeholder='Votre lien' style='height:5%; border-color: transparent transparent #FFF transparent;' />
                             <script src='../../js/radioBtnFin.js'></script>
                             <input type='submit' name='connect' value='Accéder' class='lab'>
                     </form>";											//Sinon on affiche un champ de texte pour que la personne saisisse l'url d'un quizz
-                } 
 
 			} else {                                //Par défaut, on affiche un champ de texte pour que la personne saisisse l'url d'un quizz
                     echo "<form method='post' class='login'>				
