@@ -328,7 +328,7 @@
         }
         
         public function deconnexion(){                              //Fonction de déconnexion
-            if(isset($_SESSION['username'])){                        //Si une personne est déjà connectée
+            if(isset($_SESSION['username'])){                       //Si une personne est déjà connectée
                 session_destroy();
                 echo "<div class='title2 success deco'>Déconnecté ! "."<br>". "À la prochaine 🖐</div>"; //On affiche un message de déconnexion
             }
@@ -364,12 +364,12 @@
         }
 
         public function creer(){                                    //Fonction de création de quizz
-            if(isset($this->nom_quizz)){
-                $this->load->model('Fonctions');
-                $this->codeAleatoire = $this->Fonctions->codeal();
+            if(isset($this->nom_quizz)){                            //Si le nom du quizz est renseigné
+                $this->load->model('Fonctions');                    //On crée la clé du quizz
+                $this->codeAleatoire = $this->Fonctions->codeal(); 
                 //echo $this->codeAleatoire;
                 //echo "<br>temps : ".$this->duree."<br>";
-                $data = array(
+                $data = array(                                      //Et on rentre les valeurs du quizz dans la base de données
                     'quizz_nom'         => $this->nom_quizz,
                     'quizz_etat'        => 1,
                     'quizz_cle'         => $this->codeAleatoire,
@@ -457,6 +457,7 @@
                     //echo "<br>";
                 }
                 echo "<script>alert('Le quizz a bien été créé ! (Vous allez pouvoir le retrouver dans la section \"statistiques\")')</script>";
+                header('Location: ./Accueil');
             }
         }
 
