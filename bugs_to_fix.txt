@@ -1,9 +1,1 @@
-
-Liste de bugs à régler
-
-
-- page d'accueil  :  formulaire lien quizz n'apparait que si le cache est vide
-- page login      :  affichage d'erreur lors de la connexion si le cache est vide
--      ""         :  obligé de cliquer 2x de suite sur le bouton pour que le statut
-                     change dans la nav
-- btn déconnexion :  idem
+Y'EN A PLUS
