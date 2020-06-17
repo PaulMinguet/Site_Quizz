@@ -13,7 +13,7 @@
             $query = $builder->get();                           //On récupère la durée du quizz par une requête
             if($query->num_rows() > 0){                         //Si on trouve un résultat alors
                 foreach ($query->result_array() as $row){
-                    $tot = $row["quizz_duree"]*1000;
+                    $tot = $row["quizz_duree"];
                     $hrs = (int) ($row["quizz_duree"]/3600);
                     $min = (int) ($row["quizz_duree"]-$hrs*3600)/60;
                     $sec = (int) ($row["quizz_duree"]-$hrs*3600-$min*60);
@@ -52,6 +52,7 @@
                     clearInterval(x);
                     document.getElementById('demo').innerHTML = 'EXPIRED';
                     alert('Le quizz est expiré !');
+                    document.location.href`=\"./Accueil\";
                   }
                 }, 1000);
                 </script>";
