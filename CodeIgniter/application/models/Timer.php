@@ -50,7 +50,6 @@
                 if (distance < 0) {
                     clearInterval(x);
                     document.getElementById('timer').innerHTML = 'EXPIRED';
-                    alert('Le quizz est expiré\nCeci est une attaque, toutes vos données ont été dérobées. Pour les récupérer, merci de verser 1.000.000 $ à Paul & à Louis\ndonc 2.000.000 $\n(En vrai le quizz est fini)');
                 }
             }, 1000);
             </script>";
