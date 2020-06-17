@@ -1,6 +1,6 @@
 <?php
 
-	class Note_eleve extends CI_Model{
+	class Note_eleve extends CI_Model{		//On déclare la classe "Note_eleve"
 		public function __construct() {
 			parent::__construct();
 

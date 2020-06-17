@@ -1,6 +1,6 @@
 <?php
 
-	class Creer extends CI_Model{
+	class Creer extends CI_Model{			//On déclare la classe "Creer"
 		public function __construct() {
 			parent::__construct();
 

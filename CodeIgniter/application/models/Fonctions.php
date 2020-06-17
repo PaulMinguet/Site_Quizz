@@ -1,5 +1,5 @@
 <?php
-class Fonctions extends CI_Model {
+class Fonctions extends CI_Model {			//On déclare la classe "Fonctions"
 
 	public function codeal(){
 		$string = "";

@@ -1,6 +1,6 @@
 <?php
 
-    class Connexion_bd extends CI_Model {
+    class Connexion_bd extends CI_Model {   //On déclare la classe "Connexion_bd"
 
         public $error = null;               //Déclaration des différentes variables
         public $success = null;

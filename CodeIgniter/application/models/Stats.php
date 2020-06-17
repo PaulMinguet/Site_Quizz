@@ -1,6 +1,6 @@
 <?php
 
-	class Stats extends CI_Model{
+	class Stats extends CI_Model{				//On déclare la classe "Stats"
 		public function __construct() {
 			parent::__construct();
 

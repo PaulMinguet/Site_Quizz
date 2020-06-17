@@ -1,6 +1,6 @@
 <?php 
 
-	class Deco extends CI_Model {
+	class Deco extends CI_Model {			//On déclare la classe "Deco"
 		public function __construct() {
 			parent::__construct();
 

@@ -1,6 +1,6 @@
 <?php
 
-    class Timer extends CI_Model {
+    class Timer extends CI_Model {          //On déclare la classe "Timer"
 
         public function __construct() {
             parent::__construct();

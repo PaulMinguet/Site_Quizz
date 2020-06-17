@@ -27,7 +27,7 @@ class Home extends CI_Controller {
         $this->load->view('footer');
         $this->load->view('progress_bar');
     }
-    public function note_eleve() {                         //idem pour la page note
+    public function note_eleve() {                  //idem pour la page note
         $this->load->view('header');
         $this->load->view('nav');
         $this->load->model('Note_eleve');
@@ -47,7 +47,7 @@ class Home extends CI_Controller {
         $this->load->view('progress_bar');
     }
     
-    public function creer_question() {                       //idem pour la page creer question
+    public function creer_question() {              //idem pour la page creer question
         $this->load->view('header');
         $this->load->view('nav');
         $this->load->view('cactus');
@@ -78,7 +78,7 @@ class Home extends CI_Controller {
         $this->load->view('progress_bar');
     }
 
-    public function eleve_log() {                       //idem pour la page login élève
+    public function eleve_log() {                   //idem pour la page login élève
         $this->load->view('header');
         $this->load->view('nav');
         $this->load->model('Eleve_log');

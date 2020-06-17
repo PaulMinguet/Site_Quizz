@@ -1,5 +1,5 @@
 <?php
-	class Affichenom extends CI_Model {
+	class Affichenom extends CI_Model {					//On déclare la classe "Affichenom"
 		public function __construct(){
 			parent::__construct();
 			if(isset($_SESSION['username'])){			//Si la variable username existe, alors un utilisateur est connecté et on affiche :

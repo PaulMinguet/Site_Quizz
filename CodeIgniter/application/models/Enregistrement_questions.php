@@ -1,6 +1,6 @@
 <?php
 
-    class Enregistrement_questions extends CI_Model {
+    class Enregistrement_questions extends CI_Model {           //On déclare la classe "Enregistrement_questions"
 
         public $error = null;               //Déclaration des différentes variables
         public $success = null;

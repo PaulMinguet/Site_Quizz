@@ -1,6 +1,6 @@
 <?php
 
-    class Stats_bd extends CI_Model {
+    class Stats_bd extends CI_Model {       //On déclare la classe "Stats_bd"
 
         public $email = null;
         public $moy = 0;
