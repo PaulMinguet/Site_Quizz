@@ -116,9 +116,7 @@
                                     $(this).removeClass('onSelect');
                                     $('#inactif".$numQuizz."').addClass('onSelect');
                                     <?php   
-                                        $this->db->set('quizz_etat', '1', FALSE);
-                                        $this->db->where('quizz_id', '".$this->Auth->getIdParCle($row['quizz_cle'])."');
-                                        $this->db->update('Quizz');
+                                    echo 'LOL';
                                     ?>
                                 });
                                 $('#inactif".$numQuizz."').click(function () {
