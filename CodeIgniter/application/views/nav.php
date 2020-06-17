@@ -1,7 +1,7 @@
 <nav>
     <ul>
 	    <li><a href="./accueil" id="btn-acc"><i class="fas fa-home"></i>&nbsp;&nbsp;Accueil</a></li>
-        <li><a href="../home/accueil" id="nomnav">
+        <li><a href="./accueil" id="nomnav">
         <?php if(isset($_SESSION['username'])){ 
                 echo "<span class='point_co point_vert'></span>" . $_SESSION['username'];
             } else {
