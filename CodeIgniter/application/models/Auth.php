@@ -167,7 +167,6 @@
                     //echo "<br>";
                 }
                 echo "<script>alert('Le quizz a bien été créé ! (Vous allez pouvoir le retrouver dans la section \"statistiques\")')</script>";
-                header('Location: ./Accueil');
             }
         }
 
