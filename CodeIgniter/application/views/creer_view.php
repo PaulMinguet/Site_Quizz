@@ -66,7 +66,7 @@
         <div class='final_btn'>
             <div class='container' style='top: 50px;'>
                 <input type='submit' name='save' value='Enregistrer' class='save_btn' id='save_btn'>
-                <input type='submit' name='reset' value='Abandonner' class='reset_btn' id='reset_btn' onclick="<?php header('Location: ./Accueil')?>;">
+                <input type='submit' name='reset' value='Abandonner' class='reset_btn' id='reset_btn' onclick="URL='./Accueil'">
                 <script src='../../js/reload.js'></script>
             </div>
         </div>
