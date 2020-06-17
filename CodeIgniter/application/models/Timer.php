@@ -21,8 +21,9 @@
             }
             if(!empty($hrs) || !empty($min) || !empty($sec)){
                 echo "<!-- Display the countdown timer in an element -->
-            <p id='demo'></p>
-
+            <div class='container-time'>
+	    	<h1 class='timer' id='demo'></h1>
+	    </div>
             <script>
             // Set the date we're counting down to
             var countDownDate = new Date().getTime()+".$tot.";
