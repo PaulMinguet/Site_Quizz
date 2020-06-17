@@ -90,19 +90,17 @@
                                             WHERE quizz_id = ".$this->Auth->getIdParCle($row['quizz_cle']), FALSE); //Alors on effectue une requête pour récupérer le statut de l'utilisateur
                             $query = $builder->get();                           //On récupère la moyenne des notes du quizz
                             if($query->num_rows() > 0){                         //Si on trouve un résultat alors
-
                                 foreach ($query->result_array() as $rowSc){
-
                                     if(!empty($rowSc['avg'])){
                                             $returnHTML = $returnHTML."
                                             <div class='bar_reussite'>
                                                 <ul>
                                                     <li class='";
-                                                    if(round($rowSc['avg'],2) > 15){
+                                                    if(round($rowSc['avg'],2) > 15){                                        //Si la moyenne est au dessus de 15, on affiche le fond en vert
                                                         $returnHTML = $returnHTML."reussite";
-                                                    }else if(round($rowSc['avg'],2) >= 10 && round($rowSc['avg'],2) < 15){
+                                                    }else if(round($rowSc['avg'],2) >= 10 && round($rowSc['avg'],2) < 15){  //Si la moyenne est comprise entre 10 et 15, le fond est orange
                                                         $returnHTML = $returnHTML."moyen";
-                                                    }else{
+                                                    }else{                                                                  //Sinon le fond est rouge
                                                         $returnHTML = $returnHTML."bof";
                                                     }
                                                     $returnHTML = $returnHTML."'>".(round($rowSc['avg'],2))."</li>
@@ -117,6 +115,11 @@
                                     console.log($(this).attr('id'));
                                     $(this).removeClass('onSelect');
                                     $('#inactif".$numQuizz."').addClass('onSelect');
+                                    <?php   
+                                        $this->db->set('quizz_etat', '1', FALSE);
+                                        $this->db->where('quizz_id', '".$this->Auth->getIdParCle($row['quizz_cle'])."');
+                                        $this->db->update('Quizz');
+                                    ?>
                                 });
                                 $('#inactif".$numQuizz."').click(function () {
                                     console.log($(this).attr('id'));
