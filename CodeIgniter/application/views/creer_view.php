@@ -53,7 +53,7 @@
                         }?>
                     </select>
                     <!--<input type="time" name="durée" id="durée" min="12:00:00" max="18:00:00" required class="area_qz" onclick="colorizeNBStart()" required/> -->
-                    <script src="<?php echo base_url(); ?>../js/nb_colored.js"></script>
+                    <script src="../../js/nb_colored.js"></script>
                 </div>
             </div>
             </hr>
@@ -67,7 +67,7 @@
             <div class='container' style='top: 50px;'>
                 <input type='submit' name='save' value='Enregistrer' class='save_btn' id='save_btn'>
                 <input type='submit' name='reset' value='Abandonner' class='reset_btn' id='reset_btn' onclick="reset();">
-                <script src='<?php echo base_url(); ?>js/reload.js'></script>
+                <script src='../../js/reload.js'></script>
             </div>
         </div>
         </hr>

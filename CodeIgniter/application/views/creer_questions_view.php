@@ -2,8 +2,7 @@
 
     <h1 class='title'>Créer les questions !</h1>
 
-    <script src='<?php echo base_url(); ?>../js/dragDrop.js'></script>
-    <script src='<?php echo base_url(); ?>../js/choix.js'></script>
+    <script src='../../js/choix.js'></script>
     <form method='post'>
 
 <?php
@@ -53,7 +52,7 @@ $nbQ = $this->Auth->getNbQuestion();
             <div class='container' style='top: 50px;'>
                 <input type='submit' name='save' value='Enregistrer' class='save_btn' id='save_btn'>
                 <input type='submit' name='reset' value='Abandonner' class='reset_btn' id='reset_btn' onclick="reset();">
-                <script src='<?php echo base_url(); ?>js/reload.js'></script>
+                <script src='../../js/reload.js'></script>
             </div>
         </div>
         </hr>

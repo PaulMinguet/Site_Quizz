@@ -12,7 +12,7 @@
 			    	echo "<form method='post' class='login'>				
                             <label for='lien' class='lab'>Lien du Quizz</label>
                             <input id='lien' type='text' name='lien' placeholder='Votre lien' style='height:5%; border-color: transparent transparent #FFF transparent;' />
-                            <script src='<?php echo base_url(); ?>js/radioBtnFin.js'></script>
+                            <script src='../../js/radioBtnFin.js'></script>
                             <input type='submit' name='connect' value='Accéder' class='lab'>
                     </form>";											//Sinon on affiche un champ de texte pour que la personne saisisse l'url d'un quizz
                 } 
@@ -21,7 +21,7 @@
                     echo "<form method='post' class='login'>				
                                 <label for='lien' class='lab'>Lien du Quizz</label>
                                 <input id='lien' type='text' name='lien' placeholder='Votre lien' style='height:40px; width:70%; border-color: transparent transparent #FFF transparent;' />
-                                <script src='<?php echo base_url(); ?>js/radioBtnFin.js'></script>
+                                <script src='../../js/radioBtnFin.js'></script>
                                 <input type='submit' name='connect' value='Accéder' class='lab'>
                         </form>";										
             }
