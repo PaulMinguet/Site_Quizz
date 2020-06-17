@@ -7,8 +7,6 @@
 			$title = "Quiz | QUIZZ";
 
             $this->load->model('Jeu_bd');	//On charge tous les models et vues dont on a besoin pour la page de Jeu
-            $this->load->model('Timer');
-            $this->Timer->afficheTimer();
             $this->load->model('Auth');
             $this->Auth->terminerQuizz();
             
