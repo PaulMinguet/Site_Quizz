@@ -13,7 +13,7 @@
             $query = $builder->get();                           //On récupère la durée du quizz par une requête
             if($query->num_rows() > 0){                         //Si on trouve un résultat alors
                 foreach ($query->result_array() as $row){
-                    $tot = $row["quizz_duree"];
+                    $tot = $row["quizz_duree"]*1000;
                     $hrs = (int) ($row["quizz_duree"]/3600);
                     $min = (int) ($row["quizz_duree"]-$hrs*3600)/60;
                     $sec = (int) ($row["quizz_duree"]-$hrs*3600-$min*60);
@@ -52,7 +52,6 @@
                     clearInterval(x);
                     document.getElementById('demo').innerHTML = 'EXPIRED';
                     alert('Le quizz est expiré !');
-                    document.location.href`=\"http://dwarves.iut-fbleau.fr/~daubie/pt_wim21/CodeIgniter/index.php/home/Accueil\";
                   }
                 }, 1000);
                 </script>";
