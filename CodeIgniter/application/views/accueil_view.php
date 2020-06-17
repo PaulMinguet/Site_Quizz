@@ -7,7 +7,7 @@
 	    	<?php 
 	    	if(isset($_SESSION['statut'])){									//Si la variable statut a une valeur,
 		    	if($_SESSION['statut'] == "professeur"){					//Qui est "professeur"
-			        echo "<a href='../home/creer'>Créer un nouveau quizz !</a><br>";	//Alors on affiche le bouton pour qu'il puisse créer un quizz
+			        echo "<a href='../home/creer'>Créer un nouveau quizz !</a><br><br>";	//Alors on affiche le bouton pour qu'il puisse créer un quizz
 			    }														//Qui est autre (donc élève ou rien)
 			    	echo "<form method='post' class='login'>				
                             <label for='lien' class='lab'>Lien du Quizz</label>
