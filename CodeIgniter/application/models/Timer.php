@@ -30,7 +30,7 @@
             <script language='JavaScript1.2'>
 
             function setcountdown(thehour,themin,thesec){
-                hr=1;min=5;sec=0
+                hr=0;min=0;sec=5
             }
 
             ////////// CONFIGUREZ LE COMPTEUR CI-DESSOUS //////////////////
