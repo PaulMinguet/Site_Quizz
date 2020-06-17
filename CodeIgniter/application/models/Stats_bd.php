@@ -115,9 +115,6 @@
                                     console.log($(this).attr('id'));
                                     $(this).removeClass('onSelect');
                                     $('#inactif".$numQuizz."').addClass('onSelect');
-                                    <?php   
-                                    echo 'LOL';
-                                    ?>
                                 });
                                 $('#inactif".$numQuizz."').click(function () {
                                     console.log($(this).attr('id'));
