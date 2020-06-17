@@ -73,7 +73,7 @@ class Home extends CI_Controller {
         $this->load->view('nav');
         $this->load->model('Login');
         $this->load->view('cactus');
-        $this->load->view('Login_view');
+        $this->load->view('login_view');
         $this->load->view('footer');
         $this->load->view('progress_bar');
     }
