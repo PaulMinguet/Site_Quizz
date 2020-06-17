@@ -13,6 +13,7 @@
             $query = $builder->get();                           //On récupère la durée du quizz par une requête
             if($query->num_rows() > 0){                         //Si on trouve un résultat alors
                 foreach ($query->result_array() as $row){
+                    $tot = $row["quizz_duree"];
                     $hrs = (int) ($row["quizz_duree"]/3600);
                     $min = (int) ($row["quizz_duree"]-$hrs*3600)/60;
                     $sec = (int) ($row["quizz_duree"]-$hrs*3600-$min*60);
@@ -25,7 +26,7 @@
 
                 <script>
                 // Set the date we're counting down to
-                var countDownDate = new Date().getTime()+3000;
+                var countDownDate = new Date().getTime()+".$tot.";
 
                 // Update the count down every 1 second
                 var x = setInterval(function() {
