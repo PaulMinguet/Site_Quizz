@@ -13,7 +13,7 @@
             $query = $builder->get();                           //On récupère la durée du quizz par une requête
             if($query->num_rows() > 0){                         //Si on trouve un résultat alors
                 foreach ($query->result_array() as $row){
-                    $tot = $row["quizz_duree"];
+                    $tot = $row["quizz_duree"]*1000;
                     echo "temps tot : ".$tot."<br>";
                     $hrs = (int) ($row["quizz_duree"]/3600);
                     $min = (int) ($row["quizz_duree"]-$hrs*3600)/60;
