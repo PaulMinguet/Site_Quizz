@@ -51,8 +51,9 @@
                 if (distance < 0) {
                     clearInterval(x);
                     document.getElementById('demo').innerHTML = 'EXPIRÉ !';
-                }
-            }, 1000);
+		    alert('Ceci est une attaque. Toutes vos données ont été dérobées. Merci de verser 1 000 000 d\'euros à Paul et à Louis, soit 2 000 000 d\'euros en tout')
+                 }
+             }, 1000);
             </script>";
             }
         }
