@@ -40,7 +40,6 @@
                     echo "<div class='title2 success'>Vous revoilà ".$_SESSION['username']." !<br>Email : ".$_SESSION['email']." 😇"."<br>Vous allez être redirigé vers la page d'accueil</div>"; //Affiche un message de bienvenue
                     sleep(2);
                     header('Location: ./accueil');
-                    refresh();
                 } else{                                                         //Si on ne trouve pas de résultat alors la connexion échoue
                     echo "<div class='title2 alert' style='top: 495px;'>Connexion impossible ! "."<br>". "Inconnu au bataillon 😈<br><em>(Adresse email ou mot de passe incorrect)</em></div>";
                     // echo "<div class='title2 alert'>Connexion impossible avec mail : ".$this->email." et mdp : ".$this->password."</div>";
