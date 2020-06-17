@@ -425,6 +425,23 @@ input[type="submit"]:hover {
 	cursor: pointer;
 }
 
+input[type="reset"] {
+	margin: 0 auto;
+	padding: 13px;
+	border: none;
+	font-family: 'Jost', sans-serif;
+	background-color: #2ECC72;
+	color: #FFF;
+	font-size: 20px;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-style: italic;
+}
+
+input[type="reset"]:hover {
+	cursor: pointer;
+}
+
 .login input[type="radio"] {
     /*position: relative;*/
 	top: 44px;
