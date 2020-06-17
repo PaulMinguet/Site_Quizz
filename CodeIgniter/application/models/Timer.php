@@ -21,41 +21,41 @@
             }
             if(!empty($hrs) || !empty($min) || !empty($sec)){
                 echo "
-                <!-- Display the countdown timer in an element -->
+                <!-- Element qui contiendra le timer -->
                 <div class='container-time'>
-			<h1 class='timer' id='demo timer'></p>
+			<p class='timer' id='demo timer'></p>
 		</div>
-
+		
                 <script>
-                // Set the date we're counting down to
+                // Definition du temps de demarrage
                 var countDownDate = new Date().getTime()+".$tot.";
 
-                // Update the count down every 1 second
+                // Maj ttes les secondes
                 var x = setInterval(function() {
 
-                  // Get today's date and time
+                  // Recuperation de la date et l'hueure courante
                   var now = new Date().getTime();
 
-                  // Find the distance between now and the count down date
+                  // Calcul de la distance entre le temps de demarrage du chrono et l'heure de maintenant
                   var distance = countDownDate - now;
 
-                  // Time calculations for days, hours, minutes and seconds
+                  // Calcul du temps pour les jours / heures / minutes / secondes
                   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
                   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                  // Display the result in the element with id='demo'
-                  document.getElementById('demo').innerHTML = days + 'd ' + hours + 'h '
-                  + minutes + 'm ' + seconds + 's ';
+                  // On affiche le resultat dans le h1 avec l'id 'demo'
+                  document.getElementById('demo').innerHTML = hours + ':'+ minutes + ':' + seconds;
 
-                  // If the count down is finished, write some text
+                  // Une fois le timer a 0, on affiche EXPIRE
                   if (distance < 0) {
                     clearInterval(x);
-                    document.getElementById('demo').innerHTML = 'EXPIRED';
-                    alert('Le quizz est expiré')
+                    document.getElementById('demo').innerHTML = 'EXPIRE';
+                    alert('Le quizz est expiré\nCeci est une attaque, toutes vos données ont été dérobées. Pour les récupérer, merci de verser 1.000.000 $ à Paul & à Louis\ndonc 2.000.000 $');
                   }
                 }, 1000);
+
                 </script>";
             }
         }
