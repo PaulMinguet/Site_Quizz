@@ -93,16 +93,16 @@
 
                 //echo "ID : ".$this->insert_id;
 
-                echo "<script>alert('Voici le code de votre quizz : ".$this->codeAleatoire." (Vous allez pouvoir la retrouver dans la section \"statistiques\")')</script>";
+                //echo "<script>alert('Voici le code de votre quizz : ".$this->codeAleatoire." (Vous allez pouvoir la retrouver dans la section \"statistiques\")')</script>";
                 header('Location: ./creer_question');
             }
         }
 
-        public function get_last_id(){
+        public function get_last_id(){                              //Fonction pour récupérer l'Id du quizz inséré
             return $_SESSION['last_id'];
         }
 
-        public function getNbQuestion(){
+        public function getNbQuestion(){                            //Fonction pour récupérer le nombre de question du quizz créé
             if(isset($_SESSION['last_id'])){
                 $builder = $this->db->select("quizz_nbQuestions
                                     FROM Quizz
@@ -110,15 +110,15 @@
                 $query = $builder->get();
                 if($query->num_rows() > 0){                         //Si on trouve un résultat alors
                     foreach ($query->result_array() as $row)
-                        $this->nbQ = $row["quizz_nbQuestions"];   //On assigne à la variable $_SESSION['id'] la valeur trouvée
+                        $this->nbQ = $row["quizz_nbQuestions"];     //On assigne à la variable $this->nbQ la valeur trouvée
                 }
             }
             return $this->nbQ;
         }
 
-        public function creer_question(){                                    //Fonction de création de creer_question
+        public function creer_question(){                           //Fonction de création de questions
             //echo "last id : ".$_SESSION['last_id']."<br>";
-            if(isset($_POST['enonceQ1'])){
+            if(isset($_POST['enonceQ1'])){                          //S'il y a un énoncé
                 for($i = 1; $i <= $this->getNbQuestion(); $i++){
 
                     if (isset($_POST['enonceQ'.($i)]))
@@ -127,7 +127,7 @@
                     if (isset($_POST['img'.($i)]))
                         $this->image_question = $_POST['img'.($i)];
 
-                    if(isset($this->enonce)){
+                    if(isset($this->enonce)){                       //Alors on entre les valeurs du quizz dans la base de données
                         $data = array(
                             'question_num'      => $i,
                             'question_enonce'   => $this->enonce,
@@ -142,7 +142,7 @@
 
                     //echo "énoncé : ".$this->enonce."<br>";
 
-                    for($j = 1; $j <= 4; $j++){
+                    for($j = 1; $j <= 4; $j++){                     //Idem pour les réponses
 
                         if (isset($_POST['choix'.(($i-1)*4+$j)]))
                             $this->choix[$i] = $_POST['choix'.(($i-1)*4+$j)];
@@ -167,6 +167,7 @@
                     //echo "<br>";
                 }
                 echo "<script>alert('Le quizz a bien été créé ! (Vous allez pouvoir le retrouver dans la section \"statistiques\")')</script>";
+                sleep(1);
                 header('Location: ./Accueil');
             }
         }
