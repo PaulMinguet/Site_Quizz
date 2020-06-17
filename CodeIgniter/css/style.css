@@ -78,12 +78,11 @@ nav {
 }
 
 nav ul {
-	margin-top: 0;
+    margin-top: 0;
 	padding: 18px 0;
 }
 
 nav ul li {
-	/* text-align: center; */
 	display: inline;
 	padding: 0 12px 0;
     font-family: 'Jost', sans-serif;
@@ -140,9 +139,8 @@ nav ul li a {
 }
 
 .btn_nav {
-    font-family: 'Jost',
-    sans-serif;
-    top: 18px;
+	position: relative;
+    font-family: 'Jost', sans-serif;
     font-weight: 600;
 }
 
@@ -154,19 +152,19 @@ nav ul li a {
 }
 
 #btn-log {
-    right: 200px;
+    right: 190px;
 	color: #2ECC72;
 	background-color: #222;
 }
 
 #btn-sign {
-	right: 320px;
+	right: 306px;
 	color: #2EAAAA;
 	background-color: #222;
 }
 
 #btn-stats {
-    right: 446px;
+    right: 429px;
     background-color: #fff;
     color: rgb(49, 138, 255);
 }
@@ -188,7 +186,7 @@ nav ul li a {
     -o-transition: all .4s;
 }
 #btn-play {
-    right: 620px;
+    right: 596px;
     color: #ffe100;
     background-color: #2c006a;
 }
@@ -199,6 +197,7 @@ nav ul li a {
 #btn-stats,
 #btn-sign {
 	position: absolute;
+	top: 12px;
 	font-size: 20px;
 	font-style: italic;
 	padding: 6px 12px 6px 8px;
