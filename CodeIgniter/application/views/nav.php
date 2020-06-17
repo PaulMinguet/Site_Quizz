@@ -1,6 +1,7 @@
 <nav>
     <ul>
         <li><?php echo anchor('home/accueil', '<span class="btn_nav">&nbsp;&nbsp;Accueil</span>', 'id="btn-acc", class="fas fa-home"')?>
+	<li><a href="./accueil" id="btn-acc"><i class="fas fa-home"></i>&nbsp;&nbsp;Accueil</a></li>
             <li><a href="../home/accueil" id="nomnav">
             <?php if(isset($_SESSION['username'])){ 
                     echo "<span class='point_co point_vert'></span>" . $_SESSION['username'];
@@ -9,7 +10,8 @@
                 }
             ?></a></li>
         <li><?php echo anchor('home/accueil', '<span class="btn_nav">&nbsp;&nbsp;Jouer</span>', 'class="fas fa-gamepad", id="btn-play"')?></li>
-        <li><?php echo anchor('home/signin', '<span class="btn_nav">&nbsp;&nbsp;Sign In</span>', 'id="btn-sign", class="fas fa-sign-in-alt "')?></li>
+        <!--<li><?php echo anchor('home/signin', '<span class="btn_nav">&nbsp;&nbsp;Sign In</span>', 'id="btn-sign", class="fas fa-sign-in-alt "')?></li>-->
+	<li><a href="./signin" id="btn-sign"><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Sign In</a></li>
         <li><?php echo anchor('home/login', '<span class="btn_nav">&nbsp;&nbsp;Log In</span>', 'id="btn-log", class="fas fa-key "')?></li>
         <?php if(isset($_SESSION['username'])){
             if(isset($_SESSION['statut']) && $_SESSION['statut'] == 'professeur'){ 
