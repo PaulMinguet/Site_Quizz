@@ -25,10 +25,9 @@
                         sleep(1);
                     }
                 }*/
+                echo "#######################################################################";
             echo "
             <script language='JavaScript1.2'>
-
-            alert('LOL');
 
             function setcountdown(thehour,themin,thesec){
                 hr=1;min=5;sec=0
