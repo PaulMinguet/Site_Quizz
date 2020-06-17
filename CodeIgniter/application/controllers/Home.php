@@ -21,6 +21,7 @@ class Home extends CI_Controller {
         $this->load->view('header');
         $this->load->view('nav');
         $this->load->model('Timer');
+        $this->Timer->afficheTimer();
         $this->load->model('Jeu');
         $this->load->view('jeu_view');
         $this->load->view('cactus');
