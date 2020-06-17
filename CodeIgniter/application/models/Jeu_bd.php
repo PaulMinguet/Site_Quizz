@@ -8,20 +8,20 @@
 
         public function getJeu(){           //Fonction pour afficher un quizz
             $returnHTMLJeu = "";
-            if(isset($_GET['cle'])){                          //Si la clé est renseignée
+            if(isset($_GET['cle'])){        //Si la clé est renseignée
                 //echo "cle = ".$_GET['cle']."<br>";
                 $builder = $this->db->select("Q.quizz_id, Q.quizz_nom, Q.quizz_etat, Q.quizz_duree, Q.quizz_nbQuestions
                                             FROM Quizz Q
                                             WHERE Q.quizz_cle = '".$_GET['cle']."'", FALSE);    //On fait une requête pour rechercher le quizz correspondant à la clé renseignée
                 $query = $builder->get();
-                if($query->num_rows() > 0){                         //Si on trouve un résultat alors
-                    foreach ($query->result_array() as $row){
-                        if($row["quizz_etat"] == 1){
-                            $hrs = (int) ($row["quizz_duree"]/3600);
+                if($query->num_rows() > 0){                             //Si on trouve un résultat alors
+                    foreach ($query->result_array() as $row){           //Pour chaque ligne trouvée
+                        if($row["quizz_etat"] == 1){                    //Si l'état du quizz est à 1 (le quizz est ouvert)
+                            $hrs = (int) ($row["quizz_duree"]/3600);    //On converti la durée du quizz en heures, minutes et secondes
                             $min = (int) ($row["quizz_duree"]-$hrs*3600)/60;
                             $sec = (int) ($row["quizz_duree"]-$hrs*3600-$min*60);
-                            $returnHTMLJeu = "
-                            <div class='container'>
+                            $returnHTMLJeu =                            //Et on affiche le quizz avec toutes les variables et valeurs de la base de données 
+                            "<div class='container'>
                                 <div class='statutQuizz actif'>
                                     <h2><i class='fas fa-check-circle'></i>&nbsp;Actif</h2>
                                 </div>
@@ -65,15 +65,15 @@
                             $builder = $this->db->select("Ques.question_id, Ques.question_num, Ques.question_enonce, Ques.question_image
                                                 FROM Question Ques INNER JOIN Quizz Q ON Ques.quizz_id = Q.quizz_id
                                                 WHERE Q.quizz_cle = '".$_GET['cle']."'", FALSE);
-                            $query = $builder->get();
+                            $query = $builder->get();                           //On fait une requête pour récupérer les questions du quizz
                             if($query->num_rows() > 0){                         //Si on trouve un résultat alors
                                 foreach ($query->result_array() as $row){
-                                    if(isset($row['question_num'])){
+                                    if(isset($row['question_num'])){            //On attribue les variables qu'on utilisera après
                                         $nQues = $row['question_num'];
                                     }
                                     if(isset($row['question_image'])){
                                         $img = $row['question_image'];
-                                    }
+                                    }                                           //Idem que pour l'affichage du quizz, on affiche les questions
                                     $returnHTMLJeu = $returnHTMLJeu."
                                     <form class='container'>
                                         <div class='nbQuizz rep_nb'><h1>".$nQues."</h1></div>
@@ -92,10 +92,10 @@
                                                 $builder = $this->db->select("Rep.reponse_texte, Rep.reponse_num
                                                     FROM Reponse Rep INNER JOIN Question Ques ON Rep.question_id = Ques.question_id
                                                     WHERE Rep.question_id = '".$row['question_id']."'", FALSE);
-                                                $query = $builder->get();
+                                                $query = $builder->get();                           //On récupère les données des réponses aux questions
 
                                                 if($query->num_rows() > 0){                         //Si on trouve un résultat alors
-                                                    foreach ($query->result_array() as $row){
+                                                    foreach ($query->result_array() as $row){       //Idem que pour le quizz et les questions, on affiche les réponses
                                                         if(!empty($row['reponse_texte'])){
                                                             $returnHTMLJeu = $returnHTMLJeu."
                                                             <div class='line_rep'>
@@ -115,19 +115,19 @@
                                                     </div><br/><br/>";
                                 }
                             }
-                        }else{
+                        }else{                                                                  //Si l'état n'est pas à 1, alors le quizz est fermé
                             echo "<h1 class='title2 alert'>Le quizz demandé est Fermé</h1>";
                         }
                     }
                     if($row["quizz_etat"] == 1){
                         $returnHTMLJeu = $returnHTMLJeu."<br><input type='submit' name='send' value='Envoyer' class='send_btn' id='send_btn'>
-                        </form>";
+                        </form>";                                                               //Enfin, on affiche le bouton poru envoyer nos réponses
                     }
-                }else{
+                }else{                                                                          //Si la clé est introuvable, alors le quizz demandé n'existe pas
                     echo "<h1 class='title2 alert'>Le quizz demandé est inexistant</h1>";
                 }
             }
-            return $returnHTMLJeu;
+            return $returnHTMLJeu;                                                              //On renvoie le quizz
         }
     }
 ?>
