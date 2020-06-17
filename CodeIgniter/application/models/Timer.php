@@ -104,7 +104,7 @@
                     }
                 setTimeout('countdown()',1000)
             }
-            </script>"
+            </script>";
         }
     }
 ?>
