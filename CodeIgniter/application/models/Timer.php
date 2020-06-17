@@ -6,11 +6,11 @@
             parent::__construct();
         }
 
-        public function afficheTimer(){
+        public function afficheTimer(){     //Fonction pour afficher le timer
             $builder = $this->db->select("quizz_duree
                                             FROM Quizz
                                             WHERE quizz_cle = '".$_GET['cle']."'", FALSE);
-                $query = $builder->get();
+                $query = $builder->get();                           //On récupère la durée du quizz par une requête
                 if($query->num_rows() > 0){                         //Si on trouve un résultat alors
                     foreach ($query->result_array() as $row){
                         $hrs = (int) ($row["quizz_duree"]/3600);

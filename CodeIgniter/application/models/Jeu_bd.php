@@ -115,7 +115,7 @@
                                                     </div><br/><br/>";
                                 }
                                 $returnHTMLJeu = $returnHTMLJeu."<br><input type='submit' name='send' value='Envoyer' class='send_btn' id='send_btn'>
-                            </form>";                                                               //Enfin, on affiche le bouton poru envoyer nos réponses
+                            </form>";                                                           //Enfin, on affiche le bouton poru envoyer nos réponses
                             }
                         }else{                                                                  //Si l'état n'est pas à 1, alors le quizz est fermé
                             echo "<h1 class='title2 alert'>Le quizz demandé est Fermé</h1>";

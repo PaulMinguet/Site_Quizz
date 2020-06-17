@@ -30,9 +30,9 @@
                     foreach ($query->result_array() as $row){
                         $numQuizz++;
                         //echo "id user : ".$this->Auth->getIdUser()."<br>";
-                        $hrs = (int) ($row["quizz_duree"]/3600);
+                        $hrs = (int) ($row["quizz_duree"]/3600);    //On converti la durée du quizz en question en heures, minutes et secondes
                         $min = (int) ($row["quizz_duree"]-$hrs*3600)/60;
-                        $sec = (int) ($row["quizz_duree"]-$hrs*3600-$min*60);
+                        $sec = (int) ($row["quizz_duree"]-$hrs*3600-$min*60);   //Ensuite on affiche le quizz
                         $returnHTML = $returnHTML."
                         <div class='container'>
                             <div class='nbQuizz rep_nb'><h1>".$numQuizz."</h1></div>
@@ -88,36 +88,27 @@
                             $builder = $this->db->select("AVG(score) as avg
                                             FROM Score
                                             WHERE quizz_id = ".$this->Auth->getIdParCle($row['quizz_cle']), FALSE); //Alors on effectue une requête pour récupérer le statut de l'utilisateur
-                            $query = $builder->get();
+                            $query = $builder->get();                           //On récupère la moyenne des notes du quizz
                             if($query->num_rows() > 0){                         //Si on trouve un résultat alors
 
                                 foreach ($query->result_array() as $rowSc){
-                                    if(!empty($rowSc['avg'])){
-                                            $this->note = $rowSc['avg'];
-                                            //echo "quizz id : ".$this->Auth->getIdParCle($row['quizz_cle'])."<br>";
-                                            //echo "nbNotes : ".$rowSc['nbRep']."<br>";
-                                            //echo "row avg : ".$rowSc['avg']."<br>";
-                                            //echo "note = ".$this->note."<br>";
-                                            $this->moy = $this->moy + $this->note;
-                                            //echo "moyenne = ".$this->moy."<br><br>";  
-                                    }
-                                }
 
-                                if(!empty($rowSc['avg'])){
-                                        $returnHTML = $returnHTML."
-                                        <div class='bar_reussite'>
-                                            <ul>
-                                                <li class='";
-                                                if(round($rowSc['avg'],2) > 15){
-                                                    $returnHTML = $returnHTML."reussite";
-                                                }else if(round($rowSc['avg'],2) >= 10 && round($rowSc['avg'],2) < 15){
-                                                    $returnHTML = $returnHTML."moyen";
-                                                }else{
-                                                    $returnHTML = $returnHTML."bof";
-                                                }
-                                                $returnHTML = $returnHTML."'>".(round($rowSc['avg'],2))."</li>
-                                            </ul>
-                                        </div>";
+                                    if(!empty($rowSc['avg'])){
+                                            $returnHTML = $returnHTML."
+                                            <div class='bar_reussite'>
+                                                <ul>
+                                                    <li class='";
+                                                    if(round($rowSc['avg'],2) > 15){
+                                                        $returnHTML = $returnHTML."reussite";
+                                                    }else if(round($rowSc['avg'],2) >= 10 && round($rowSc['avg'],2) < 15){
+                                                        $returnHTML = $returnHTML."moyen";
+                                                    }else{
+                                                        $returnHTML = $returnHTML."bof";
+                                                    }
+                                                    $returnHTML = $returnHTML."'>".(round($rowSc['avg'],2))."</li>
+                                                </ul>
+                                            </div>";
+                                    }
                                 }
                             }
 
