@@ -31,12 +31,11 @@
 
 
                 if($query->num_rows() > 0){                                     //Si on trouve un résultat, alors la connexion a réussi
-                    foreach ($query->result_array() as $row)                    //Alors on transforme notre résultat sous forme de variable
+                    foreach ($query->result_array() as $row){                    //Alors on transforme notre résultat sous forme de variable
                             $_SESSION['username'] = $row["username"];           //Et on assigne à $_SESSION['username'] la valeur trouvée (nom et prénom)
                             $_SESSION['nom'] = $row["utilisateur_nom"];
                             $_SESSION['prenom'] = $row["utilisateur_prenom"];   
-                            
-                    
+                    }
                     $_SESSION['email'] = $this->email;                          //Idem pour le mail
                     echo "<div class='title2 success'>Vous revoilà ".$_SESSION['username']." !<br>Email : ".$_SESSION['email']." 😇"."<br>Vous allez être redirigé vers la page d'accueil</div>"; //Affiche un message de bienvenue
                     sleep(2);
