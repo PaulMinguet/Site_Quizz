@@ -1,0 +1,15 @@
+À l'arrivée sur le site, l'utilise tombe sur une page 
+avec un message lui demandant de se connecter. 
+S'il ne le fait pas, il ne pourra pas accéder aux 
+fonctionnalités du site; Ce dernier lui redemandera de se connecter.
+En cliquant sur le bouton "Sign In" l'utilisateur 
+est redirigé vers une page d'inscription sur laquelle 
+il doit entrer ses informations. Une fois qu'il clique sur le bouton s'enregistrer, 
+ses informations sont vérifiées dans la base
+de données. S'il y a déjà un compte associé à cette
+adresse email, un message d'erreur apparaît, sinon l'inscription est réussie.
+En cliquant sur le bouton "Log In", l'utilisateur est
+redirigé vers une page de connexion sur laquelle 
+il doit être son adresse email et son mot de passe. Si l'authentification réussi,
+il est redirigé vers la page d'accueil, sinon
+un message d'erreur apparaît.

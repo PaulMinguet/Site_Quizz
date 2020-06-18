@@ -1,0 +1,3 @@
+Lorsqu'un élève connecté clic entre la clé d'un quizz et clic sur "commencer", si la clé est correcte, alors il est redirigé vers la page du quizz.
+Sinon, une erreur s'affiche. Si la clé est bonne, l'élève trouve sur la page affichée, le quizz en question. Il peut cocher les réponses qu'il désire
+avant d'appuyer sur le bouton "terminer". Une fois ce bouton cliqué, l'élève reçois une clé unique lui permettant d'accéder à son résultat.

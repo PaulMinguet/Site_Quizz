@@ -1,0 +1,10 @@
+Lorsque le professeur clique sur le bouton pour créer un quizz, 
+la page de création de quizz s'affiche. Sur celle-ci, le professeur 
+peut renseigner le nom du quizz ainsi que le nombre de questions.
+Une fois ceci choisi, il décide alors du nom de la première 
+question ainsi que des réponses possible et de la bonne réponse.
+Il répète ceci en boucle jusqu'à avoir complété toutes les questions.
+Il peut quand même toujours rajouter des questions comme bon 
+lui semble. Une fois qu'il a fini de créer le quizz, le professeur 
+peut cliquer sur "terminer" et ainsi obtenir une clé à partager aux élèves
+afin qu'ils puissent accéder au quizz.
