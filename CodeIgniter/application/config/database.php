@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'dwarves.iut-fbleau.fr',
-	'username' => 'minguetp',
-	'password' => 'minguetp',
-	'database' => 'minguetp',
+	'hostname' => '****',
+	'username' => '****',
+	'password' => '****',
+	'database' => '****',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
